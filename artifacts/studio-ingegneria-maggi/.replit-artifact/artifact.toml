@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Studio Ingegneria Maggi"
+description = "Sito istituzionale contemporaneo per Studio Ingegneria Maggi S.r.l., con servizi, progetti, approccio e contatti per raccontare lo studio a clienti pubblici e privati."
+version = "1.0.0"
+id = "artifacts/studio-ingegneria-maggi"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25141
+
+[services.development]
+run = "pnpm --filter @workspace/studio-ingegneria-maggi run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/studio-ingegneria-maggi", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/studio-ingegneria-maggi/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25141"
+BASE_PATH = "/"
