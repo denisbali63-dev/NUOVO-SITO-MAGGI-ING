@@ -355,7 +355,6 @@ function ServiceDetail({ service }: { service: ServicePanel }) {
       </div>
       {works[service.slug] && works[service.slug].length > 0 && (
         <div className="service-detail__works">
-          <div className="section-tag"><span>Lavori</span><span className="section-rule" /> Realizzazioni</div>
           <div className="works-grid">
             {works[service.slug].map((work) => (
               <article

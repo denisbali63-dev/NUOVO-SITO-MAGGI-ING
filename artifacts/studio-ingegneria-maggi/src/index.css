@@ -2167,3 +2167,50 @@ a.cert-card {
   color: var(--ink); background: rgba(255, 255, 255, 0.92);
   border-radius: 50%; box-shadow: 0 4px 14px rgba(23, 59, 83, 0.18);
 }
+
+/* === Revisione lavori: caption on hover + lightbox due colonne === */
+.service-detail__works { margin-top: clamp(40px, 5vw, 70px); }
+.work-card__caption {
+  position: absolute;
+  inset: 0;
+  left: 0; right: 0; top: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(23, 59, 83, 0.92), rgba(23, 59, 83, 0.35) 55%, rgba(23, 59, 83, 0) 82%);
+  border-radius: 0;
+  backdrop-filter: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.work-card:hover .work-card__caption { opacity: 1; }
+.work-card__caption .work-card__client { color: #bfe0ef; }
+.work-card__caption h3 { color: #ffffff; }
+.work-card__caption .work-card__date { color: rgba(255, 255, 255, 0.85); }
+
+.work-lightbox__panel {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: stretch;
+  width: min(1000px, 100%);
+}
+.work-lightbox__body {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 44px 42px;
+}
+.work-lightbox__image {
+  order: 2;
+  height: 100%;
+  min-height: 380px;
+  aspect-ratio: auto;
+}
+.work-lightbox__image img { height: 100%; }
+@media (max-width: 760px) {
+  .work-lightbox__panel { grid-template-columns: 1fr; }
+  .work-lightbox__image { order: 1; min-height: 220px; aspect-ratio: 16 / 10; }
+  .work-lightbox__body { order: 2; padding: 30px 26px 34px; }
+}
