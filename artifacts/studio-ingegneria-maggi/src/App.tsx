@@ -39,6 +39,21 @@ const navItems = [
   { label: 'Contatti', href: '#contatti' },
 ];
 
+const clientLogos = [
+  { src: 'loghi-clienti/autostrade.png', name: "Autostrade per l'Italia" },
+  { src: 'loghi-clienti/anas.png', name: 'ANAS' },
+  { src: 'loghi-clienti/roma-capitale.png', name: 'Roma Capitale' },
+  { src: 'loghi-clienti/regione-lazio.png', name: 'Regione Lazio' },
+  { src: 'loghi-clienti/cm-roma.png', name: 'Città metropolitana di Roma Capitale' },
+  { src: 'loghi-clienti/cm-bari.png', name: 'Città metropolitana di Bari' },
+  { src: 'loghi-clienti/provincia-frosinone.png', name: 'Provincia di Frosinone' },
+  { src: 'loghi-clienti/provincia-latina.png', name: 'Provincia di Latina' },
+  { src: 'loghi-clienti/invitalia.png', name: 'Invitalia' },
+  { src: 'loghi-clienti/enav.png', name: 'ENAV' },
+  { src: 'loghi-clienti/risorse-per-roma.png', name: 'Risorse per Roma' },
+  { src: 'loghi-clienti/sport-e-salute.png', name: 'Sport e Salute' },
+];
+
 const servicePanels = [
   {
     slug: 'architettura',
@@ -504,6 +519,24 @@ function App() {
                   </div>
                 </a>
               ))}
+            </section>
+
+            <section className="clients" aria-label="Principali clienti dello studio">
+              <p className="clients__label">Hanno scelto lo Studio</p>
+              <div className="clients__track">
+                <div className="clients__row">
+                  {clientLogos.map((c) => (
+                    <span className="clients__item" key={c.name}>
+                      <img src={asset(c.src)} alt={c.name} loading="lazy" />
+                    </span>
+                  ))}
+                  {clientLogos.map((c) => (
+                    <span className="clients__item" key={`${c.name}-dup`} aria-hidden="true">
+                      <img src={asset(c.src)} alt="" loading="lazy" />
+                    </span>
+                  ))}
+                </div>
+              </div>
             </section>
 
             <section id="studio" className="studio section-pad">
