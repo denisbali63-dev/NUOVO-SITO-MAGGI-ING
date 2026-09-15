@@ -1,12 +1,17 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import {
   ArrowRight,
+  Award,
+  Boxes,
   Building2,
   Check,
   HardHat,
+  HeartHandshake,
+  Leaf,
   Map,
   Menu,
   Ruler,
+  Scale,
   ScanSearch,
   ShieldCheck,
   X,
@@ -30,6 +35,7 @@ const navItems = [
   { label: 'Studio', href: '#studio' },
   { label: 'Servizi', href: '#servizi' },
   { label: 'Progetti', href: '#progetti' },
+  { label: 'Certificazioni', href: '#certificazioni' },
   { label: 'Contatti', href: '#contatti' },
 ];
 
@@ -177,6 +183,69 @@ const projects = [
     subtitle: 'Spazi che cambiano funzione',
     image: asset('images/riuso-ferroviario.jpg'),
     className: 'project-card--wide',
+  },
+];
+
+const certifications = [
+  {
+    code: 'ISO 9001:2015',
+    title: 'Qualità',
+    description:
+      'Sistema di gestione della qualità: procedure controllate e miglioramento continuo a garanzia del risultato in ogni fase del lavoro.',
+    body: 'CERT International',
+    number: 'QMS-0912/B',
+    valid: '23.02.2027',
+    Icon: Award,
+  },
+  {
+    code: 'ISO 14001:2015',
+    title: 'Ambiente',
+    description:
+      'Sistema di gestione ambientale: attenzione agli impatti e uso responsabile delle risorse nelle attività dello studio.',
+    body: 'CERT International',
+    number: 'EMS-1255/A',
+    valid: '14.12.2026',
+    Icon: Leaf,
+  },
+  {
+    code: 'UNI EN ISO 45001:2023',
+    title: 'Salute e sicurezza',
+    description:
+      'Sistema di gestione della salute e sicurezza sul lavoro, per tutelare le persone in ufficio e in cantiere.',
+    body: 'CERT International',
+    number: 'OH&SMS-1253/B',
+    valid: '06.12.2026',
+    Icon: ShieldCheck,
+  },
+  {
+    code: 'SA 8000:2014',
+    title: 'Responsabilità sociale',
+    description:
+      'Standard di responsabilità sociale: rispetto dei diritti dei lavoratori e condizioni di lavoro eque ed etiche.',
+    body: 'CERT International',
+    number: 'SA-2363/A',
+    valid: '26.02.2029',
+    Icon: HeartHandshake,
+  },
+  {
+    code: 'UNI/PdR 125:2022',
+    title: 'Parità di genere',
+    description:
+      'Sistema di gestione per la parità di genere: pari opportunità, inclusione e valorizzazione delle persone.',
+    body: 'Quality Italia',
+    number: '053-PdR-2024',
+    valid: '03.12.2027',
+    Icon: Scale,
+  },
+  {
+    code: 'UNI/PdR 74:2019',
+    title: 'Sistema di gestione BIM',
+    description:
+      'Qualificazione BIM per la progettazione architettonica, strutturale e impiantistica di opere civili con metodo digitale.',
+    body: 'NQA Italia',
+    number: 'C-2024-006',
+    valid: '26.12.2027',
+    Icon: Boxes,
   },
 ];
 
@@ -415,6 +484,36 @@ function App() {
                   </article>
                 ))}
               </div>
+            </section>
+
+            <section id="certificazioni" className="certifications section-pad">
+              <div className="certifications__heading">
+                <div className="section-tag"><span>06</span><span className="section-rule" /> Certificazioni</div>
+                <SectionHeading eyebrow="Qualità verificata">
+                  Standard riconosciuti,<br /><em>impegni concreti.</em>
+                </SectionHeading>
+                <div className="certifications__intro">
+                  <p>Il nostro modo di lavorare è verificato da enti indipendenti. Sei certificazioni attestano qualità, ambiente, sicurezza, responsabilità sociale, parità di genere e metodo BIM: un impegno rinnovato nel tempo verso committenti pubblici e privati.</p>
+                </div>
+              </div>
+              <div className="certifications__grid">
+                {certifications.map(({ code, title, description, body, number, valid, Icon }) => (
+                  <article className="cert-card" key={code}>
+                    <div className="cert-card__top">
+                      <Icon className="cert-card__icon" size={30} strokeWidth={1.4} />
+                      <span className="cert-card__code">{code}</span>
+                    </div>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                    <div className="cert-card__ref">Certificato n° {number}</div>
+                    <div className="cert-card__meta">
+                      <span><small>Ente</small>{body}</span>
+                      <span><small>Valida fino al</small>{valid}</span>
+                    </div>
+                  </article>
+                ))}
+              </div>
+              <p className="certifications__note">Certificazioni rilasciate da organismi accreditati (ACCREDIA · IAF · SNAS) e soggette a sorveglianza periodica.</p>
             </section>
 
             <section id="contatti" className="contact section-pad">
