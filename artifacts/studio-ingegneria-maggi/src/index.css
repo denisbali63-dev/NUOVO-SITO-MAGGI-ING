@@ -2071,3 +2071,31 @@ a.cert-card {
   border-radius: 50%;
   outline-offset: 4px;
 }
+
+/* Loghi enti certificatori nella fascia */
+.cert-strip__issuers {
+  margin-top: 38px;
+}
+
+.cert-strip__issuers-label {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--ink-soft);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.cert-strip__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(26px, 4vw, 60px);
+}
+
+.cert-strip__logos img {
+  height: 40px;
+  width: auto;
+}

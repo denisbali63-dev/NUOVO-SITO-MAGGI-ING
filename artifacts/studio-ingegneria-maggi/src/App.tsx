@@ -613,6 +613,14 @@ function App() {
             sicurezza sul lavoro (ISO 45001:2023), responsabilità sociale (SA 8000:2014),
             parità di genere (UNI/PdR 125:2022) e gestione BIM (UNI/PdR 74:2019).
           </p>
+          <div className="cert-strip__issuers">
+            <span className="cert-strip__issuers-label">Enti certificatori</span>
+            <div className="cert-strip__logos">
+              <img src={asset('loghi/cert-international.png')} alt="CERT International" />
+              <img src={asset('loghi/quality-italia.png')} alt="Quality Italia" />
+              <img src={asset('loghi/nqa.png')} alt="NQA Italia" />
+            </div>
+          </div>
         </div>
       </section>
 
