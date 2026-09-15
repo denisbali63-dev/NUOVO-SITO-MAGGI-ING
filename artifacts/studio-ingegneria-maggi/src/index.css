@@ -1947,3 +1947,127 @@ img {
     margin-top: 40px;
   }
 }
+
+/* ============================================================
+   Fascia certificazioni (sigilli, in fondo pagina)
+   ============================================================ */
+.cert-strip {
+  background: var(--off-white);
+  border-top: 1px solid var(--line);
+}
+
+.cert-strip__inner {
+  width: min(100% - 48px, 1120px);
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 76px) 0;
+  text-align: center;
+}
+
+.cert-strip__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 42px);
+}
+
+.cert-badge__seal {
+  width: clamp(82px, 11vw, 104px);
+  height: auto;
+  transition: transform 0.35s ease;
+}
+
+.cert-badge__seal:hover {
+  transform: translateY(-4px);
+}
+
+.cert-badge__ring-outer {
+  fill: var(--white);
+  stroke: var(--blue-deep);
+  stroke-width: 1.5;
+}
+
+.cert-badge__ring-inner {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1;
+}
+
+.cert-badge__top {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--blue-deep);
+  letter-spacing: 0.06em;
+}
+
+.cert-badge__main {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  fill: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.cert-badge__year {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  fill: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+
+.cert-badge__check {
+  fill: none;
+  stroke: var(--blue-deep);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cert-strip__note {
+  max-width: 780px;
+  margin: 30px auto 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+@media (max-width: 720px) {
+  .cert-strip__badges {
+    gap: 22px 26px;
+  }
+}
+
+/* Card certificazioni cliccabili + link PDF */
+a.cert-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.cert-card__open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  color: var(--blue-deep);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.cert-card__open svg {
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-card__open svg {
+  transform: translateX(4px);
+}
+
+.cert-seal-link {
+  display: inline-block;
+  border-radius: 50%;
+  outline-offset: 4px;
+}

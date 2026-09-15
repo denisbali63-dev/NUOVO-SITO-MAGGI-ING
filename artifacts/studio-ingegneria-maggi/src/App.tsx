@@ -196,6 +196,7 @@ const certifications = [
     number: 'QMS-0912/B',
     valid: '23.02.2027',
     Icon: Award,
+    pdf: 'certificati/iso-9001.pdf',
   },
   {
     code: 'ISO 14001:2015',
@@ -206,6 +207,7 @@ const certifications = [
     number: 'EMS-1255/A',
     valid: '14.12.2026',
     Icon: Leaf,
+    pdf: 'certificati/iso-14001.pdf',
   },
   {
     code: 'UNI EN ISO 45001:2023',
@@ -216,6 +218,7 @@ const certifications = [
     number: 'OH&SMS-1253/B',
     valid: '06.12.2026',
     Icon: ShieldCheck,
+    pdf: 'certificati/iso-45001.pdf',
   },
   {
     code: 'SA 8000:2014',
@@ -226,6 +229,7 @@ const certifications = [
     number: 'SA-2363/A',
     valid: '26.02.2029',
     Icon: HeartHandshake,
+    pdf: 'certificati/sa-8000.pdf',
   },
   {
     code: 'UNI/PdR 125:2022',
@@ -236,6 +240,7 @@ const certifications = [
     number: '053-PdR-2024',
     valid: '03.12.2027',
     Icon: Scale,
+    pdf: 'certificati/uni-pdr-125.pdf',
   },
   {
     code: 'UNI/PdR 74:2019',
@@ -246,6 +251,7 @@ const certifications = [
     number: 'C-2024-006',
     valid: '26.12.2027',
     Icon: Boxes,
+    pdf: 'certificati/uni-pdr-74.pdf',
   },
 ];
 
@@ -312,6 +318,33 @@ function ServiceDetail({ service }: { service: ServicePanel }) {
         </ul>
       </div>
     </section>
+  );
+}
+
+const certSeals = [
+  { top: 'ISO', main: '9001', year: '2015', pdf: 'certificati/iso-9001.pdf' },
+  { top: 'ISO', main: '14001', year: '2015', pdf: 'certificati/iso-14001.pdf' },
+  { top: 'ISO', main: '45001', year: '2023', pdf: 'certificati/iso-45001.pdf' },
+  { top: 'SA', main: '8000', year: '2014', pdf: 'certificati/sa-8000.pdf' },
+  { top: 'UNI/PdR', main: '125', year: '2022', pdf: 'certificati/uni-pdr-125.pdf' },
+  { top: 'UNI/PdR', main: '74', year: '2019', pdf: 'certificati/uni-pdr-74.pdf' },
+];
+
+function CertBadge({ top, main, year }: { top: string; main: string; year: string }) {
+  return (
+    <svg
+      className="cert-badge__seal"
+      viewBox="0 0 120 120"
+      role="img"
+      aria-label={`Certificazione ${top} ${main}:${year}`}
+    >
+      <circle className="cert-badge__ring-outer" cx="60" cy="60" r="57" />
+      <circle className="cert-badge__ring-inner" cx="60" cy="60" r="48" />
+      <text className="cert-badge__top" x="60" y="46" textAnchor="middle">{top}</text>
+      <text className="cert-badge__main" x="60" y="73" textAnchor="middle">{main}</text>
+      <text className="cert-badge__year" x="60" y="89" textAnchor="middle">{year}</text>
+      <path className="cert-badge__check" d="M53 101 l4.5 4.5 l10 -10" />
+    </svg>
   );
 }
 
@@ -497,8 +530,14 @@ function App() {
                 </div>
               </div>
               <div className="certifications__grid">
-                {certifications.map(({ code, title, description, body, number, valid, Icon }) => (
-                  <article className="cert-card" key={code}>
+                {certifications.map(({ code, title, description, body, number, valid, pdf, Icon }) => (
+                  <a
+                    className="cert-card"
+                    key={code}
+                    href={asset(pdf)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <div className="cert-card__top">
                       <Icon className="cert-card__icon" size={30} strokeWidth={1.4} />
                       <span className="cert-card__code">{code}</span>
@@ -510,7 +549,8 @@ function App() {
                       <span><small>Ente</small>{body}</span>
                       <span><small>Valida fino al</small>{valid}</span>
                     </div>
-                  </article>
+                    <span className="cert-card__open">Apri il certificato <ArrowRight size={14} /></span>
+                  </a>
                 ))}
               </div>
               <p className="certifications__note">Certificazioni rilasciate da organismi accreditati (ACCREDIA · IAF · SNAS) e soggette a sorveglianza periodica.</p>
@@ -550,6 +590,31 @@ function App() {
           </>
         )}
       </main>
+
+      <section className="cert-strip" aria-label="Certificazioni dello studio">
+        <div className="cert-strip__inner">
+          <div className="cert-strip__badges">
+            {certSeals.map(({ pdf, ...seal }) => (
+              <a
+                key={`${seal.top}-${seal.main}`}
+                className="cert-seal-link"
+                href={asset(pdf)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Apri il certificato ${seal.top} ${seal.main}`}
+              >
+                <CertBadge {...seal} />
+              </a>
+            ))}
+          </div>
+          <p className="cert-strip__note">
+            Studio Ingegneria Maggi opera con sistemi di gestione certificati da enti
+            accreditati per qualità (ISO 9001:2015), ambiente (ISO 14001:2015), salute e
+            sicurezza sul lavoro (ISO 45001:2023), responsabilità sociale (SA 8000:2014),
+            parità di genere (UNI/PdR 125:2022) e gestione BIM (UNI/PdR 74:2019).
+          </p>
+        </div>
+      </section>
 
       <footer className="site-footer">
         <Logo light />
