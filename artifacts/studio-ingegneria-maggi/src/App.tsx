@@ -282,8 +282,44 @@ function SectionHeading({
   );
 }
 
+type Work = {
+  image: string;
+  client: string;
+  title: string;
+  date: string;
+  description: string;
+};
+
+const workDescription =
+  "Descrizione approfondita del lavoro: un breve testo che racconta l'intervento, le fasi seguite dallo studio (dal rilievo alla direzione lavori) e i risultati ottenuti. Testo di esempio da sostituire con la descrizione reale.";
+
+const works: Record<string, Work[]> = {
+  architettura: [
+    { image: notFacade, client: 'Committente · Luogo', title: 'Progetto NOT', date: 'Anno · stato', description: workDescription },
+    { image: notOverview, client: 'Committente · Luogo', title: "Progetto NOT · vista d'insieme", date: 'Anno · stato', description: workDescription },
+  ],
+  strutture: [
+    { image: roofStructure, client: 'Committente · Luogo', title: 'Intervento strutturale', date: 'Anno · stato', description: workDescription },
+    { image: viboPlan, client: 'Committente · Luogo', title: 'Progetto VIBO · strutture', date: 'Anno · stato', description: workDescription },
+  ],
+  edilizia: [
+    { image: viboBuilding, client: 'Committente · Luogo', title: 'Progetto VIBO', date: 'Anno · stato', description: workDescription },
+    { image: notAerial, client: 'Committente · Luogo', title: 'Recupero edilizio', date: 'Anno · stato', description: workDescription },
+  ],
+  cantiere: [
+    { image: notOverview, client: 'Committente · Luogo', title: 'Direzione lavori', date: 'Anno · stato', description: workDescription },
+  ],
+  indagini: [
+    { image: roofStructure, client: 'Committente · Luogo', title: 'Indagini e diagnostica', date: 'Anno · stato', description: workDescription },
+  ],
+  territorio: [
+    { image: notAerial, client: 'Committente · Luogo', title: 'Territorio e infrastrutture', date: 'Anno · stato', description: workDescription },
+  ],
+};
+
 function ServiceDetail({ service }: { service: ServicePanel }) {
   const { Icon } = service;
+  const [openWork, setOpenWork] = useState<Work | null>(null);
 
   return (
     <section className="service-detail">
@@ -317,6 +353,50 @@ function ServiceDetail({ service }: { service: ServicePanel }) {
           ))}
         </ul>
       </div>
+      {works[service.slug] && works[service.slug].length > 0 && (
+        <div className="service-detail__works">
+          <div className="section-tag"><span>Lavori</span><span className="section-rule" /> Realizzazioni</div>
+          <div className="works-grid">
+            {works[service.slug].map((work) => (
+              <article
+                className="work-card"
+                key={work.title}
+                role="button"
+                tabIndex={0}
+                onClick={() => setOpenWork(work)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpenWork(work); } }}
+              >
+                <div className="work-card__image">
+                  <img src={work.image} alt={work.title} />
+                </div>
+                <div className="work-card__caption">
+                  <span className="work-card__client">{work.client}</span>
+                  <h3>{work.title}</h3>
+                  <span className="work-card__date">{work.date}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+      {openWork && (
+        <div className="work-lightbox" onClick={() => setOpenWork(null)}>
+          <div className="work-lightbox__panel" onClick={(e) => e.stopPropagation()}>
+            <button className="work-lightbox__close" type="button" aria-label="Chiudi" onClick={() => setOpenWork(null)}>
+              <X size={22} />
+            </button>
+            <div className="work-lightbox__image">
+              <img src={openWork.image} alt={openWork.title} />
+            </div>
+            <div className="work-lightbox__body">
+              <span className="work-card__client">{openWork.client}</span>
+              <h3>{openWork.title}</h3>
+              <span className="work-card__date">{openWork.date}</span>
+              <p>{openWork.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
