@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import {
   ArrowRight,
   Award,
@@ -15,6 +15,8 @@ import {
   ScanSearch,
   ShieldCheck,
   X,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 
 import architectureMark from '@assets/SIM_emblema.png';
@@ -511,11 +513,71 @@ function ItalyMap() {
   );
 }
 
+function PortfolioCarousel({ items, onOpen }: { items: Project[]; onOpen: (p: Project) => void }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(false);
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    let raf = 0;
+    const tick = () => {
+      if (el && !pausedRef.current) {
+        el.scrollLeft += 0.5;
+        const half = el.scrollWidth / 2;
+        if (half > 0 && el.scrollLeft >= half) el.scrollLeft -= half;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+  const nudge = (dir: number) => {
+    const el = trackRef.current;
+    if (el) el.scrollBy({ left: dir * 380, behavior: 'smooth' });
+  };
+  const loop = [...items, ...items];
+  return (
+    <div
+      className="portfolio-carousel"
+      onMouseEnter={() => { pausedRef.current = true; }}
+      onMouseLeave={() => { pausedRef.current = false; }}
+    >
+      <button type="button" className="portfolio-carousel__arrow portfolio-carousel__arrow--prev" aria-label="Progetto precedente" onClick={() => nudge(-1)}>
+        <ChevronLeft size={22} />
+      </button>
+      <div className="portfolio-carousel__track" ref={trackRef}>
+        {loop.map((project, i) => (
+          <article
+            className="portfolio-slide"
+            key={`${project.title}-${i}`}
+            role="button"
+            tabIndex={0}
+            onClick={() => onOpen(project)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(project); } }}
+          >
+            <div className="portfolio-slide__image">
+              <img src={project.image} alt={project.title} loading="lazy" />
+            </div>
+            <div className="portfolio-slide__caption">
+              <span className="portfolio-card__cat">{project.category}</span>
+              <h3>{project.title}</h3>
+              <span className="portfolio-card__meta">{project.meta}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+      <button type="button" className="portfolio-carousel__arrow portfolio-carousel__arrow--next" aria-label="Progetto successivo" onClick={() => nudge(1)}>
+        <ChevronRight size={22} />
+      </button>
+    </div>
+  );
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [activeServiceSlug, setActiveServiceSlug] = useState<string | null>(null);
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>('Tutti');
   const [openProject, setOpenProject] = useState<Project | null>(null);
 
   useEffect(() => {
@@ -680,11 +742,14 @@ function App() {
 
             <section id="progetti" className="projects section-pad">
               <div className="projects__heading">
-                <SectionHeading eyebrow="Portfolio">
-                  Le opere<br /><em>realizzate.</em>
-                </SectionHeading>
+                <div className="projects__lead">
+                  <div className="section-tag"><span>03</span><span className="section-rule" /> Portfolio</div>
+                  <SectionHeading eyebrow="Selezione di opere">
+                    Le opere<br /><em>realizzate.</em>
+                  </SectionHeading>
+                </div>
                 <div className="projects__heading-copy">
-                  <p>Una selezione di opere, studi e visioni che raccontano il lavoro dello studio attraverso architettura, strutture, edilizia, cantiere e territorio. Filtra per ambito o apri un progetto per la scheda completa.</p>
+                  <p>Una selezione di opere, studi e visioni che raccontano il lavoro dello studio attraverso architettura, strutture, edilizia, cantiere e territorio. Scorri le opere o filtra per ambito; apri un progetto per la scheda completa.</p>
                   <span className="projects__count">{portfolio.length} opere realizzate</span>
                 </div>
               </div>
@@ -707,12 +772,12 @@ function App() {
                 })}
               </div>
 
-              {activeCategory === null ? (
-                <p className="portfolio__hint">Seleziona un ambito qui sopra per vedere le opere realizzate.</p>
+              {activeCategory === 'Tutti' || activeCategory === null ? (
+                <PortfolioCarousel items={portfolio} onOpen={setOpenProject} />
               ) : (
               <div className="portfolio__grid">
                 {portfolio
-                  .filter((p) => activeCategory === 'Tutti' || p.category === activeCategory)
+                  .filter((p) => p.category === activeCategory)
                   .map((project) => (
                     <article
                       className="portfolio-card"
@@ -758,7 +823,7 @@ function App() {
 
             <section id="certificazioni" className="certifications section-pad">
               <div className="certifications__heading">
-                <div className="section-tag"><span>06</span><span className="section-rule" /> Certificazioni</div>
+                <div className="section-tag"><span>04</span><span className="section-rule" /> Certificazioni</div>
                 <SectionHeading eyebrow="Qualità verificata">
                   Standard riconosciuti,<br /><em>impegni concreti.</em>
                 </SectionHeading>
@@ -795,7 +860,7 @@ function App() {
 
             <section id="lavora" className="careers section-pad">
               <div className="careers__heading">
-                <div className="section-tag"><span>07</span><span className="section-rule" /> Lavora con noi</div>
+                <div className="section-tag"><span>05</span><span className="section-rule" /> Lavora con noi</div>
                 <SectionHeading eyebrow="Unisciti allo studio">
                   Le persone fanno<br /><em>la differenza.</em>
                 </SectionHeading>
@@ -843,6 +908,7 @@ function App() {
 
             <section id="contatti" className="contact section-pad">
           <div className="contact__intro">
+            <div className="section-tag"><span>06</span><span className="section-rule" /> Contatti</div>
             <SectionHeading eyebrow="Iniziamo da qui">
               Hai un progetto?<br /><em>Parliamone.</em>
             </SectionHeading>
