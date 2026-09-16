@@ -36,7 +36,37 @@ const navItems = [
   { label: 'Servizi', href: '#servizi' },
   { label: 'Progetti', href: '#progetti' },
   { label: 'Certificazioni', href: '#certificazioni' },
+  { label: 'Lavora con noi', href: '#lavora' },
   { label: 'Contatti', href: '#contatti' },
+];
+
+const careerBenefits = [
+  {
+    title: 'Progetti che lasciano il segno',
+    text: 'Opere pubbliche e private di rilievo, dal singolo intervento alle grandi infrastrutture, accanto a enti e committenti importanti.',
+  },
+  {
+    title: 'Crescita e formazione continua',
+    text: 'Aggiornamento costante, percorsi certificati e affiancamento sul campo: qui si impara facendo, con professionisti esperti al proprio fianco.',
+  },
+  {
+    title: 'Metodo e strumenti aggiornati',
+    text: 'Progettazione BIM, sistemi di gestione certificati e procedure chiare: lavoriamo con ordine, qualità e attenzione ai dettagli.',
+  },
+  {
+    title: 'Una squadra, tre sedi',
+    text: 'Un ambiente collaborativo e concreto tra Fiuggi, Nola e Rieti, dove ogni persona conta e ogni contributo trova spazio.',
+  },
+];
+
+const careerRoles = [
+  'Ingegneri strutturisti',
+  'Ingegneri civili e delle infrastrutture',
+  'Architetti',
+  'Geologi',
+  'Tecnici e disegnatori BIM',
+  'Geometri e tecnici di cantiere',
+  'Amministrazione e segreteria',
 ];
 
 const clientLogos = [
@@ -547,15 +577,15 @@ function App() {
             </SectionHeading>
             <div className="studio__grid">
               <p>
-                Studio Ingegneria Maggi S.r.l. nasce a Fiuggi nel 2004. Da allora accompagniamo enti pubblici, imprese e privati in ogni fase di un progetto: dall’ascolto del luogo alle indagini, dalla visione alla direzione dei lavori.
+                Studio Ingegneria Maggi S.r.l. nasce a Fiuggi nel 2004 dalla volontà di mettere la competenza tecnica al servizio dei luoghi e delle persone. In oltre vent’anni siamo cresciuti progetto dopo progetto, affiancando enti pubblici, imprese e privati in ogni fase: dall’ascolto del territorio alle indagini, dalla progettazione alla direzione dei lavori. Per essere sempre più vicini a cantieri e committenti, alla sede storica di Fiuggi abbiamo affiancato le sedi operative di Nola e Rieti.
               </p>
               <p>
-                Siamo una squadra di ingegneri, architetti, geologi e tecnici. Competenze diverse, una sola responsabilità: costruire risposte chiare, misurabili e adatte a un contesto reale.
+                Siamo ingegneri, architetti, geologi e tecnici: competenze diverse riunite da una sola responsabilità — trasformare la complessità in risposte chiare, misurabili e durature, capaci di reggere la prova del tempo e del contesto reale. Tre sedi, un’unica squadra, un metodo condiviso su tutto il territorio.
               </p>
             </div>
             <div className="studio__stats">
               <div><strong>2004</strong><span>Anno di fondazione</span></div>
-              <div><strong>Fiuggi</strong><span>Base operativa</span></div>
+              <div><strong>3</strong><span>Sedi operative</span></div>
               <div><strong>360°</strong><span>Visione del progetto</span></div>
               <div><strong>20+</strong><span>Anni di esperienza</span></div>
             </div>
@@ -581,16 +611,27 @@ function App() {
                   <span>01 / Sede principale</span>
                   <h3>Fiuggi</h3>
                   <p>Il punto di partenza dello studio, dove si incontrano esperienza, progettazione e coordinamento.</p>
+                  <div className="location-card__info">
+                    <p className="location-card__addr">Via Casavetere, 25 bis/a<br />03014 Fiuggi (FR)</p>
+                    <a href="tel:+390775504019">+39 0775 504019</a>
+                    <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
+                  </div>
                 </article>
                 <article className="location-card">
                   <span>02 / Sede operativa</span>
                   <h3>Nola</h3>
-                  <p>Una presenza pensata per ampliare il raggio d’azione e seguire con maggiore continuità i lavori.</p>
+                  <p>Una presenza pensata per ampliare il raggio d’azione e seguire con maggiore continuità i lavori nel territorio campano.</p>
+                  <div className="location-card__info">
+                    <p className="location-card__addr">Via San Massimo, 216<br />80035 Nola (NA)</p>
+                  </div>
                 </article>
                 <article className="location-card">
                   <span>03 / Sede operativa</span>
                   <h3>Rieti</h3>
-                  <p>Un presidio sul territorio per essere più vicini a committenti, cantieri e nuove opportunità.</p>
+                  <p>Un presidio sul territorio per essere più vicini a committenti, cantieri e nuove opportunità nel reatino.</p>
+                  <div className="location-card__info">
+                    <p className="location-card__addr">Via Pennina, 11<br />02100 Rieti (RI)</p>
+                  </div>
                 </article>
               </div>
             </section>
@@ -666,6 +707,54 @@ function App() {
                 ))}
               </div>
               <p className="certifications__note">Certificazioni rilasciate da organismi accreditati (ACCREDIA · IAF · SNAS) e soggette a sorveglianza periodica.</p>
+            </section>
+
+            <section id="lavora" className="careers section-pad">
+              <div className="careers__heading">
+                <div className="section-tag"><span>07</span><span className="section-rule" /> Lavora con noi</div>
+                <SectionHeading eyebrow="Unisciti allo studio">
+                  Le persone fanno<br /><em>la differenza.</em>
+                </SectionHeading>
+              </div>
+              <div className="careers__intro">
+                <p>
+                  Cresciamo scegliendo con cura le persone giuste. Cerchiamo professionisti curiosi e rigorosi che vogliano mettere la propria competenza al servizio di progetti reali, con la voglia di imparare e la responsabilità di fare bene. Se ti riconosci in questo, ci piacerebbe conoscerti.
+                </p>
+                <a className="text-link" href="#careers-cta">Invia la tua candidatura <ArrowRight size={16} /></a>
+              </div>
+
+              <div className="careers__benefits">
+                {careerBenefits.map((b, i) => (
+                  <article className="careers-benefit" key={b.title}>
+                    <span className="careers-benefit__num">{String(i + 1).padStart(2, '0')}</span>
+                    <h3>{b.title}</h3>
+                    <p>{b.text}</p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="careers__apply">
+                <div className="careers-roles">
+                  <span className="careers-roles__label">Le figure che cerchiamo</span>
+                  <ul className="careers-roles__list">
+                    {careerRoles.map((r) => (
+                      <li key={r}><ArrowRight size={15} />{r}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="careers-cta" id="careers-cta">
+                  <span className="eyebrow">Candidatura spontanea</span>
+                  <h3>Mandaci il tuo curriculum.</h3>
+                  <p>Non trovi la tua figura nell'elenco? Scrivici comunque: valutiamo con attenzione ogni candidatura spontanea. Allega il CV e due righe su di te.</p>
+                  <a
+                    className="button button--primary"
+                    href="mailto:info@studioingegneriamaggi.it?subject=Candidatura%20%E2%80%94%20Lavora%20con%20noi"
+                  >
+                    Candidati ora <ArrowRight size={17} />
+                  </a>
+                  <p className="careers-cta__hint">Oppure scrivi a <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a></p>
+                </div>
+              </div>
             </section>
 
             <section id="contatti" className="contact section-pad">
