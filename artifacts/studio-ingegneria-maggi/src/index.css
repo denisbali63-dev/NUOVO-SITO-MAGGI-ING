@@ -31,7 +31,7 @@ body {
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body,
@@ -69,13 +69,23 @@ img {
 
 .site-shell {
   min-height: 100vh;
-  overflow: hidden;
+  overflow: clip;
   background: var(--white);
 }
 
 .site-header {
-  position: relative;
-  z-index: 20;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: background 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.site-header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,6 +93,12 @@ img {
   width: min(100% - 48px, 1400px);
   min-height: 88px;
   margin: 0 auto;
+}
+
+.site-header--scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 30px rgba(23, 59, 83, 0.06);
 }
 
 .brand {
@@ -1452,12 +1468,12 @@ img {
 }
 
 @media (max-width: 720px) {
-  .site-header,
+  .site-header__inner,
   .section-pad {
     width: min(100% - 40px, 1400px);
   }
 
-  .site-header {
+  .site-header__inner {
     min-height: 76px;
   }
 
@@ -2885,4 +2901,116 @@ a.cert-card {
   .site-shell { min-height: 100dvh; }
   .services-hero { height: min(780px, calc(100dvh - 88px)); }
   .hero { min-height: calc(100dvh - 88px); }
+}
+
+
+/* ===== Reveal allo scroll ===== */
+.reveal { opacity: 0; transform: translateY(22px); }
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ===== Banda numeri d'impatto ===== */
+.impact {
+  background: var(--ink);
+  color: var(--white);
+}
+.impact__inner {
+  width: min(100% - 48px, 1400px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  padding: clamp(46px, 6vw, 78px) 0;
+}
+.impact__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: clamp(18px, 2.4vw, 40px);
+  border-left: 1px solid rgba(223, 241, 248, 0.16);
+}
+.impact__item:first-child { padding-left: 0; border-left: 0; }
+.impact__item strong {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(2.6rem, 4.6vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--white);
+}
+.impact__item span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #b9d1dc;
+}
+@media (max-width: 760px) {
+  .impact__inner { grid-template-columns: repeat(2, 1fr); gap: 34px 22px; }
+  .impact__item:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 420px) {
+  .impact__inner { grid-template-columns: 1fr; gap: 28px; }
+  .impact__item, .impact__item:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+
+/* ===== Come lavoriamo (metodo) ===== */
+.metodo { background: var(--white); }
+.metodo__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 760px;
+}
+.metodo__intro {
+  margin: 4px 0 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.85;
+}
+.metodo__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 44px);
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.metodo-step {
+  border-top: 2px solid var(--blue-deep);
+  padding-top: 22px;
+}
+.metodo-step__num {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--blue-deep);
+}
+.metodo-step h3 {
+  margin: 14px 0 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.metodo-step p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+@media (max-width: 900px) {
+  .metodo__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 30px; }
+}
+@media (max-width: 520px) {
+  .metodo__steps { grid-template-columns: 1fr; gap: 28px; }
 }

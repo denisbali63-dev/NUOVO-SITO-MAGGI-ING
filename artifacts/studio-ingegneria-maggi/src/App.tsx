@@ -515,34 +515,49 @@ function ItalyMap() {
 
 function PortfolioCarousel({ items, onOpen }: { items: Project[]; onOpen: (p: Project) => void }) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
+  const visibleRef = useRef(true);
+  const resumeTimer = useRef<number | undefined>(undefined);
   useEffect(() => {
     const el = trackRef.current;
-    if (!el) return;
+    const wrap = wrapRef.current;
+    if (!el || !wrap) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const io = new IntersectionObserver((entries) => { visibleRef.current = entries[0].isIntersecting; }, { threshold: 0.02 });
+    io.observe(wrap);
     let raf = 0;
     const tick = () => {
-      if (el && !pausedRef.current) {
-        el.scrollLeft += 0.5;
+      if (el && !pausedRef.current && visibleRef.current && !reduce) {
+        el.scrollLeft += 0.45;
         const half = el.scrollWidth / 2;
         if (half > 0 && el.scrollLeft >= half) el.scrollLeft -= half;
       }
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    return () => { cancelAnimationFrame(raf); io.disconnect(); if (resumeTimer.current) window.clearTimeout(resumeTimer.current); };
   }, []);
   const nudge = (dir: number) => {
     const el = trackRef.current;
     if (el) el.scrollBy({ left: dir * 380, behavior: 'smooth' });
   };
+  const pauseFor = (ms: number) => {
+    pausedRef.current = true;
+    if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
+    resumeTimer.current = window.setTimeout(() => { pausedRef.current = false; }, ms);
+  };
   const loop = [...items, ...items];
   return (
     <div
       className="portfolio-carousel"
+      ref={wrapRef}
       onMouseEnter={() => { pausedRef.current = true; }}
       onMouseLeave={() => { pausedRef.current = false; }}
+      onTouchStart={() => { pausedRef.current = true; }}
+      onTouchEnd={() => pauseFor(2600)}
     >
-      <button type="button" className="portfolio-carousel__arrow portfolio-carousel__arrow--prev" aria-label="Progetto precedente" onClick={() => nudge(-1)}>
+      <button type="button" className="portfolio-carousel__arrow portfolio-carousel__arrow--prev" aria-label="Progetto precedente" onClick={() => { nudge(-1); pauseFor(2600); }}>
         <ChevronLeft size={22} />
       </button>
       <div className="portfolio-carousel__track" ref={trackRef}>
@@ -566,12 +581,19 @@ function PortfolioCarousel({ items, onOpen }: { items: Project[]; onOpen: (p: Pr
           </article>
         ))}
       </div>
-      <button type="button" className="portfolio-carousel__arrow portfolio-carousel__arrow--next" aria-label="Progetto successivo" onClick={() => nudge(1)}>
+      <button type="button" className="portfolio-carousel__arrow portfolio-carousel__arrow--next" aria-label="Progetto successivo" onClick={() => { nudge(1); pauseFor(2600); }}>
         <ChevronRight size={22} />
       </button>
     </div>
   );
 }
+
+const metodoSteps = [
+  { n: '01', title: 'Gara e offerta', text: 'Analizziamo il bando e prepariamo l’offerta tecnica ed economica, con la documentazione richiesta dall’appalto pubblico.' },
+  { n: '02', title: 'Rilievo e progettazione', text: 'Indagini, rilievi e progettazione preliminare, definitiva ed esecutiva, coordinando strutture, impianti e discipline specialistiche.' },
+  { n: '03', title: 'Direzione lavori e sicurezza', text: 'Seguiamo il cantiere con direzione dei lavori, coordinamento della sicurezza e controllo di tempi, costi e qualità.' },
+  { n: '04', title: 'Collaudo e consegna', text: 'Verifiche finali, collaudo e consegna dell’opera all’ente committente, con la documentazione completa.' },
+];
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -579,6 +601,28 @@ function App() {
   const [activeServiceSlug, setActiveServiceSlug] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>('Tutti');
   const [openProject, setOpenProject] = useState<Project | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (activeServiceSlug) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const els = Array.from(document.querySelectorAll('.section-pad, .impact'));
+    els.forEach((el) => el.classList.add('reveal'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [activeServiceSlug]);
 
   useEffect(() => {
     const syncServiceFromHash = () => {
@@ -600,27 +644,29 @@ function App() {
 
   return (
     <div id="top" className="site-shell">
-      <header className="site-header">
-        <Logo />
-        <nav className="desktop-nav" aria-label="Navigazione principale">
-          {navItems.map((item, index) => (
-            <a key={item.href} href={item.href}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-        <a className="header-cta" href="#contatti">
-          Parliamo del progetto <ArrowRight size={16} />
-        </a>
-        <button
-          className="menu-button"
-          type="button"
-          aria-label={menuOpen ? 'Chiudi menu' : 'Apri menu'}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((value) => !value)}
-        >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+      <header className={`site-header ${scrolled ? 'site-header--scrolled' : ''}`}>
+        <div className="site-header__inner">
+          <Logo />
+          <nav className="desktop-nav" aria-label="Navigazione principale">
+            {navItems.map((item, index) => (
+              <a key={item.href} href={item.href}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <a className="header-cta" href="#contatti">
+            Parliamo del progetto <ArrowRight size={16} />
+          </a>
+          <button
+            className="menu-button"
+            type="button"
+            aria-label={menuOpen ? 'Chiudi menu' : 'Apri menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((value) => !value)}
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </header>
 
       {menuOpen && (
@@ -686,20 +732,42 @@ function App() {
                 Siamo ingegneri, architetti, geologi e tecnici: competenze diverse riunite da una sola responsabilità — trasformare la complessità in risposte chiare, misurabili e durature, capaci di reggere la prova del tempo e del contesto reale. Tre sedi, un’unica squadra, un metodo condiviso su tutto il territorio.
               </p>
             </div>
-            <div className="studio__stats">
-              <div><strong>2004</strong><span>Anno di fondazione</span></div>
-              <div><strong>3</strong><span>Sedi operative</span></div>
-              <div><strong>360°</strong><span>Visione del progetto</span></div>
-              <div><strong>20+</strong><span>Anni di esperienza</span></div>
-            </div>
           </div>
           <img className="studio__mark" src={architectureMark} alt="" aria-hidden="true" />
+            </section>
+
+            <section className="impact" aria-label="Numeri dello studio">
+              <div className="impact__inner">
+                <div className="impact__item"><strong>2004</strong><span>Anno di fondazione</span></div>
+                <div className="impact__item"><strong>20+</strong><span>Anni di esperienza</span></div>
+                <div className="impact__item"><strong>3</strong><span>Sedi operative</span></div>
+                <div className="impact__item"><strong>6</strong><span>Ambiti di intervento</span></div>
+              </div>
+            </section>
+
+            <section id="metodo" className="metodo section-pad">
+              <div className="metodo__heading">
+                <div className="section-tag"><span>02</span><span className="section-rule" /> Come lavoriamo</div>
+                <SectionHeading eyebrow="Dal bando all’opera">
+                  Un metodo chiaro,<br /><em>dalla gara alla consegna.</em>
+                </SectionHeading>
+                <p className="metodo__intro">Lavoriamo principalmente per committenti pubblici — enti, comuni, province e amministrazioni — con alcune commesse private. Ogni incarico segue un percorso ordinato e verificabile in ogni fase.</p>
+              </div>
+              <div className="metodo__steps">
+                {metodoSteps.map((step) => (
+                  <article className="metodo-step" key={step.n}>
+                    <span className="metodo-step__num">{step.n}</span>
+                    <h3>{step.title}</h3>
+                    <p>{step.text}</p>
+                  </article>
+                ))}
+              </div>
             </section>
 
             <section className="locations section-pad">
               <ItalyMap />
               <div className="locations__heading">
-                <div className="section-tag"><span>02</span><span className="section-rule" /> Dove lavoriamo</div>
+                <div className="section-tag"><span>03</span><span className="section-rule" /> Dove lavoriamo</div>
                 <SectionHeading eyebrow="Una presenza più vicina">
                   Tre punti di vista,<br /><em>un’unica squadra.</em>
                 </SectionHeading>
@@ -743,7 +811,7 @@ function App() {
             <section id="progetti" className="projects section-pad">
               <div className="projects__heading">
                 <div className="projects__lead">
-                  <div className="section-tag"><span>03</span><span className="section-rule" /> Portfolio</div>
+                  <div className="section-tag"><span>04</span><span className="section-rule" /> Portfolio</div>
                   <SectionHeading eyebrow="Selezione di opere">
                     Le opere<br /><em>realizzate.</em>
                   </SectionHeading>
@@ -823,7 +891,7 @@ function App() {
 
             <section id="certificazioni" className="certifications section-pad">
               <div className="certifications__heading">
-                <div className="section-tag"><span>04</span><span className="section-rule" /> Certificazioni</div>
+                <div className="section-tag"><span>05</span><span className="section-rule" /> Certificazioni</div>
                 <SectionHeading eyebrow="Qualità verificata">
                   Standard riconosciuti,<br /><em>impegni concreti.</em>
                 </SectionHeading>
@@ -860,7 +928,7 @@ function App() {
 
             <section id="lavora" className="careers section-pad">
               <div className="careers__heading">
-                <div className="section-tag"><span>05</span><span className="section-rule" /> Lavora con noi</div>
+                <div className="section-tag"><span>06</span><span className="section-rule" /> Lavora con noi</div>
                 <SectionHeading eyebrow="Unisciti allo studio">
                   Le persone fanno<br /><em>la differenza.</em>
                 </SectionHeading>
@@ -908,7 +976,7 @@ function App() {
 
             <section id="contatti" className="contact section-pad">
           <div className="contact__intro">
-            <div className="section-tag"><span>06</span><span className="section-rule" /> Contatti</div>
+            <div className="section-tag"><span>07</span><span className="section-rule" /> Contatti</div>
             <SectionHeading eyebrow="Iniziamo da qui">
               Hai un progetto?<br /><em>Parliamone.</em>
             </SectionHeading>
