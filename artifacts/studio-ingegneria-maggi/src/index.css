@@ -31,7 +31,7 @@ body {
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body,
@@ -69,13 +69,19 @@ img {
 
 .site-shell {
   min-height: 100vh;
-  overflow: clip;
+  overflow: hidden;
   background: var(--white);
 }
 
+.site-shell > main {
+  padding-top: 88px;
+}
+
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   width: 100%;
   background: rgba(255, 255, 255, 0.82);
@@ -2805,7 +2811,6 @@ a.cert-card {
   gap: 6px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -3013,4 +3018,9 @@ a.cert-card {
 }
 @media (max-width: 520px) {
   .metodo__steps { grid-template-columns: 1fr; gap: 28px; }
+}
+
+
+@media (max-width: 720px) {
+  .site-shell > main { padding-top: 76px; }
 }

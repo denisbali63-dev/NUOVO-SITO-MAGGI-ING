@@ -518,26 +518,30 @@ function PortfolioCarousel({ items, onOpen }: { items: Project[]; onOpen: (p: Pr
   const wrapRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
   const visibleRef = useRef(true);
+  const posRef = useRef(0);
   const resumeTimer = useRef<number | undefined>(undefined);
   useEffect(() => {
     const el = trackRef.current;
     const wrap = wrapRef.current;
     if (!el || !wrap) return;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    posRef.current = el.scrollLeft;
     const io = new IntersectionObserver((entries) => { visibleRef.current = entries[0].isIntersecting; }, { threshold: 0.02 });
     io.observe(wrap);
     let raf = 0;
     const tick = () => {
       if (el && !pausedRef.current && visibleRef.current && !reduce) {
-        el.scrollLeft += 0.45;
         const half = el.scrollWidth / 2;
-        if (half > 0 && el.scrollLeft >= half) el.scrollLeft -= half;
+        posRef.current += 0.5;
+        if (half > 0 && posRef.current >= half) posRef.current -= half;
+        el.scrollLeft = posRef.current;
       }
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => { cancelAnimationFrame(raf); io.disconnect(); if (resumeTimer.current) window.clearTimeout(resumeTimer.current); };
   }, []);
+  const syncPos = () => { const el = trackRef.current; if (el) posRef.current = el.scrollLeft; };
   const nudge = (dir: number) => {
     const el = trackRef.current;
     if (el) el.scrollBy({ left: dir * 380, behavior: 'smooth' });
@@ -545,7 +549,7 @@ function PortfolioCarousel({ items, onOpen }: { items: Project[]; onOpen: (p: Pr
   const pauseFor = (ms: number) => {
     pausedRef.current = true;
     if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
-    resumeTimer.current = window.setTimeout(() => { pausedRef.current = false; }, ms);
+    resumeTimer.current = window.setTimeout(() => { syncPos(); pausedRef.current = false; }, ms);
   };
   const loop = [...items, ...items];
   return (
@@ -553,7 +557,7 @@ function PortfolioCarousel({ items, onOpen }: { items: Project[]; onOpen: (p: Pr
       className="portfolio-carousel"
       ref={wrapRef}
       onMouseEnter={() => { pausedRef.current = true; }}
-      onMouseLeave={() => { pausedRef.current = false; }}
+      onMouseLeave={() => { syncPos(); pausedRef.current = false; }}
       onTouchStart={() => { pausedRef.current = true; }}
       onTouchEnd={() => pauseFor(2600)}
     >
@@ -594,6 +598,35 @@ const metodoSteps = [
   { n: '03', title: 'Direzione lavori e sicurezza', text: 'Seguiamo il cantiere con direzione dei lavori, coordinamento della sicurezza e controllo di tempi, costi e qualità.' },
   { n: '04', title: 'Collaudo e consegna', text: 'Verifiche finali, collaudo e consegna dell’opera all’ente committente, con la documentazione completa.' },
 ];
+
+function CountUp({ value, suffix = '', duration = 1500 }: { value: number; suffix?: string; duration?: number }) {
+  const [display, setDisplay] = useState(0);
+  const ref = useRef<HTMLElement>(null);
+  const done = useRef(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setDisplay(value); return; }
+    const io = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !done.current) {
+        done.current = true;
+        const start = performance.now();
+        const step = (now: number) => {
+          const t = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+          setDisplay(Math.round(eased * value));
+          if (t < 1) requestAnimationFrame(step);
+          else setDisplay(value);
+        };
+        requestAnimationFrame(step);
+        io.disconnect();
+      }
+    }, { threshold: 0.45 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [value, duration]);
+  return <strong ref={ref}>{display}{suffix}</strong>;
+}
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -738,10 +771,10 @@ function App() {
 
             <section className="impact" aria-label="Numeri dello studio">
               <div className="impact__inner">
-                <div className="impact__item"><strong>2004</strong><span>Anno di fondazione</span></div>
-                <div className="impact__item"><strong>20+</strong><span>Anni di esperienza</span></div>
-                <div className="impact__item"><strong>3</strong><span>Sedi operative</span></div>
-                <div className="impact__item"><strong>6</strong><span>Ambiti di intervento</span></div>
+                <div className="impact__item"><CountUp value={2004} /><span>Anno di fondazione</span></div>
+                <div className="impact__item"><CountUp value={20} suffix="+" /><span>Anni di esperienza</span></div>
+                <div className="impact__item"><CountUp value={3} /><span>Sedi operative</span></div>
+                <div className="impact__item"><CountUp value={6} /><span>Ambiti di intervento</span></div>
               </div>
             </section>
 
