@@ -17,8 +17,9 @@ import {
   X,
 } from 'lucide-react';
 
-import logoBlue from '@assets/Logo_SIM_blu_1788173215548.png';
 import architectureMark from '@assets/SIM_emblema.png';
+import brandEmblem from '@assets/SIM_emblema.png';
+import { ITALY_VIEWBOX, ITALY_PATH, ITALY_SEDI } from './lib/italy';
 import notFacade from '@assets/NOT.1_1788173173214.jpg';
 import notAerial from '@assets/NOT.2_1788173173218.jpg';
 import notOverview from '@assets/NOT_1788173173220.jpg';
@@ -32,9 +33,9 @@ import roofStructure from '@assets/IMG-20140307-WA0006_1788180849882.jpg';
 const asset = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, '')}`;
 
 const navItems = [
-  { label: 'Studio', href: '#studio' },
   { label: 'Servizi', href: '#servizi' },
-  { label: 'Progetti', href: '#progetti' },
+  { label: 'Studio', href: '#studio' },
+  { label: 'Portfolio', href: '#progetti' },
   { label: 'Certificazioni', href: '#certificazioni' },
   { label: 'Lavora con noi', href: '#lavora' },
   { label: 'Contatti', href: '#contatti' },
@@ -82,6 +83,9 @@ const clientLogos = [
   { src: 'loghi-clienti/enav.png', name: 'ENAV' },
   { src: 'loghi-clienti/risorse-per-roma.png', name: 'Risorse per Roma' },
   { src: 'loghi-clienti/sport-e-salute.png', name: 'Sport e Salute' },
+  { src: 'loghi-clienti/acea.png', name: 'ACEA Infrastructure' },
+  { src: 'loghi-clienti/ater-roma.png', name: 'ATER Roma' },
+  { src: 'loghi-clienti/ministero-interno.png', name: "Ministero dell'Interno" },
 ];
 
 const servicePanels = [
@@ -323,7 +327,7 @@ const certifications = [
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <a className={`brand ${light ? 'brand--light' : ''}`} href="#top" aria-label="Studio Ingegneria Maggi, torna all'inizio">
-      <img src={logoBlue} alt="SIM Fiuggi" />
+      <img className="brand__emblem" src={brandEmblem} alt="Studio Ingegneria Maggi" />
       <span>Studio Ingegneria<br />Maggi S.r.l.</span>
     </a>
   );
@@ -492,6 +496,21 @@ function CertBadge({ top, main, year }: { top: string; main: string; year: strin
   );
 }
 
+function ItalyMap() {
+  return (
+    <svg className="locations__map" viewBox={ITALY_VIEWBOX} aria-hidden="true" focusable="false">
+      <path className="italy-outline" d={ITALY_PATH} />
+      {ITALY_SEDI.map((p) => (
+        <g className="sede-marker" key={p.name}>
+          <circle className="sede-halo" cx={p.cx} cy={p.cy} r="26" />
+          <circle className="sede-dot" cx={p.cx} cy={p.cy} r="12" />
+          <text className="sede-label" x={p.cx + 32} y={p.cy + 9}>{p.name}</text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
@@ -616,6 +635,7 @@ function App() {
             </section>
 
             <section className="locations section-pad">
+              <ItalyMap />
               <div className="locations__heading">
                 <div className="section-tag"><span>02</span><span className="section-rule" /> Dove lavoriamo</div>
                 <SectionHeading eyebrow="Una presenza più vicina">
@@ -661,11 +681,11 @@ function App() {
             <section id="progetti" className="projects section-pad">
               <div className="projects__heading">
                 <SectionHeading eyebrow="Portfolio">
-                  Progetti reali,<br /><em>contesti diversi.</em>
+                  Le opere<br /><em>realizzate.</em>
                 </SectionHeading>
                 <div className="projects__heading-copy">
                   <p>Una selezione di opere, studi e visioni che raccontano il lavoro dello studio attraverso architettura, strutture, edilizia, cantiere e territorio. Filtra per ambito o apri un progetto per la scheda completa.</p>
-                  <span className="projects__count">{portfolio.length} progetti</span>
+                  <span className="projects__count">{portfolio.length} opere realizzate</span>
                 </div>
               </div>
 

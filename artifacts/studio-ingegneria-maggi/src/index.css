@@ -91,8 +91,12 @@ img {
 }
 
 .brand img {
-  width: 74px;
-  height: auto;
+  width: auto;
+  height: 36px;
+}
+
+.brand__emblem {
+  display: block;
 }
 
 .brand span {
@@ -725,9 +729,8 @@ img {
 
 .studio {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(140px, 0.35fr) minmax(0, 1.65fr);
-  gap: clamp(30px, 7vw, 120px);
+  display: block;
+  text-align: center;
   background: var(--white);
 }
 
@@ -756,10 +759,18 @@ img {
   background: var(--line);
 }
 
+.studio__label { justify-content: center; }
+
 .studio__content {
   position: relative;
   z-index: 1;
-  max-width: 1030px;
+  max-width: 940px;
+  margin: 34px auto 0;
+}
+
+.studio .section-heading h2 {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-heading h2 {
@@ -774,9 +785,9 @@ img {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px;
-  max-width: 760px;
-  margin-top: 55px;
-  margin-left: auto;
+  max-width: 780px;
+  margin: 55px auto 0;
+  text-align: left;
 }
 
 .studio__grid p,
@@ -1396,7 +1407,10 @@ img {
 }
 
 .site-footer .brand--light img {
-  width: 74px;
+  width: auto;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
 }
 
 .site-footer p,
@@ -1461,7 +1475,8 @@ img {
 
   .brand img,
   .site-footer .brand--light img {
-    width: 76px;
+    width: auto;
+    height: 32px;
   }
 
   .menu-button {
@@ -2689,5 +2704,66 @@ a.cert-card {
     opacity: 1;
     transform: none;
     background: linear-gradient(180deg, rgba(11, 31, 45, 0) 40%, rgba(11, 31, 45, 0.9) 100%);
+  }
+}
+
+/* ===== Mappa Italia sfondo sezione Dove lavoriamo ===== */
+.locations {
+  position: relative;
+  overflow: hidden;
+}
+
+.locations__map {
+  position: absolute;
+  top: clamp(-90px, -4vw, -50px);
+  right: clamp(-10px, 2vw, 55px);
+  height: min(82%, 620px);
+  width: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.locations__map .italy-outline {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.6;
+  stroke-linejoin: round;
+  opacity: 0.3;
+}
+
+.locations__map .sede-dot {
+  fill: var(--blue-deep);
+  opacity: 0.95;
+}
+
+.locations__map .sede-halo {
+  fill: none;
+  stroke: var(--blue-deep);
+  stroke-width: 3;
+  opacity: 0.4;
+}
+
+.locations__map .sede-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  fill: var(--ink);
+  opacity: 0.6;
+}
+
+.locations__heading,
+.locations__intro,
+.locations__list {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 720px) {
+  .locations__map {
+    top: auto;
+    bottom: 8px;
+    right: -30px;
+    height: 320px;
+    opacity: 0.6;
   }
 }
