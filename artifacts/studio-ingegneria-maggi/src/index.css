@@ -19,6 +19,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -29,6 +31,7 @@ body {
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body,
@@ -2137,6 +2140,7 @@ a.cert-card {
   padding: 16px 18px;
   background: rgba(255, 255, 255, 0.93);
   border-radius: 6px;
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 .work-card__client {
@@ -2154,7 +2158,7 @@ a.cert-card {
 .work-lightbox {
   position: fixed; inset: 0; z-index: 200;
   display: grid; place-items: center; padding: 24px;
-  background: rgba(23, 59, 83, 0.55); backdrop-filter: blur(3px);
+  background: rgba(23, 59, 83, 0.55); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
   animation: lb-fade 0.25s ease;
 }
 @keyframes lb-fade { from { opacity: 0; } to { opacity: 1; } }
@@ -2747,7 +2751,7 @@ a.cert-card {
   z-index: 1;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1279px) {
   .locations__map {
     display: none;
   }
@@ -2784,6 +2788,7 @@ a.cert-card {
   display: flex;
   gap: 6px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -2872,4 +2877,12 @@ a.cert-card {
     width: 40px;
     height: 40px;
   }
+}
+
+
+/* Altezze viewport dinamiche (gestisce la barra indirizzi su iPhone/Android) */
+@supports (height: 100dvh) {
+  .site-shell { min-height: 100dvh; }
+  .services-hero { height: min(780px, calc(100dvh - 88px)); }
+  .hero { min-height: calc(100dvh - 88px); }
 }
