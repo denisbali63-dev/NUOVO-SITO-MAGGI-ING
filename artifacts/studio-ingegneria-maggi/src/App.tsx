@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 import logoBlue from '@assets/Logo_SIM_blu_1788173215548.png';
-import architectureMark from '@assets/SIM_LOGO_1788173215549.png';
+import architectureMark from '@assets/SIM_emblema.png';
 import notFacade from '@assets/NOT.1_1788173173214.jpg';
 import notAerial from '@assets/NOT.2_1788173173218.jpg';
 import notOverview from '@assets/NOT_1788173173220.jpg';
@@ -179,55 +179,75 @@ const servicePanels = [
 ];
 type ServicePanel = typeof servicePanels[number];
 
-const projects = [
+type Project = {
+  title: string;
+  category: string;
+  meta: string;
+  image: string;
+  description: string;
+};
+
+const projectDescription =
+  "Descrizione approfondita del progetto: un breve testo che racconta l'intervento, il ruolo dello studio (dal rilievo e progettazione fino alla direzione dei lavori) e i risultati ottenuti. Testo di esempio da sostituire con la descrizione reale del progetto.";
+
+const portfolioCategories = ['Tutti', 'Architettura', 'Strutture', 'Edilizia', 'Cantiere', 'Territorio'];
+
+const portfolio: Project[] = [
   {
-    number: '01',
-    title: 'Progetto NOT',
-    subtitle: 'Nuova architettura sanitaria',
+    title: 'Ospedale NOT',
+    category: 'Architettura',
+    meta: 'Struttura sanitaria · Nola (NA)',
     image: notFacade,
-    className: 'project-card--wide',
+    description: projectDescription,
   },
   {
-    number: '02',
-    title: 'Progetto NOT',
-    subtitle: 'Paesaggio e connessioni',
-    image: notAerial,
-    className: 'project-card--tall',
-  },
-  {
-    number: '03',
-    title: 'Progetto NOT',
-    subtitle: 'Visione d’insieme',
-    image: notOverview,
-    className: 'project-card--wide',
-  },
-  {
-    number: '04',
-    title: 'Progetto VIBO',
-    subtitle: 'Spazi per la formazione',
+    title: 'Polo formativo VIBO',
+    category: 'Edilizia',
+    meta: 'Spazi per la formazione · Vibo Valentia',
     image: viboBuilding,
-    className: 'project-card--wide',
+    description: projectDescription,
   },
   {
-    number: '05',
-    title: 'Progetto VIBO',
-    subtitle: 'Disegno e dettaglio',
+    title: 'Grande copertura',
+    category: 'Strutture',
+    meta: 'Progettazione strutturale · Lazio',
+    image: roofStructure,
+    description: projectDescription,
+  },
+  {
+    title: "Ospedale NOT · vista d'insieme",
+    category: 'Architettura',
+    meta: 'Composizione e volumi · Nola (NA)',
+    image: notOverview,
+    description: projectDescription,
+  },
+  {
+    title: 'VIBO · dettaglio strutturale',
+    category: 'Strutture',
+    meta: 'Disegno e dettaglio · Vibo Valentia',
     image: viboPlan,
-    className: 'project-card--plan',
+    description: projectDescription,
   },
   {
-    number: '06',
+    title: 'Paesaggio e connessioni',
+    category: 'Territorio',
+    meta: 'Inserimento nel contesto · Nola (NA)',
+    image: notAerial,
+    description: projectDescription,
+  },
+  {
     title: 'Recupero edilizio',
-    subtitle: 'Memoria, materia, nuova vita',
+    category: 'Edilizia',
+    meta: 'Restauro e riuso · Centro storico',
     image: asset('images/edificio-restauro.jpg'),
-    className: 'project-card--wide',
+    description: projectDescription,
   },
   {
-    number: '07',
-    title: 'Riuso ferroviario',
-    subtitle: 'Spazi che cambiano funzione',
+    title: 'Riuso area ferroviaria',
+    category: 'Cantiere',
+    meta: 'Rifunzionalizzazione · Area ferroviaria',
     image: asset('images/riuso-ferroviario.jpg'),
-    className: 'project-card--wide',
+    description: projectDescription,
   },
 ];
 
@@ -476,6 +496,8 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [activeServiceSlug, setActiveServiceSlug] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState('Tutti');
+  const [openProject, setOpenProject] = useState<Project | null>(null);
 
   useEffect(() => {
     const syncServiceFromHash = () => {
@@ -638,38 +660,76 @@ function App() {
 
             <section id="progetti" className="projects section-pad">
               <div className="projects__heading">
-                <SectionHeading eyebrow="Selezione di lavori">
+                <SectionHeading eyebrow="Portfolio">
                   Progetti reali,<br /><em>contesti diversi.</em>
                 </SectionHeading>
                 <div className="projects__heading-copy">
-                  <p>Una selezione di opere, studi e visioni che raccontano il lavoro dello studio attraverso architettura, strutture, recupero e territorio.</p>
-                  <span className="projects__count">07 / lavori in evidenza</span>
+                  <p>Una selezione di opere, studi e visioni che raccontano il lavoro dello studio attraverso architettura, strutture, edilizia, cantiere e territorio. Filtra per ambito o apri un progetto per la scheda completa.</p>
+                  <span className="projects__count">{portfolio.length} progetti</span>
                 </div>
               </div>
-              <article className="project-feature">
-                <div className="project-feature__image">
-                  <img src={notFacade} alt="Progetto NOT, vista della facciata" />
-                  <span>01 / 07</span>
-                </div>
-                <div className="project-feature__copy">
-                  <span className="eyebrow">Progetto in evidenza</span>
-                  <h3>NOT</h3>
-                  <p>Una grande architettura sanitaria in cui disegno, struttura e paesaggio costruiscono un nuovo punto di riferimento per il territorio.</p>
-                  <a className="text-link" href="#contatti">Parliamo di un progetto <ArrowRight size={16} /></a>
-                </div>
-              </article>
-              <div className="projects__grid">
-                {projects.slice(1).map((project) => (
-                  <article className={`project-card ${project.className}`} key={`${project.number}-${project.subtitle}`}>
-                    <div className="project-card__image"><img src={project.image} alt={`${project.title}, ${project.subtitle}`} /></div>
-                    <div className="project-card__meta">
-                      <span>{project.number}</span>
-                      <div><strong>{project.title}</strong><small>{project.subtitle}</small></div>
-                      <ArrowRight size={17} />
+
+              <div className="portfolio__filters" role="tablist" aria-label="Filtra i progetti">
+                {portfolioCategories.map((cat) => {
+                  const count = cat === 'Tutti' ? portfolio.length : portfolio.filter((p) => p.category === cat).length;
+                  if (count === 0) return null;
+                  return (
+                    <button
+                      type="button"
+                      key={cat}
+                      className={`portfolio__filter ${activeCategory === cat ? 'is-active' : ''}`}
+                      aria-pressed={activeCategory === cat}
+                      onClick={() => setActiveCategory(cat)}
+                    >
+                      {cat}<span className="portfolio__filter-count">{count}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="portfolio__grid">
+                {portfolio
+                  .filter((p) => activeCategory === 'Tutti' || p.category === activeCategory)
+                  .map((project) => (
+                    <article
+                      className="portfolio-card"
+                      key={project.title}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setOpenProject(project)}
+                      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpenProject(project); } }}
+                    >
+                      <div className="portfolio-card__image">
+                        <img src={project.image} alt={project.title} loading="lazy" />
+                      </div>
+                      <div className="portfolio-card__overlay">
+                        <span className="portfolio-card__cat">{project.category}</span>
+                        <h3>{project.title}</h3>
+                        <span className="portfolio-card__meta">{project.meta}</span>
+                        <span className="portfolio-card__open">Apri il progetto <ArrowRight size={15} /></span>
+                      </div>
+                    </article>
+                  ))}
+              </div>
+
+              {openProject && (
+                <div className="work-lightbox" onClick={() => setOpenProject(null)}>
+                  <div className="work-lightbox__panel" onClick={(e) => e.stopPropagation()}>
+                    <button className="work-lightbox__close" type="button" aria-label="Chiudi" onClick={() => setOpenProject(null)}>
+                      <X size={22} />
+                    </button>
+                    <div className="work-lightbox__image">
+                      <img src={openProject.image} alt={openProject.title} />
                     </div>
-                  </article>
-                ))}
-              </div>
+                    <div className="work-lightbox__body">
+                      <span className="work-card__client">{openProject.category}</span>
+                      <h3>{openProject.title}</h3>
+                      <span className="work-card__date">{openProject.meta}</span>
+                      <p>{openProject.description}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </section>
 
             <section id="certificazioni" className="certifications section-pad">
