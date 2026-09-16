@@ -92,7 +92,7 @@ img {
 
 .brand img {
   width: auto;
-  height: 36px;
+  height: 50px;
 }
 
 .brand__emblem {
@@ -100,7 +100,7 @@ img {
 }
 
 .brand span {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.12em;
@@ -125,7 +125,7 @@ img {
 .contact-form label span,
 .project-card__meta,
 .studio__stats span {
-  font-size: 10px;
+  font-size: 12.5px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.13em;
@@ -730,7 +730,6 @@ img {
 .studio {
   position: relative;
   display: block;
-  text-align: center;
   background: var(--white);
 }
 
@@ -741,7 +740,7 @@ img {
   align-self: start;
   gap: 12px;
   color: var(--ink-soft);
-  font-size: 10px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -759,18 +758,10 @@ img {
   background: var(--line);
 }
 
-.studio__label { justify-content: center; }
-
 .studio__content {
   position: relative;
   z-index: 1;
-  max-width: 940px;
-  margin: 34px auto 0;
-}
-
-.studio .section-heading h2 {
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 34px;
 }
 
 .section-heading h2 {
@@ -786,8 +777,7 @@ img {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px;
   max-width: 780px;
-  margin: 55px auto 0;
-  text-align: left;
+  margin: 55px 0 0;
 }
 
 .studio__grid p,
@@ -1408,7 +1398,7 @@ img {
 
 .site-footer .brand--light img {
   width: auto;
-  height: 40px;
+  height: 52px;
   filter: brightness(0) invert(1);
   opacity: 0.92;
 }
@@ -1476,7 +1466,7 @@ img {
   .brand img,
   .site-footer .brand--light img {
     width: auto;
-    height: 32px;
+    height: 42px;
   }
 
   .menu-button {
@@ -2710,14 +2700,13 @@ a.cert-card {
 /* ===== Mappa Italia sfondo sezione Dove lavoriamo ===== */
 .locations {
   position: relative;
-  overflow: hidden;
 }
 
 .locations__map {
   position: absolute;
-  top: clamp(-90px, -4vw, -50px);
-  right: clamp(-10px, 2vw, 55px);
-  height: min(82%, 620px);
+  top: clamp(8px, 1.5vw, 34px);
+  right: clamp(0px, 2vw, 44px);
+  height: min(64%, 500px);
   width: auto;
   z-index: 0;
   pointer-events: none;
@@ -2760,10 +2749,15 @@ a.cert-card {
 
 @media (max-width: 720px) {
   .locations__map {
-    top: auto;
-    bottom: 8px;
-    right: -30px;
-    height: 320px;
-    opacity: 0.6;
+    display: none;
   }
+}
+
+
+.portfolio__hint {
+  margin-top: 60px;
+  padding: 46px 0 10px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  text-align: center;
 }

@@ -515,7 +515,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [activeServiceSlug, setActiveServiceSlug] = useState<string | null>(null);
-  const [activeCategory, setActiveCategory] = useState('Tutti');
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [openProject, setOpenProject] = useState<Project | null>(null);
 
   useEffect(() => {
@@ -707,6 +707,9 @@ function App() {
                 })}
               </div>
 
+              {activeCategory === null ? (
+                <p className="portfolio__hint">Seleziona un ambito qui sopra per vedere le opere realizzate.</p>
+              ) : (
               <div className="portfolio__grid">
                 {portfolio
                   .filter((p) => activeCategory === 'Tutti' || p.category === activeCategory)
@@ -731,6 +734,7 @@ function App() {
                     </article>
                   ))}
               </div>
+              )}
 
               {openProject && (
                 <div className="work-lightbox" onClick={() => setOpenProject(null)}>
