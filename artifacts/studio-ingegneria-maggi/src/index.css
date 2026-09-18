@@ -2944,7 +2944,9 @@ a.cert-card {
 /* Altezze viewport dinamiche (gestisce la barra indirizzi su iPhone/Android) */
 @supports (height: 100dvh) {
   .site-shell { min-height: 100dvh; }
-  .services-hero { height: min(780px, calc(100dvh - 88px)); }
+  @media (min-width: 721px) {
+    .services-hero { height: min(780px, calc(100dvh - 88px)); }
+  }
   .hero { min-height: calc(100dvh - 88px); }
 }
 
