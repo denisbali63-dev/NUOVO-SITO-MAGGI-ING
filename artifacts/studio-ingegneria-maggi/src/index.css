@@ -74,7 +74,7 @@ img {
 }
 
 .site-shell > main {
-  padding-top: 88px;
+  padding-top: 98px;
 }
 
 .site-header {
@@ -97,7 +97,7 @@ img {
   justify-content: space-between;
   gap: 24px;
   width: min(100% - 48px, 1400px);
-  min-height: 88px;
+  min-height: 98px;
   margin: 0 auto;
 }
 
@@ -117,7 +117,7 @@ img {
 
 .brand img {
   width: auto;
-  height: 64px;
+  height: 74px;
 }
 
 .brand__emblem {
@@ -125,7 +125,7 @@ img {
 }
 
 .brand span {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.12em;
@@ -237,7 +237,7 @@ img {
 .services-hero {
   display: flex;
   width: 100%;
-  height: min(780px, calc(100vh - 88px));
+  height: min(780px, calc(100vh - 98px));
   min-height: 620px;
   background: var(--ink);
 }
@@ -546,7 +546,7 @@ img {
   grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
   align-items: center;
   gap: clamp(40px, 7vw, 130px);
-  min-height: calc(100vh - 88px);
+  min-height: calc(100vh - 98px);
   padding-top: clamp(64px, 7vw, 100px);
   padding-bottom: clamp(88px, 8vw, 125px);
   background: var(--blue-pale);
@@ -2945,9 +2945,9 @@ a.cert-card {
 @supports (height: 100dvh) {
   .site-shell { min-height: 100dvh; }
   @media (min-width: 721px) {
-    .services-hero { height: min(780px, calc(100dvh - 88px)); }
+    .services-hero { height: min(780px, calc(100dvh - 98px)); }
   }
-  .hero { min-height: calc(100dvh - 88px); }
+  .hero { min-height: calc(100dvh - 98px); }
 }
 
 
