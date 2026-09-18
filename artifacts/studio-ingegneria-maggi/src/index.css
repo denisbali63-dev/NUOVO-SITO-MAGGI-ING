@@ -1409,12 +1409,52 @@ img {
 
 .site-footer {
   display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 40px max(24px, calc((100vw - 1400px) / 2)) 34px;
+  color: var(--white);
+  background: var(--ink);
+}
+.site-footer__top {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 22px;
-  padding: 28px max(24px, calc((100vw - 1400px) / 2));
-  color: var(--white);
-  background: var(--ink);
+}
+.site-footer__totop {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #cfe4ec;
+  font-size: 13px;
+}
+.site-footer__totop:hover { color: var(--white); }
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 30px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(223, 241, 248, 0.16);
+}
+.site-footer__legal p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #90aab6;
+}
+.site-footer__links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.site-footer__links a { font-size: 12.5px; color: #cfe4ec; }
+.site-footer__links a:hover { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.site-footer__links span { color: #4a6b7d; }
+@media (max-width: 620px) {
+  .site-footer__top { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .site-footer__legal { flex-direction: column; align-items: flex-start; }
 }
 
 .site-footer .brand--light {
@@ -3079,4 +3119,118 @@ a.cert-card {
 
 @media (max-width: 720px) {
   .site-shell > main { padding-top: 76px; }
+}
+
+
+/* ===== Pagine legali (Privacy / Cookie) ===== */
+.legal {
+  width: min(100% - 48px, 820px);
+}
+.legal__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  color: var(--blue-deep);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+.legal__back:hover { color: var(--ink); }
+.legal__eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--blue-deep);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.legal__body h1 {
+  margin: 0 0 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  line-height: 1.05;
+  color: var(--ink);
+}
+.legal__lead {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.75;
+}
+.legal__body h2 {
+  margin: 40px 0 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-size: 1.35rem;
+  color: var(--ink);
+}
+.legal__body p {
+  margin: 0 0 14px;
+  max-width: 68ch;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.legal__body strong { color: var(--ink); font-weight: 600; }
+.legal__body a {
+  color: var(--blue-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal__updated {
+  margin-top: 8px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ===== Banner cookie ===== */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: min(100% - 32px, 1080px);
+  margin: 0 auto 16px;
+  padding: 18px 22px;
+  background: var(--ink);
+  color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(11, 31, 45, 0.28);
+}
+.cookie-banner__text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #cfe4ec;
+}
+.cookie-banner__text a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.cookie-banner__ok {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 11px 22px;
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+.cookie-banner__ok:hover { background: var(--blue-pale); }
+@media (max-width: 640px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .cookie-banner__ok { align-self: flex-start; }
 }

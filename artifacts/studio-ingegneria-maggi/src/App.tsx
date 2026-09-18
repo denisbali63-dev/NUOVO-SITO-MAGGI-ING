@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import {
   ArrowRight,
+  ArrowLeft,
   Award,
   Boxes,
   Building2,
@@ -628,6 +629,99 @@ function CountUp({ value, suffix = '', duration = 1500 }: { value: number; suffi
   return <strong ref={ref}>{display}{suffix}</strong>;
 }
 
+function CookieBanner() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    let accepted = false;
+    try { accepted = localStorage.getItem('sim-cookie-consent') === '1'; } catch { accepted = false; }
+    if (!accepted) setShow(true);
+  }, []);
+  const accept = () => {
+    try { localStorage.setItem('sim-cookie-consent', '1'); } catch { /* no-op */ }
+    setShow(false);
+  };
+  if (!show) return null;
+  return (
+    <div className="cookie-banner" role="dialog" aria-label="Informativa cookie">
+      <p className="cookie-banner__text">
+        Questo sito utilizza solo cookie tecnici necessari al suo funzionamento e carica i caratteri da Google Fonts.
+        Non usiamo cookie di profilazione. Maggiori dettagli nella <a href="#cookie">Cookie Policy</a>.
+      </p>
+      <button type="button" className="button button--primary cookie-banner__ok" onClick={accept}>Ho capito</button>
+    </div>
+  );
+}
+
+function LegalPage({ page }: { page: 'privacy' | 'cookie' }) {
+  const updated = 'Settembre 2026';
+  return (
+    <article className="legal section-pad">
+      <a className="legal__back" href="#top"><ArrowLeft size={16} /> Torna al sito</a>
+      {page === 'privacy' ? (
+        <div className="legal__body">
+          <span className="legal__eyebrow">Note legali</span>
+          <h1>Informativa sulla privacy</h1>
+          <p className="legal__lead">Informativa resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) a chi consulta questo sito e utilizza i moduli di contatto.</p>
+
+          <h2>1. Titolare del trattamento</h2>
+          <p>Studio Ingegneria Maggi S.r.l., con sede in Via Casavetere 25 bis/a, 03014 Fiuggi (FR). P.IVA (da inserire) · PEC (da inserire) · Email <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a> · Tel. +39 0775 504019.</p>
+
+          <h2>2. Dati personali trattati</h2>
+          <p><strong>Dati di navigazione.</strong> I sistemi informatici e le procedure preposte al funzionamento del sito acquisiscono, nel corso del normale esercizio, alcuni dati tecnici la cui trasmissione è implicita nell&rsquo;uso dei protocolli di comunicazione di Internet (ad esempio indirizzo IP, tipo di browser e dispositivo, data e ora della richiesta, pagine visitate). Questi dati sono utilizzati al solo fine di garantire il funzionamento e la sicurezza del sito.</p>
+          <p><strong>Dati forniti volontariamente.</strong> Quando compili il modulo &laquo;Contatti&raquo; o ci scrivi via email, trattiamo i dati che ci comunichi: nome, indirizzo email e il contenuto del messaggio.</p>
+
+          <h2>3. Finalità e basi giuridiche</h2>
+          <p>Rispondere alle richieste inviate tramite il modulo o via email e gestire i relativi contatti (art. 6, par. 1, lett. b — riscontro a una richiesta dell&rsquo;interessato; e lett. f — legittimo interesse a gestire le comunicazioni). Garantire il funzionamento, la manutenzione e la sicurezza del sito (art. 6, par. 1, lett. f). Adempiere a eventuali obblighi di legge (art. 6, par. 1, lett. c), ove applicabili.</p>
+
+          <h2>4. Natura del conferimento</h2>
+          <p>Il conferimento dei dati tramite il modulo di contatto è facoltativo; il mancato conferimento comporta l&rsquo;impossibilità di dare seguito alla richiesta.</p>
+
+          <h2>5. Modalità del trattamento</h2>
+          <p>Il trattamento avviene con strumenti elettronici, adottando misure tecniche e organizzative adeguate a proteggere i dati da accessi non autorizzati, perdita o divulgazione.</p>
+
+          <h2>6. Destinatari dei dati</h2>
+          <p>I dati possono essere trattati da soggetti che forniscono servizi tecnici per conto del Titolare (ad esempio il fornitore di hosting ed eventuali servizi di invio email), nominati responsabili del trattamento ove previsto dall&rsquo;art. 28 GDPR. I dati non sono diffusi né ceduti a terzi per loro finalità.</p>
+
+          <h2>7. Trasferimenti verso Paesi terzi</h2>
+          <p>Il sito è ospitato su GitHub Pages (GitHub, Inc., USA) e utilizza i caratteri tipografici Google Fonts (Google LLC, USA). Gli eventuali trasferimenti di dati verso gli Stati Uniti avvengono sulla base di garanzie adeguate ai sensi degli artt. 44 e ss. GDPR (Clausole Contrattuali Standard e/o adesione al Data Privacy Framework).</p>
+
+          <h2>8. Periodo di conservazione</h2>
+          <p>I dati inviati tramite il modulo sono conservati per il tempo necessario a gestire la richiesta e ad assolvere eventuali obblighi di legge; i dati tecnici di navigazione per il tempo strettamente necessario alle finalità indicate.</p>
+
+          <h2>9. Diritti dell&rsquo;interessato</h2>
+          <p>Puoi esercitare in ogni momento i diritti previsti dagli artt. 15-22 GDPR: accesso, rettifica, cancellazione, limitazione, opposizione al trattamento e portabilità dei dati, oltre alla revoca del consenso ove il trattamento vi si basi. Per esercitarli scrivi a <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>. Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">www.garanteprivacy.it</a>).</p>
+
+          <h2>10. Modifiche</h2>
+          <p>Il Titolare si riserva di aggiornare la presente informativa; le modifiche saranno pubblicate su questa pagina.</p>
+          <p className="legal__updated">Ultimo aggiornamento: {updated}</p>
+        </div>
+      ) : (
+        <div className="legal__body">
+          <span className="legal__eyebrow">Note legali</span>
+          <h1>Cookie Policy</h1>
+          <p className="legal__lead">Informativa sull&rsquo;uso dei cookie e delle tecnologie analoghe su questo sito.</p>
+
+          <h2>1. Cosa sono i cookie</h2>
+          <p>I cookie sono piccoli file di testo che i siti visitati inviano al dispositivo dell&rsquo;utente, dove vengono memorizzati per essere ritrasmessi agli stessi siti alla visita successiva. Esistono cookie tecnici (necessari al funzionamento) e cookie di profilazione (usati per tracciare l&rsquo;utente a fini pubblicitari).</p>
+
+          <h2>2. Cookie utilizzati da questo sito</h2>
+          <p>Questo sito <strong>non utilizza cookie di profilazione</strong> né strumenti di tracciamento pubblicitario o statistico.</p>
+          <p><strong>Archiviazione tecnica.</strong> Il sito memorizza localmente nel browser (localStorage) unicamente la tua scelta relativa al banner cookie, per non riproporlo a ogni visita. È un dato tecnico, non richiede consenso e non consente di identificarti.</p>
+          <p><strong>Risorse di terze parti.</strong> I caratteri tipografici sono caricati da Google Fonts (Google LLC), che riceve l&rsquo;indirizzo IP necessario a servire i font; tale servizio non installa cookie di profilazione. L&rsquo;hosting su GitHub Pages registra log tecnici necessari all&rsquo;erogazione del servizio.</p>
+
+          <h2>3. Come gestire i cookie</h2>
+          <p>Puoi gestire o eliminare i cookie e i dati dei siti dalle impostazioni del tuo browser. Le istruzioni sono disponibili nelle guide di <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Chrome</a>, <a href="https://support.mozilla.org/it/kb/Attivare%20e%20disattivare%20i%20cookie" target="_blank" rel="noopener noreferrer">Firefox</a>, <a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a> ed <a href="https://support.microsoft.com/it-it/microsoft-edge" target="_blank" rel="noopener noreferrer">Edge</a>.</p>
+
+          <h2>4. Aggiornamenti</h2>
+          <p>Qualora in futuro il sito introduca strumenti statistici o di terze parti che utilizzano cookie (ad esempio statistiche di traffico o mappe incorporate), questa policy sarà aggiornata e verrà richiesto il consenso preventivo dove necessario.</p>
+          <p className="legal__updated">Ultimo aggiornamento: {updated}</p>
+          <p>Per informazioni sul trattamento dei dati personali consulta la <a href="#privacy">Informativa sulla privacy</a>.</p>
+        </div>
+      )}
+    </article>
+  );
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
@@ -635,6 +729,7 @@ function App() {
   const [activeCategory, setActiveCategory] = useState<string | null>('Tutti');
   const [openProject, setOpenProject] = useState<Project | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [legalPage, setLegalPage] = useState<'privacy' | 'cookie' | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -644,7 +739,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (activeServiceSlug) return;
+    if (activeServiceSlug || legalPage) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const els = Array.from(document.querySelectorAll('.section-pad, .impact'));
     els.forEach((el) => el.classList.add('reveal'));
@@ -665,17 +760,21 @@ function App() {
       io2.observe(steps);
     }
     return () => { io.disconnect(); io2?.disconnect(); };
-  }, [activeServiceSlug]);
+  }, [activeServiceSlug, legalPage]);
 
   useEffect(() => {
-    const syncServiceFromHash = () => {
+    const syncFromHash = () => {
+      const h = window.location.hash;
       const prefix = '#servizio-';
-      setActiveServiceSlug(window.location.hash.startsWith(prefix) ? window.location.hash.slice(prefix.length) : null);
+      setActiveServiceSlug(h.startsWith(prefix) ? h.slice(prefix.length) : null);
+      const lp = h === '#privacy' ? 'privacy' : h === '#cookie' ? 'cookie' : null;
+      setLegalPage(lp as 'privacy' | 'cookie' | null);
+      if (h.startsWith(prefix) || lp) window.scrollTo(0, 0);
     };
 
-    syncServiceFromHash();
-    window.addEventListener('hashchange', syncServiceFromHash);
-    return () => window.removeEventListener('hashchange', syncServiceFromHash);
+    syncFromHash();
+    window.addEventListener('hashchange', syncFromHash);
+    return () => window.removeEventListener('hashchange', syncFromHash);
   }, []);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -723,7 +822,9 @@ function App() {
       )}
 
       <main>
-        {activeServiceSlug ? (
+        {legalPage ? (
+          <LegalPage page={legalPage} />
+        ) : activeServiceSlug ? (
           <ServiceDetail service={servicePanels.find((service) => service.slug === activeServiceSlug) ?? servicePanels[0]} />
         ) : (
           <>
@@ -1087,10 +1188,21 @@ function App() {
       </section>
 
       <footer className="site-footer">
-        <Logo light />
-        <p>Fiuggi · Nola · Rieti</p>
-        <a href="#top">Torna su <ArrowRight size={15} /></a>
+        <div className="site-footer__top">
+          <Logo light />
+          <p className="site-footer__sedi">Fiuggi · Nola · Rieti</p>
+          <a className="site-footer__totop" href="#top">Torna su <ArrowRight size={15} /></a>
+        </div>
+        <div className="site-footer__legal">
+          <p>Studio Ingegneria Maggi S.r.l. — Via Casavetere 25 bis/a, 03014 Fiuggi (FR) · P.IVA (da inserire) · PEC (da inserire)</p>
+          <nav className="site-footer__links" aria-label="Note legali">
+            <a href="#privacy">Privacy Policy</a>
+            <span aria-hidden="true">·</span>
+            <a href="#cookie">Cookie Policy</a>
+          </nav>
+        </div>
       </footer>
+      <CookieBanner />
     </div>
   );
 }
