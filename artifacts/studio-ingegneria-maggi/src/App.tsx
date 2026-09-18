@@ -654,7 +654,17 @@ function App() {
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
     els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+
+    const steps = document.querySelector('.metodo__steps');
+    let io2: IntersectionObserver | undefined;
+    if (steps) {
+      steps.classList.add('anim-steps');
+      io2 = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) { steps.classList.add('is-in'); io2?.disconnect(); }
+      }, { threshold: 0.2 });
+      io2.observe(steps);
+    }
+    return () => { io.disconnect(); io2?.disconnect(); };
   }, [activeServiceSlug]);
 
   useEffect(() => {

@@ -2987,8 +2987,64 @@ a.cert-card {
   margin-top: clamp(40px, 5vw, 64px);
 }
 .metodo-step {
-  border-top: 2px solid var(--blue-deep);
+  position: relative;
   padding-top: 22px;
+}
+.metodo-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue-deep);
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* Animazione in sequenza dei numeri/step (solo quando JS attivo e non reduced-motion) */
+.metodo__steps.anim-steps .metodo-step::before {
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.metodo__steps.anim-steps .metodo-step__num,
+.metodo__steps.anim-steps .metodo-step h3,
+.metodo__steps.anim-steps .metodo-step p {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.metodo__steps.anim-steps.is-in .metodo-step::before {
+  transform: scaleX(1);
+}
+.metodo__steps.anim-steps.is-in .metodo-step__num,
+.metodo__steps.anim-steps.is-in .metodo-step h3,
+.metodo__steps.anim-steps.is-in .metodo-step p {
+  opacity: 1;
+  transform: none;
+}
+.metodo__steps.anim-steps .metodo-step:nth-child(1)::before,
+.metodo__steps.anim-steps .metodo-step:nth-child(1) .metodo-step__num,
+.metodo__steps.anim-steps .metodo-step:nth-child(1) h3,
+.metodo__steps.anim-steps .metodo-step:nth-child(1) p { transition-delay: 0s; }
+.metodo__steps.anim-steps .metodo-step:nth-child(2)::before,
+.metodo__steps.anim-steps .metodo-step:nth-child(2) .metodo-step__num,
+.metodo__steps.anim-steps .metodo-step:nth-child(2) h3,
+.metodo__steps.anim-steps .metodo-step:nth-child(2) p { transition-delay: 0.14s; }
+.metodo__steps.anim-steps .metodo-step:nth-child(3)::before,
+.metodo__steps.anim-steps .metodo-step:nth-child(3) .metodo-step__num,
+.metodo__steps.anim-steps .metodo-step:nth-child(3) h3,
+.metodo__steps.anim-steps .metodo-step:nth-child(3) p { transition-delay: 0.28s; }
+.metodo__steps.anim-steps .metodo-step:nth-child(4)::before,
+.metodo__steps.anim-steps .metodo-step:nth-child(4) .metodo-step__num,
+.metodo__steps.anim-steps .metodo-step:nth-child(4) h3,
+.metodo__steps.anim-steps .metodo-step:nth-child(4) p { transition-delay: 0.42s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .metodo__steps.anim-steps .metodo-step::before { transform: scaleX(1); }
+  .metodo__steps.anim-steps .metodo-step__num,
+  .metodo__steps.anim-steps .metodo-step h3,
+  .metodo__steps.anim-steps .metodo-step p { opacity: 1; transform: none; }
 }
 .metodo-step__num {
   display: block;
