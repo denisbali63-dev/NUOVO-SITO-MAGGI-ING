@@ -664,7 +664,7 @@ function LegalPage({ page }: { page: 'privacy' | 'cookie' }) {
           <p className="legal__lead">Informativa resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) a chi consulta questo sito e utilizza i moduli di contatto.</p>
 
           <h2>1. Titolare del trattamento</h2>
-          <p>Studio Ingegneria Maggi S.r.l., con sede in Via Casavetere 25 bis/a, 03014 Fiuggi (FR). P.IVA (da inserire) · PEC (da inserire) · Email <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a> · Tel. +39 0775 504019.</p>
+          <p>Studio Ingegneria Maggi S.r.l., con sede in Via Casavetere 25 bis/a, 03014 Fiuggi (FR). P.IVA IT02334940604 · PEC studioingegneriamaggi@pec.it · Email <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a> · Tel. +39 0775 504019.</p>
 
           <h2>2. Dati personali trattati</h2>
           <p><strong>Dati di navigazione.</strong> I sistemi informatici e le procedure preposte al funzionamento del sito acquisiscono, nel corso del normale esercizio, alcuni dati tecnici la cui trasmissione è implicita nell&rsquo;uso dei protocolli di comunicazione di Internet (ad esempio indirizzo IP, tipo di browser e dispositivo, data e ora della richiesta, pagine visitate). Questi dati sono utilizzati al solo fine di garantire il funzionamento e la sicurezza del sito.</p>
@@ -722,6 +722,47 @@ function LegalPage({ page }: { page: 'privacy' | 'cookie' }) {
   );
 }
 
+function CertificationsPage() {
+  return (
+    <article className="certifications cert-page section-pad">
+      <a className="legal__back" href="#top"><ArrowLeft size={16} /> Torna al sito</a>
+      <div className="certifications__heading">
+        <SectionHeading eyebrow="Qualità verificata">
+          Standard riconosciuti,<br /><em>impegni concreti.</em>
+        </SectionHeading>
+        <div className="certifications__intro">
+          <p>Il nostro modo di lavorare è verificato da enti indipendenti. Sei certificazioni attestano qualità, ambiente, sicurezza, responsabilità sociale, parità di genere e metodo BIM: un impegno rinnovato nel tempo verso committenti pubblici e privati.</p>
+        </div>
+      </div>
+      <div className="certifications__grid">
+        {certifications.map(({ code, title, description, body, number, valid, pdf, Icon }) => (
+          <a
+            className="cert-card"
+            key={code}
+            href={asset(pdf)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="cert-card__top">
+              <Icon className="cert-card__icon" size={30} strokeWidth={1.4} />
+              <span className="cert-card__code">{code}</span>
+            </div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <div className="cert-card__ref">Certificato n° {number}</div>
+            <div className="cert-card__meta">
+              <span><small>Ente</small>{body}</span>
+              <span><small>Valida fino al</small>{valid}</span>
+            </div>
+            <span className="cert-card__open">Apri il certificato <ArrowRight size={14} /></span>
+          </a>
+        ))}
+      </div>
+      <p className="certifications__note">Certificazioni rilasciate da organismi accreditati (ACCREDIA · IAF · SNAS) e soggette a sorveglianza periodica.</p>
+    </article>
+  );
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
@@ -730,16 +771,26 @@ function App() {
   const [openProject, setOpenProject] = useState<Project | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [legalPage, setLegalPage] = useState<'privacy' | 'cookie' | null>(null);
+  const [showCerts, setShowCerts] = useState(false);
+  const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      const el = progressRef.current;
+      if (el) {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        el.style.transform = `scaleX(${h > 0 ? Math.min(1, window.scrollY / h) : 0})`;
+      }
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll);
+    return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); };
   }, []);
 
   useEffect(() => {
-    if (activeServiceSlug || legalPage) return;
+    if (activeServiceSlug || legalPage || showCerts) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const els = Array.from(document.querySelectorAll('.section-pad, .impact'));
     els.forEach((el) => el.classList.add('reveal'));
@@ -760,7 +811,7 @@ function App() {
       io2.observe(steps);
     }
     return () => { io.disconnect(); io2?.disconnect(); };
-  }, [activeServiceSlug, legalPage]);
+  }, [activeServiceSlug, legalPage, showCerts]);
 
   useEffect(() => {
     const syncFromHash = () => {
@@ -769,7 +820,9 @@ function App() {
       setActiveServiceSlug(h.startsWith(prefix) ? h.slice(prefix.length) : null);
       const lp = h === '#privacy' ? 'privacy' : h === '#cookie' ? 'cookie' : null;
       setLegalPage(lp as 'privacy' | 'cookie' | null);
-      if (h.startsWith(prefix) || lp) window.scrollTo(0, 0);
+      const certs = h === '#certificazioni';
+      setShowCerts(certs);
+      if (h.startsWith(prefix) || lp || certs) window.scrollTo(0, 0);
     };
 
     syncFromHash();
@@ -809,6 +862,7 @@ function App() {
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
+        <div className="scroll-progress" ref={progressRef} aria-hidden="true" />
       </header>
 
       {menuOpen && (
@@ -824,6 +878,8 @@ function App() {
       <main>
         {legalPage ? (
           <LegalPage page={legalPage} />
+        ) : showCerts ? (
+          <CertificationsPage />
         ) : activeServiceSlug ? (
           <ServiceDetail service={servicePanels.find((service) => service.slug === activeServiceSlug) ?? servicePanels[0]} />
         ) : (
@@ -1033,46 +1089,9 @@ function App() {
               )}
             </section>
 
-            <section id="certificazioni" className="certifications section-pad">
-              <div className="certifications__heading">
-                <div className="section-tag"><span>05</span><span className="section-rule" /> Certificazioni</div>
-                <SectionHeading eyebrow="Qualità verificata">
-                  Standard riconosciuti,<br /><em>impegni concreti.</em>
-                </SectionHeading>
-                <div className="certifications__intro">
-                  <p>Il nostro modo di lavorare è verificato da enti indipendenti. Sei certificazioni attestano qualità, ambiente, sicurezza, responsabilità sociale, parità di genere e metodo BIM: un impegno rinnovato nel tempo verso committenti pubblici e privati.</p>
-                </div>
-              </div>
-              <div className="certifications__grid">
-                {certifications.map(({ code, title, description, body, number, valid, pdf, Icon }) => (
-                  <a
-                    className="cert-card"
-                    key={code}
-                    href={asset(pdf)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="cert-card__top">
-                      <Icon className="cert-card__icon" size={30} strokeWidth={1.4} />
-                      <span className="cert-card__code">{code}</span>
-                    </div>
-                    <h3>{title}</h3>
-                    <p>{description}</p>
-                    <div className="cert-card__ref">Certificato n° {number}</div>
-                    <div className="cert-card__meta">
-                      <span><small>Ente</small>{body}</span>
-                      <span><small>Valida fino al</small>{valid}</span>
-                    </div>
-                    <span className="cert-card__open">Apri il certificato <ArrowRight size={14} /></span>
-                  </a>
-                ))}
-              </div>
-              <p className="certifications__note">Certificazioni rilasciate da organismi accreditati (ACCREDIA · IAF · SNAS) e soggette a sorveglianza periodica.</p>
-            </section>
-
             <section id="lavora" className="careers section-pad">
               <div className="careers__heading">
-                <div className="section-tag"><span>06</span><span className="section-rule" /> Lavora con noi</div>
+                <div className="section-tag"><span>05</span><span className="section-rule" /> Lavora con noi</div>
                 <SectionHeading eyebrow="Unisciti allo studio">
                   Le persone fanno<br /><em>la differenza.</em>
                 </SectionHeading>
@@ -1120,7 +1139,7 @@ function App() {
 
             <section id="contatti" className="contact section-pad">
           <div className="contact__intro">
-            <div className="section-tag"><span>07</span><span className="section-rule" /> Contatti</div>
+            <div className="section-tag"><span>06</span><span className="section-rule" /> Contatti</div>
             <SectionHeading eyebrow="Iniziamo da qui">
               Hai un progetto?<br /><em>Parliamone.</em>
             </SectionHeading>
@@ -1194,7 +1213,7 @@ function App() {
           <a className="site-footer__totop" href="#top">Torna su <ArrowRight size={15} /></a>
         </div>
         <div className="site-footer__legal">
-          <p>Studio Ingegneria Maggi S.r.l. — Via Casavetere 25 bis/a, 03014 Fiuggi (FR) · P.IVA (da inserire) · PEC (da inserire)</p>
+          <p>Studio Ingegneria Maggi S.r.l. — Via Casavetere 25 bis/a, 03014 Fiuggi (FR) · P.IVA IT02334940604 · PEC studioingegneriamaggi@pec.it</p>
           <nav className="site-footer__links" aria-label="Note legali">
             <a href="#privacy">Privacy Policy</a>
             <span aria-hidden="true">·</span>

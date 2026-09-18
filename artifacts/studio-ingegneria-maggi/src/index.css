@@ -3234,3 +3234,78 @@ a.cert-card {
   }
   .cookie-banner__ok { align-self: flex-start; }
 }
+
+
+/* === micro-interactions / polish (v2) === */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue));
+  transition: transform 120ms linear;
+  will-change: transform;
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* animated nav underline */
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background: var(--blue-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+.desktop-nav a:hover::after,
+.desktop-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* button lift + arrow nudge */
+.button--primary {
+  transition: background-color 180ms ease, transform 180ms ease,
+    box-shadow 180ms ease;
+}
+.button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.button--primary svg { transition: transform 180ms ease; }
+.button--primary:hover svg { transform: translateX(4px); }
+.header-cta { transition: background-color 180ms ease, border-color 180ms ease,
+  color 180ms ease, transform 180ms ease; }
+.header-cta:hover { transform: translateY(-1px); }
+
+/* consistent keyboard focus ring */
+a:focus-visible,
+button:focus-visible,
+.button--primary:focus-visible,
+.text-link:focus-visible,
+.legal__back:focus-visible,
+.cookie-banner button:focus-visible {
+  outline: 2px solid var(--blue-deep);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+/* cards keep their own focus treatment */
+.portfolio-card:focus-visible,
+.portfolio-slide:focus-visible { outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress { transition: none; }
+  .desktop-nav a::after,
+  .button--primary,
+  .button--primary svg,
+  .header-cta { transition: none; }
+  .button--primary:hover { transform: none; box-shadow: none; }
+  .header-cta:hover { transform: none; }
+}
