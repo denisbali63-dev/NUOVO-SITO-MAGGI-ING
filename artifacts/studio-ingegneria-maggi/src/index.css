@@ -2255,10 +2255,10 @@ a.cert-card {
   flex-direction: column;
   justify-content: flex-end;
   padding: 24px;
-  background: linear-gradient(to top, rgba(23, 59, 83, 0.92), rgba(23, 59, 83, 0.35) 55%, rgba(23, 59, 83, 0) 82%);
+  background: linear-gradient(to top, rgba(23, 59, 83, 0.94), rgba(23, 59, 83, 0.45) 48%, rgba(23, 59, 83, 0) 78%);
   border-radius: 0;
   backdrop-filter: none;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.4s ease;
 }
 .work-card:hover .work-card__caption { opacity: 1; }
@@ -3311,3 +3311,5 @@ button:focus-visible,
   .button--primary:hover { transform: none; box-shadow: none; }
   .header-cta:hover { transform: none; }
 }
+
+.work-card__date:empty { display: none; }
