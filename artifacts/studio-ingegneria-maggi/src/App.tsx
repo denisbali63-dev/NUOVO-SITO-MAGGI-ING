@@ -191,7 +191,7 @@ const portfolio: Project[] = [
     title: 'Nuovo Ospedale Tiburtino',
     category: 'Architettura',
     meta: 'Struttura sanitaria · Tivoli (RM)',
-    image: notFacade,
+    image: asset('progetti/tiburtino/tib-16.jpg'),
     description: "Progetto per una nuova struttura sanitaria nel territorio tiburtino: organizzazione funzionale dei volumi, dei percorsi e dei collegamenti, con attenzione all'inserimento nel contesto.",
   },
   {
@@ -240,8 +240,22 @@ const portfolio: Project[] = [
     title: "Nuovo Ospedale Tiburtino · vista d'insieme",
     category: 'Architettura',
     meta: 'Composizione e volumi · Tivoli (RM)',
-    image: notOverview,
+    image: asset('progetti/tiburtino/tib-07.jpg'),
     description: "Vista d'insieme del complesso: composizione dei volumi e relazione con il contesto urbano e paesaggistico.",
+  },
+  {
+    title: 'Scuola San Francesco d’Assisi — Bellegra',
+    category: 'Architettura',
+    meta: 'Edilizia scolastica · Bellegra (RM)',
+    image: asset('progetti/bellegra/bel-07.jpg'),
+    description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: aule luminose, spazi comuni e aree gioco, con l'edificio che si adatta al pendio.",
+  },
+  {
+    title: 'Ampliamento Scuola “Francesco da Fiano”',
+    category: 'Architettura',
+    meta: 'Edilizia scolastica · Fiano Romano (RM)',
+    image: asset('progetti/fiano/fia-02.jpg'),
+    description: "Ampliamento della Scuola Media “Francesco da Fiano”: nuovi spazi didattici e un auditorium integrati con l'edificio esistente.",
   },
 ];
 
@@ -355,6 +369,9 @@ const workDescription =
 
 const works: Record<string, Work[]> = {
   architettura: [
+    { image: asset('progetti/tiburtino/tib-16.jpg'), images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')], client: '', title: 'Nuovo Ospedale Tiburtino', date: '', description: "Progetto per il Nuovo Ospedale Tiburtino, a Tivoli (RM): un complesso sanitario dall'impianto curvo che organizza degenze, servizi e percorsi attorno a spazi verdi e terrazze terapeutiche, con grande attenzione all'inserimento nel paesaggio e alla sostenibilità energetica." },
+    { image: asset('progetti/bellegra/bel-07.jpg'), images: [asset('progetti/bellegra/bel-07.jpg'), asset('progetti/bellegra/bel-05.jpg'), asset('progetti/bellegra/bel-08.jpg'), asset('progetti/bellegra/bel-27.jpg'), asset('progetti/bellegra/bel-29.jpg'), asset('progetti/bellegra/bel-31.jpg'), asset('progetti/bellegra/bel-34.jpg')], client: '', title: 'Scuola San Francesco d’Assisi — Bellegra', date: '', description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: un edificio che si adatta al pendio, con aule luminose, spazi comuni e aree gioco all'aperto, pensato per la sicurezza e il benessere dei bambini." },
+    { image: asset('progetti/fiano/fia-02.jpg'), images: [asset('progetti/fiano/fia-02.jpg'), asset('progetti/fiano/fia-01.jpg')], client: '', title: 'Ampliamento Scuola “Francesco da Fiano”', date: '', description: "Ampliamento della Scuola Media “Francesco da Fiano” a Fiano Romano (RM): nuovi spazi didattici e un auditorium integrati con l'edificio esistente e con il contesto." },
     { image: asset('progetti/mattatoio-3.jpg'), images: [asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')], client: '', title: 'Ex Mattatoio di Subiaco', date: '', description: "Recupero dell'ex mattatoio comunale di Subiaco, trasformato in un nuovo spazio pubblico polifunzionale al servizio del territorio e del Parco dei Monti Simbruini: consolidamento dell'involucro, nuova copertura in legno, sala polifunzionale e spazi espositivi." },
     { image: asset('progetti/filettino.jpg'), client: '', title: 'Scuola di Filettino', date: '', description: "Progetto per l'edificio scolastico di Filettino, con partizioni interne mobili per adattare gli ambienti alle diverse attività didattiche. In immagine il rendering di progetto." },
   ],
