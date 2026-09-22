@@ -355,13 +355,12 @@ const workDescription =
 
 const works: Record<string, Work[]> = {
   architettura: [
-    { image: asset('progetti/mattatoio-1.jpg'), images: [asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-2.jpg'), asset('progetti/mattatoio-3.jpg')], client: 'Recupero e rifunzionalizzazione', title: 'Ex Mattatoio di Subiaco', date: '', description: "Recupero dell'ex mattatoio comunale di Subiaco, trasformato in un nuovo spazio pubblico al servizio del territorio e del Parco dei Monti Simbruini: consolidamento dell'involucro, nuova copertura in legno e riorganizzazione degli spazi interni ed esterni." },
-    { image: asset('progetti/filettino.jpg'), client: 'Edilizia scolastica', title: 'Scuola di Filettino', date: '', description: "Progetto per l'edificio scolastico di Filettino, con partizioni interne mobili per adattare gli ambienti alle diverse attività didattiche. In immagine il rendering di progetto." },
+    { image: asset('progetti/mattatoio-3.jpg'), images: [asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')], client: '', title: 'Ex Mattatoio di Subiaco', date: '', description: "Recupero dell'ex mattatoio comunale di Subiaco, trasformato in un nuovo spazio pubblico polifunzionale al servizio del territorio e del Parco dei Monti Simbruini: consolidamento dell'involucro, nuova copertura in legno, sala polifunzionale e spazi espositivi." },
+    { image: asset('progetti/filettino.jpg'), client: '', title: 'Scuola di Filettino', date: '', description: "Progetto per l'edificio scolastico di Filettino, con partizioni interne mobili per adattare gli ambienti alle diverse attività didattiche. In immagine il rendering di progetto." },
   ],
   strutture: [
-    { image: asset('progetti/copertura-1.jpg'), images: [asset('progetti/copertura-1.jpg'), asset('progetti/copertura-2.jpg')], client: 'Struttura in legno', title: 'Copertura dell’ex Mattatoio', date: '', description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, progettata per il recupero dell'ex mattatoio di Subiaco: una soluzione leggera e reversibile, integrata con la muratura esistente." },
-    { image: asset('progetti/ponte-comino.jpg'), client: 'Infrastrutture', title: 'Ponte in Valle di Comino', date: '', description: "Opera d'arte stradale sul corso d'acqua: progettazione e verifica dell'impalcato e delle spalle, con attenzione all'inserimento nel contesto fluviale." },
-    { image: asset('progetti/passerella-comino.jpg'), client: 'Infrastrutture', title: 'Passerella pedonale in Valle di Comino', date: '', description: "Passerella pedonale di attraversamento in acciaio: una struttura leggera e durevole per collegare in sicurezza le due sponde." },
+    { image: asset('progetti/copertura-1.jpg'), images: [asset('progetti/copertura-1.jpg'), asset('progetti/copertura-2.jpg')], client: '', title: 'Copertura dell’ex Mattatoio', date: '', description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, progettata per il recupero dell'ex mattatoio di Subiaco: una soluzione leggera e reversibile, integrata con la muratura esistente." },
+    { image: asset('progetti/ponte-comino.jpg'), images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')], client: '', title: 'Passerella pedonale in Valle di Comino', date: '', description: "Attraversamento pedonale in Valle di Comino, con struttura metallica leggera sul corso d'acqua. (Descrizione da confermare.)" },
   ],
   cantiere: [
     { image: notOverview, client: 'Committente · Luogo', title: 'Direzione lavori', date: 'Anno · stato', description: workDescription },
@@ -380,7 +379,7 @@ const works: Record<string, Work[]> = {
     { image: asset('indagini/11_puntelli.jpg'), client: 'Prova di carico', title: "Prova di carico con puntelli", date: '', description: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." },
   ],
   territorio: [
-    { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg')], client: 'Ambiente e infrastrutture', title: 'Pista ciclopedonale del Lago di Canterno', date: '', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
+    { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: '', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
   ],
 };
 

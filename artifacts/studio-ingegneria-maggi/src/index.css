@@ -3324,3 +3324,5 @@ button:focus-visible,
 .work-lightbox__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .work-lightbox__thumb:hover { opacity: 0.9; }
 .work-lightbox__thumb.is-active { opacity: 1; border-color: var(--blue-deep); }
+
+.work-card__client:empty { display: none; }
