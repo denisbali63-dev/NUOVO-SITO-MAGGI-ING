@@ -190,7 +190,7 @@ const portfolio: Project[] = [
   {
     title: 'Nuovo Ospedale Tiburtino',
     category: 'Architettura',
-    meta: 'Struttura sanitaria · Provincia di Roma',
+    meta: 'Struttura sanitaria · Tivoli (RM)',
     image: notFacade,
     description: projectDescription,
   },
@@ -211,7 +211,7 @@ const portfolio: Project[] = [
   {
     title: "Nuovo Ospedale Tiburtino · vista d'insieme",
     category: 'Architettura',
-    meta: 'Composizione e volumi · Provincia di Roma',
+    meta: 'Composizione e volumi · Tivoli (RM)',
     image: notOverview,
     description: projectDescription,
   },
@@ -225,7 +225,7 @@ const portfolio: Project[] = [
   {
     title: 'Paesaggio e connessioni',
     category: 'Territorio',
-    meta: 'Inserimento nel contesto · Provincia di Roma',
+    meta: 'Inserimento nel contesto · Tivoli (RM)',
     image: notAerial,
     description: projectDescription,
   },
