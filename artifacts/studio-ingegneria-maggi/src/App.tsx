@@ -101,6 +101,7 @@ const servicePanels = [
     activities: [
       'Studi di fattibilità e progettazione preliminare, definitiva ed esecutiva',
       'Progettazione architettonica, urbanistica e di interni',
+      'Recupero e rifunzionalizzazione dell’esistente e nuove costruzioni',
       'Edilizia pubblica, privata, residenziale, commerciale e turistico-ricettiva',
       'Progettazione impiantistica e coordinamento delle discipline',
     ],
@@ -123,54 +124,8 @@ const servicePanels = [
     Icon: Ruler,
   },
   {
-    slug: 'edilizia',
-    number: '03',
-    title: 'Edilizia',
-    detail: 'Recupero e nuovi edifici',
-    description: 'Accompagniamo la trasformazione del patrimonio edilizio, dal recupero dell’esistente alla costruzione di nuovi edifici.',
-    activities: [
-      'Ristrutturazione, restauro e riqualificazione del patrimonio esistente',
-      'Recupero di edifici storici e rifunzionalizzazione di immobili',
-      'Nuove costruzioni e ampliamenti',
-      'Progetti per edifici pubblici, servizi e attività ricettive',
-    ],
-    image: viboBuilding,
-    Icon: ShieldCheck,
-  },
-  {
-    slug: 'cantiere',
-    number: '04',
-    title: 'Cantiere',
-    detail: 'Direzione lavori e sicurezza',
-    description: 'Seguiamo la fase realizzativa con presenza, coordinamento e controllo, traducendo il progetto in un’opera eseguita correttamente.',
-    activities: [
-      'Direzione lavori e assistenza tecnica al cantiere',
-      'Coordinamento della sicurezza in fase di progettazione ed esecuzione',
-      'Controllo delle lavorazioni, dei tempi e della qualità',
-      'Supporto tecnico nella gestione dell’appalto e della chiusura dei lavori',
-    ],
-    image: asset('images/riuso-ferroviario.jpg'),
-    Icon: HardHat,
-  },
-  {
-    slug: 'indagini',
-    number: '05',
-    title: 'Indagini',
-    detail: 'Rilievi e diagnostica',
-    description: 'Partiamo dalla conoscenza concreta dell’edificio: rilievi, ispezioni e prove mirate per trasformare i dati in decisioni affidabili.',
-    activities: [
-      'Rilievi geometrici, materici e delle condizioni di conservazione',
-      'Ispezioni visive ed estrazione di campioni',
-      'Indagini endoscopiche, pacometriche, sclerometriche e Windsor',
-      'Carotaggi, prove con martinetto piatto, pull-out, prove di carico e di tiro',
-      'Rilievi per il rischio di sfondellamento e prove su elementi non strutturali',
-    ],
-    image: asset('images/edificio-restauro.jpg'),
-    Icon: ScanSearch,
-  },
-  {
     slug: 'territorio',
-    number: '06',
+    number: '03',
     title: 'Territorio',
     detail: 'Ambiente e infrastrutture',
     description: 'Mettiamo in relazione opere, ambiente e paesaggio per interventi che rispettano il territorio e costruiscono valore nel tempo.',
@@ -183,7 +138,39 @@ const servicePanels = [
     image: notOverview,
     Icon: Map,
   },
+  {
+    slug: 'indagini',
+    number: '04',
+    title: 'Indagini e Geologia',
+    detail: 'Rilievi, diagnostica e geologia',
+    description: 'Partiamo dalla conoscenza concreta dell’edificio e del terreno: rilievi, ispezioni, prove mirate e indagini geologiche per trasformare i dati in decisioni affidabili.',
+    activities: [
+      'Rilievi geometrici, materici e delle condizioni di conservazione',
+      'Ispezioni visive ed estrazione di campioni',
+      'Indagini endoscopiche, pacometriche, sclerometriche e Windsor',
+      'Carotaggi, prove con martinetto piatto, pull-out, prove di carico e di tiro',
+      'Indagini geologiche e geotecniche a supporto della progettazione',
+    ],
+    image: asset('images/edificio-restauro.jpg'),
+    Icon: ScanSearch,
+  },
+  {
+    slug: 'cantiere',
+    number: '05',
+    title: 'Cantiere',
+    detail: 'Direzione lavori e sicurezza',
+    description: 'Seguiamo la fase realizzativa con presenza, coordinamento e controllo, traducendo il progetto in un’opera eseguita correttamente.',
+    activities: [
+      'Direzione lavori e assistenza tecnica al cantiere',
+      'Coordinamento della sicurezza in fase di progettazione ed esecuzione',
+      'Controllo delle lavorazioni, dei tempi e della qualità',
+      'Supporto tecnico nella gestione dell’appalto e della chiusura dei lavori',
+    ],
+    image: asset('images/riuso-ferroviario.jpg'),
+    Icon: HardHat,
+  },
 ];
+
 type ServicePanel = typeof servicePanels[number];
 
 type Project = {
@@ -356,6 +343,7 @@ function SectionHeading({
 
 type Work = {
   image: string;
+  images?: string[];
   client: string;
   title: string;
   date: string;
@@ -367,16 +355,13 @@ const workDescription =
 
 const works: Record<string, Work[]> = {
   architettura: [
-    { image: notFacade, client: 'Committente · Luogo', title: 'Progetto NOT', date: 'Anno · stato', description: workDescription },
-    { image: notOverview, client: 'Committente · Luogo', title: "Progetto NOT · vista d'insieme", date: 'Anno · stato', description: workDescription },
+    { image: asset('progetti/mattatoio-1.jpg'), images: [asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-2.jpg'), asset('progetti/mattatoio-3.jpg')], client: 'Recupero e rifunzionalizzazione', title: 'Ex Mattatoio di Subiaco', date: '', description: "Recupero dell'ex mattatoio comunale di Subiaco, trasformato in un nuovo spazio pubblico al servizio del territorio e del Parco dei Monti Simbruini: consolidamento dell'involucro, nuova copertura in legno e riorganizzazione degli spazi interni ed esterni." },
+    { image: asset('progetti/filettino.jpg'), client: 'Edilizia scolastica', title: 'Scuola di Filettino', date: '', description: "Progetto per l'edificio scolastico di Filettino, con partizioni interne mobili per adattare gli ambienti alle diverse attività didattiche. In immagine il rendering di progetto." },
   ],
   strutture: [
-    { image: roofStructure, client: 'Committente · Luogo', title: 'Intervento strutturale', date: 'Anno · stato', description: workDescription },
-    { image: viboPlan, client: 'Committente · Luogo', title: 'Progetto VIBO · strutture', date: 'Anno · stato', description: workDescription },
-  ],
-  edilizia: [
-    { image: viboBuilding, client: 'Committente · Luogo', title: 'Progetto VIBO', date: 'Anno · stato', description: workDescription },
-    { image: notAerial, client: 'Committente · Luogo', title: 'Recupero edilizio', date: 'Anno · stato', description: workDescription },
+    { image: asset('progetti/copertura-1.jpg'), images: [asset('progetti/copertura-1.jpg'), asset('progetti/copertura-2.jpg')], client: 'Struttura in legno', title: 'Copertura dell’ex Mattatoio', date: '', description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, progettata per il recupero dell'ex mattatoio di Subiaco: una soluzione leggera e reversibile, integrata con la muratura esistente." },
+    { image: asset('progetti/ponte-comino.jpg'), client: 'Infrastrutture', title: 'Ponte in Valle di Comino', date: '', description: "Opera d'arte stradale sul corso d'acqua: progettazione e verifica dell'impalcato e delle spalle, con attenzione all'inserimento nel contesto fluviale." },
+    { image: asset('progetti/passerella-comino.jpg'), client: 'Infrastrutture', title: 'Passerella pedonale in Valle di Comino', date: '', description: "Passerella pedonale di attraversamento in acciaio: una struttura leggera e durevole per collegare in sicurezza le due sponde." },
   ],
   cantiere: [
     { image: notOverview, client: 'Committente · Luogo', title: 'Direzione lavori', date: 'Anno · stato', description: workDescription },
@@ -395,13 +380,14 @@ const works: Record<string, Work[]> = {
     { image: asset('indagini/11_puntelli.jpg'), client: 'Prova di carico', title: "Prova di carico con puntelli", date: '', description: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." },
   ],
   territorio: [
-    { image: notAerial, client: 'Committente · Luogo', title: 'Territorio e infrastrutture', date: 'Anno · stato', description: workDescription },
+    { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg')], client: 'Ambiente e infrastrutture', title: 'Pista ciclopedonale del Lago di Canterno', date: '', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
   ],
 };
 
 function ServiceDetail({ service }: { service: ServicePanel }) {
   const { Icon } = service;
   const [openWork, setOpenWork] = useState<Work | null>(null);
+  const [lbIndex, setLbIndex] = useState(0);
 
   return (
     <section className="service-detail">
@@ -409,7 +395,7 @@ function ServiceDetail({ service }: { service: ServicePanel }) {
         <a className="service-detail__back" href="#servizi">
           <ArrowRight size={16} /> Torna ai servizi
         </a>
-        <span className="service-detail__index">Servizio {service.number} / 06</span>
+        <span className="service-detail__index">Servizio {service.number} / 05</span>
       </div>
       <div className="service-detail__hero">
         <div className="service-detail__copy">
@@ -444,8 +430,8 @@ function ServiceDetail({ service }: { service: ServicePanel }) {
                 key={work.title}
                 role="button"
                 tabIndex={0}
-                onClick={() => setOpenWork(work)}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpenWork(work); } }}
+                onClick={() => { setOpenWork(work); setLbIndex(0); }}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpenWork(work); setLbIndex(0); } }}
               >
                 <div className="work-card__image">
                   <img src={work.image} alt={work.title} />
@@ -467,13 +453,28 @@ function ServiceDetail({ service }: { service: ServicePanel }) {
               <X size={22} />
             </button>
             <div className="work-lightbox__image">
-              <img src={openWork.image} alt={openWork.title} />
+              <img src={(openWork.images && openWork.images[lbIndex]) || openWork.image} alt={openWork.title} />
             </div>
             <div className="work-lightbox__body">
               <span className="work-card__client">{openWork.client}</span>
               <h3>{openWork.title}</h3>
               <span className="work-card__date">{openWork.date}</span>
               <p>{openWork.description}</p>
+              {openWork.images && openWork.images.length > 1 && (
+                <div className="work-lightbox__thumbs">
+                  {openWork.images.map((img, i) => (
+                    <button
+                      key={img}
+                      type="button"
+                      className={`work-lightbox__thumb ${i === lbIndex ? 'is-active' : ''}`}
+                      onClick={() => setLbIndex(i)}
+                      aria-label={`Foto ${i + 1}`}
+                    >
+                      <img src={img} alt="" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
