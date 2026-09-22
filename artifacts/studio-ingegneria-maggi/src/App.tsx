@@ -184,7 +184,7 @@ type Project = {
 const projectDescription =
   "Descrizione approfondita del progetto: un breve testo che racconta l'intervento, il ruolo dello studio (dal rilievo e progettazione fino alla direzione dei lavori) e i risultati ottenuti. Testo di esempio da sostituire con la descrizione reale del progetto.";
 
-const portfolioCategories = ['Tutti', 'Architettura', 'Strutture', 'Edilizia', 'Cantiere', 'Territorio'];
+const portfolioCategories = ['Tutti', 'Architettura', 'Strutture', 'Territorio'];
 
 const portfolio: Project[] = [
   {
@@ -192,56 +192,56 @@ const portfolio: Project[] = [
     category: 'Architettura',
     meta: 'Struttura sanitaria · Tivoli (RM)',
     image: notFacade,
-    description: projectDescription,
+    description: "Progetto per una nuova struttura sanitaria nel territorio tiburtino: organizzazione funzionale dei volumi, dei percorsi e dei collegamenti, con attenzione all'inserimento nel contesto.",
   },
   {
-    title: 'Polo formativo VIBO',
-    category: 'Edilizia',
-    meta: 'Spazi per la formazione · Vibo Valentia',
-    image: viboBuilding,
-    description: projectDescription,
-  },
-  {
-    title: 'Grande copertura',
+    title: 'Adeguamento sismico dell’ITG di Vibo Valentia',
     category: 'Strutture',
-    meta: 'Progettazione strutturale · Lazio',
-    image: roofStructure,
-    description: projectDescription,
+    meta: 'Adeguamento sismico · Vibo Valentia (VV)',
+    image: asset('progetti/vibo/vibo-01.jpg'),
+    description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri: rinforzo delle strutture in cemento armato dei tre corpi di fabbrica secondo le NTC 2018 ed efficientamento energetico dell'edificio.",
+  },
+  {
+    title: 'Ex Mattatoio di Subiaco',
+    category: 'Architettura',
+    meta: 'Recupero e rifunzionalizzazione · Subiaco (RM)',
+    image: asset('progetti/mattatoio-3.jpg'),
+    description: "Recupero dell'ex mattatoio comunale, trasformato in un nuovo spazio pubblico polifunzionale al servizio del territorio e del Parco dei Monti Simbruini.",
+  },
+  {
+    title: 'Pista ciclopedonale del Lago di Canterno',
+    category: 'Territorio',
+    meta: 'Ambiente e paesaggio · Canterno (FR)',
+    image: asset('progetti/canterno-1.jpg'),
+    description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione per una fruizione accessibile del paesaggio.",
+  },
+  {
+    title: 'Copertura dell’ex Mattatoio',
+    category: 'Strutture',
+    meta: 'Struttura in legno · Subiaco (RM)',
+    image: asset('progetti/copertura-1.jpg'),
+    description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, leggera e reversibile, integrata con la muratura esistente dell'ex mattatoio.",
+  },
+  {
+    title: 'Scuola di Filettino',
+    category: 'Architettura',
+    meta: 'Edilizia scolastica · Filettino (FR)',
+    image: asset('progetti/filettino.jpg'),
+    description: "Progetto per l'edificio scolastico di Filettino, con partizioni interne mobili per adattare gli ambienti alle diverse attività didattiche.",
+  },
+  {
+    title: 'Passerella pedonale in Valle di Comino',
+    category: 'Strutture',
+    meta: 'Infrastrutture · Valle di Comino (FR)',
+    image: asset('progetti/ponte-comino.jpg'),
+    description: "Attraversamento pedonale in Valle di Comino: struttura metallica leggera e durevole per collegare in sicurezza le due sponde.",
   },
   {
     title: "Nuovo Ospedale Tiburtino · vista d'insieme",
     category: 'Architettura',
     meta: 'Composizione e volumi · Tivoli (RM)',
     image: notOverview,
-    description: projectDescription,
-  },
-  {
-    title: 'VIBO · dettaglio strutturale',
-    category: 'Strutture',
-    meta: 'Disegno e dettaglio · Vibo Valentia',
-    image: viboPlan,
-    description: projectDescription,
-  },
-  {
-    title: 'Paesaggio e connessioni',
-    category: 'Territorio',
-    meta: 'Inserimento nel contesto · Tivoli (RM)',
-    image: notAerial,
-    description: projectDescription,
-  },
-  {
-    title: 'Recupero edilizio',
-    category: 'Edilizia',
-    meta: 'Restauro e riuso · Centro storico',
-    image: asset('images/edificio-restauro.jpg'),
-    description: projectDescription,
-  },
-  {
-    title: 'Riuso area ferroviaria',
-    category: 'Cantiere',
-    meta: 'Rifunzionalizzazione · Area ferroviaria',
-    image: asset('images/riuso-ferroviario.jpg'),
-    description: projectDescription,
+    description: "Vista d'insieme del complesso: composizione dei volumi e relazione con il contesto urbano e paesaggistico.",
   },
 ];
 
@@ -360,7 +360,7 @@ const works: Record<string, Work[]> = {
   ],
   strutture: [
     { image: asset('progetti/vibo/vibo-01.jpg'), images: [asset('progetti/vibo/vibo-01.jpg'), asset('progetti/vibo/vibo-02.jpg'), asset('progetti/vibo/vibo-03.jpg'), asset('progetti/vibo/vibo-04.jpg'), asset('progetti/vibo/vibo-05.jpg'), asset('progetti/vibo/vibo-06.jpg'), asset('progetti/vibo/vibo-07.jpg'), asset('progetti/vibo/vibo-08.jpg'), asset('progetti/vibo/vibo-09.jpg'), asset('progetti/vibo/vibo-10.jpg'), asset('progetti/vibo/vibo-11.jpg')], client: '', title: 'Adeguamento sismico dell’ITG di Vibo Valentia', date: '', description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri di Vibo Valentia. Sulla base di analisi pushover secondo le NTC 2018, rinforzo delle strutture in cemento armato dei tre corpi di fabbrica — ringrossi armati di pilastri, travi e fondazioni e adeguamento dei giunti sismici — insieme all'efficientamento energetico dell'edificio: cappotto termico, nuovi infissi a taglio termico, illuminazione a LED e impianto fotovoltaico. In galleria render di progetto, prospetti, sezioni, piante e particolari costruttivi." },
-    { image: asset('progetti/copertura-1.jpg'), images: [asset('progetti/copertura-1.jpg'), asset('progetti/copertura-2.jpg')], client: '', title: 'Copertura dell’ex Mattatoio', date: '', description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, progettata per il recupero dell'ex mattatoio di Subiaco: una soluzione leggera e reversibile, integrata con la muratura esistente." },
+    { image: asset('progetti/copertura-1.jpg'), client: '', title: 'Copertura dell’ex Mattatoio', date: '', description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, progettata per il recupero dell'ex mattatoio di Subiaco: una soluzione leggera e reversibile, integrata con la muratura esistente." },
     { image: asset('progetti/ponte-comino.jpg'), images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')], client: '', title: 'Passerella pedonale in Valle di Comino', date: '', description: "Attraversamento pedonale in Valle di Comino, con struttura metallica leggera sul corso d'acqua. (Descrizione da confermare.)" },
   ],
   cantiere: [
@@ -1028,7 +1028,7 @@ function App() {
                   </SectionHeading>
                 </div>
                 <div className="projects__heading-copy">
-                  <p>Una selezione di opere, studi e visioni che raccontano il lavoro dello studio attraverso architettura, strutture, edilizia, cantiere e territorio. Scorri le opere o filtra per ambito; apri un progetto per la scheda completa.</p>
+                  <p>Una selezione di opere, studi e visioni che raccontano il lavoro dello studio attraverso architettura, strutture e territorio. Scorri le opere o filtra per ambito; apri un progetto per la scheda completa.</p>
                   <span className="projects__count">{portfolio.length} opere realizzate</span>
                 </div>
               </div>
