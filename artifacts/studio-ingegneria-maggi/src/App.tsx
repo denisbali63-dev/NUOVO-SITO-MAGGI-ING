@@ -188,9 +188,9 @@ const portfolioCategories = ['Tutti', 'Architettura', 'Strutture', 'Edilizia', '
 
 const portfolio: Project[] = [
   {
-    title: 'Ospedale NOT',
+    title: 'Nuovo Ospedale Tiburtino',
     category: 'Architettura',
-    meta: 'Struttura sanitaria · Nola (NA)',
+    meta: 'Struttura sanitaria · Provincia di Roma',
     image: notFacade,
     description: projectDescription,
   },
@@ -209,9 +209,9 @@ const portfolio: Project[] = [
     description: projectDescription,
   },
   {
-    title: "Ospedale NOT · vista d'insieme",
+    title: "Nuovo Ospedale Tiburtino · vista d'insieme",
     category: 'Architettura',
-    meta: 'Composizione e volumi · Nola (NA)',
+    meta: 'Composizione e volumi · Provincia di Roma',
     image: notOverview,
     description: projectDescription,
   },
@@ -225,7 +225,7 @@ const portfolio: Project[] = [
   {
     title: 'Paesaggio e connessioni',
     category: 'Territorio',
-    meta: 'Inserimento nel contesto · Nola (NA)',
+    meta: 'Inserimento nel contesto · Provincia di Roma',
     image: notAerial,
     description: projectDescription,
   },
