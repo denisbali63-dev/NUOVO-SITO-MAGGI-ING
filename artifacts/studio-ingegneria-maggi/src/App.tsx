@@ -135,7 +135,7 @@ const servicePanels = [
       'Interventi di riqualificazione e valorizzazione dei luoghi',
       'Supporto tecnico per enti pubblici, imprese e soggetti privati',
     ],
-    image: notOverview,
+    image: asset('progetti/canterno-1.jpg'),
     Icon: Map,
   },
   {
@@ -471,27 +471,33 @@ function ServiceDetail({ service }: { service: ServicePanel }) {
             </button>
             <div className="work-lightbox__image">
               <img src={(openWork.images && openWork.images[lbIndex]) || openWork.image} alt={openWork.title} />
+              {openWork.images && openWork.images.length > 1 && (
+                <>
+                  <button
+                    className="work-lightbox__nav work-lightbox__nav--prev"
+                    type="button"
+                    aria-label="Foto precedente"
+                    onClick={() => setLbIndex((i) => { const n = openWork.images?.length ?? 1; return (i - 1 + n) % n; })}
+                  >
+                    <ArrowLeft size={24} />
+                  </button>
+                  <button
+                    className="work-lightbox__nav work-lightbox__nav--next"
+                    type="button"
+                    aria-label="Foto successiva"
+                    onClick={() => setLbIndex((i) => { const n = openWork.images?.length ?? 1; return (i + 1) % n; })}
+                  >
+                    <ArrowRight size={24} />
+                  </button>
+                  <span className="work-lightbox__counter">{lbIndex + 1} / {openWork.images.length}</span>
+                </>
+              )}
             </div>
             <div className="work-lightbox__body">
               <span className="work-card__client">{openWork.client}</span>
               <h3>{openWork.title}</h3>
               <span className="work-card__date">{openWork.date}</span>
               <p>{openWork.description}</p>
-              {openWork.images && openWork.images.length > 1 && (
-                <div className="work-lightbox__thumbs">
-                  {openWork.images.map((img, i) => (
-                    <button
-                      key={img}
-                      type="button"
-                      className={`work-lightbox__thumb ${i === lbIndex ? 'is-active' : ''}`}
-                      onClick={() => setLbIndex(i)}
-                      aria-label={`Foto ${i + 1}`}
-                    >
-                      <img src={img} alt="" />
-                    </button>
-                  ))}
-                </div>
-              )}
             </div>
           </div>
         </div>
