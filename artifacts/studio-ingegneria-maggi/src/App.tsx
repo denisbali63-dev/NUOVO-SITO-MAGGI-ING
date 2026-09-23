@@ -949,12 +949,12 @@ function App() {
               <div className="clients__track">
                 <div className="clients__row">
                   {clientLogos.map((c) => (
-                    <span className="clients__item" key={c.name}>
+                    <span className={`clients__item${c.name === 'Comune di Matera' ? ' clients__item--lg' : ''}`} key={c.name}>
                       <img src={asset(c.src)} alt={c.name} loading="lazy" />
                     </span>
                   ))}
                   {clientLogos.map((c) => (
-                    <span className="clients__item" key={`${c.name}-dup`} aria-hidden="true">
+                    <span className={`clients__item${c.name === 'Comune di Matera' ? ' clients__item--lg' : ''}`} key={`${c.name}-dup`} aria-hidden="true">
                       <img src={asset(c.src)} alt="" loading="lazy" />
                     </span>
                   ))}

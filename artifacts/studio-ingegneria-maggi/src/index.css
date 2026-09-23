@@ -2372,9 +2372,11 @@ a.cert-card {
   object-fit: contain;
   display: block;
 }
+.clients__item--lg img { height: 70px; max-width: 130px; }
 @media (max-width: 720px) {
   .clients__item { padding: 0 24px; }
   .clients__item img { height: 42px; max-width: 150px; }
+  .clients__item--lg img { height: 56px; max-width: 110px; }
 }
 
 /* Info sedi nelle location card */
