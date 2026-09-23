@@ -74,9 +74,11 @@ const careerRoles = [
 ];
 
 const clientLogos = [
+  { src: 'loghi-clienti/senato.png', name: 'Senato della Repubblica' },
   { src: 'loghi-clienti/ministero-interno.png', name: "Ministero dell'Interno" },
   { src: 'loghi-clienti/autostrade.png', name: "Autostrade per l'Italia" },
   { src: 'loghi-clienti/anas.png', name: 'ANAS' },
+  { src: 'loghi-clienti/sogesid.png', name: 'Sogesid' },
   { src: 'loghi-clienti/invitalia.png', name: 'Invitalia' },
   { src: 'loghi-clienti/sport-e-salute.png', name: 'Sport e Salute' },
   { src: 'loghi-clienti/enav.png', name: 'ENAV' },
@@ -85,10 +87,19 @@ const clientLogos = [
   { src: 'loghi-clienti/roma-capitale.png', name: 'Comune di Roma Capitale' },
   { src: 'loghi-clienti/risorse-per-roma.png', name: 'Risorse per Roma' },
   { src: 'loghi-clienti/ater-roma.png', name: 'ATER Roma' },
+  { src: 'loghi-clienti/ater-civitavecchia.png', name: 'ATER Civitavecchia' },
+  { src: 'loghi-clienti/ater-rieti.png', name: 'ATER Rieti' },
   { src: 'loghi-clienti/acea.png', name: 'ACEA Infrastructure' },
+  { src: 'loghi-clienti/acea.png', name: 'ACEA ATO 2' },
+  { src: 'loghi-clienti/acea.png', name: 'ACEA ATO 5' },
+  { src: 'loghi-clienti/acea.png', name: 'ACEA Elabori' },
   { src: 'loghi-clienti/cm-bari.png', name: 'Città metropolitana di Bari' },
+  { src: 'loghi-clienti/provincia-viterbo.png', name: 'Provincia di Viterbo' },
   { src: 'loghi-clienti/provincia-latina.png', name: 'Provincia di Latina' },
   { src: 'loghi-clienti/provincia-frosinone.png', name: 'Provincia di Frosinone' },
+  { src: 'loghi-clienti/reggio-calabria.png', name: 'Comune di Reggio Calabria' },
+  { src: 'loghi-clienti/potenza.png', name: 'Comune di Potenza' },
+  { src: 'loghi-clienti/matera.png', name: 'Comune di Matera' },
 ];
 
 const servicePanels = [
