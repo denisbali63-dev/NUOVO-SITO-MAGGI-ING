@@ -542,6 +542,12 @@ function ItalyMap() {
           <circle className="sede-halo" cx={p.cx} cy={p.cy} r="26" />
           <circle className="sede-dot" cx={p.cx} cy={p.cy} r="12" />
           <text className="sede-label" x={p.cx + 32} y={p.cy + 9}>{p.name}</text>
+          <g className="sede-tooltip" transform={`translate(${p.cx}, ${p.cy})`}>
+            <rect className="sede-tooltip__bg" x="-150" y="-120" width="300" height="98" rx="12" />
+            <text className="sede-tooltip__name" x="-132" y="-86">{p.name}</text>
+            <text className="sede-tooltip__line sede-tooltip__link" x="-132" y="-58">{p.phone}</text>
+            <text className="sede-tooltip__line sede-tooltip__link" x="-132" y="-34">{p.email}</text>
+          </g>
         </g>
       ))}
     </svg>
@@ -1013,7 +1019,7 @@ function App() {
                 <a className="text-link" href="#contatti">Parliamo di un progetto <ArrowRight size={16} /></a>
               </div>
               <div className="locations__list">
-                <article className="location-card location-card--home">
+                <article className="location-card">
                   <span>01 / Sede principale</span>
                   <h3>Fiuggi</h3>
                   <p>Il punto di partenza dello studio, dove si incontrano esperienza, progettazione e coordinamento.</p>

@@ -3353,3 +3353,41 @@ button:focus-visible,
   .work-lightbox__nav--prev { left: 10px; }
   .work-lightbox__nav--next { right: 10px; }
 }
+
+/* === Dove lavoriamo: mappa interattiva, comparsa allo scroll, hover sedi === */
+.locations__map .sede-marker { pointer-events: auto; cursor: pointer; }
+.locations__map .sede-dot { transition: fill 0.2s ease; }
+.locations__map .sede-marker:hover .sede-dot { fill: var(--blue); }
+.locations__map .sede-marker:hover .sede-halo { opacity: 0.85; }
+.locations__map .sede-tooltip { opacity: 0; pointer-events: none; transition: opacity 0.18s ease; }
+.locations__map .sede-marker:hover .sede-tooltip { opacity: 1; }
+.sede-tooltip__bg { fill: var(--ink); }
+.sede-tooltip__name { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 700; fill: #ffffff; }
+.sede-tooltip__line { font-family: 'DM Sans', sans-serif; font-size: 16px; fill: #cfe4ee; }
+.sede-tooltip__link { fill: var(--blue); }
+
+@media (min-width: 1280px) {
+  .locations.reveal .locations__map { opacity: 0; transform: translateY(30px); }
+  .locations.reveal.is-visible .locations__map {
+    opacity: 1; transform: none;
+    transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+  }
+  .locations.reveal .sede-marker { opacity: 0; }
+  .locations.reveal.is-visible .sede-marker { opacity: 1; transition: opacity 0.5s ease; }
+  .locations.reveal.is-visible .sede-marker:nth-of-type(1) { transition-delay: 0.7s; }
+  .locations.reveal.is-visible .sede-marker:nth-of-type(2) { transition-delay: 0.85s; }
+  .locations.reveal.is-visible .sede-marker:nth-of-type(3) { transition-delay: 1s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .locations__map, .locations__map .sede-marker { opacity: 1 !important; transform: none !important; }
+}
+
+/* Schede sedi: nessuna fissa, evidenziazione all'hover */
+.location-card { transition: background-color 0.25s ease, color 0.25s ease; }
+.location-card:hover { background: var(--ink); color: var(--white); }
+.location-card:hover > span { color: var(--blue); }
+.location-card:hover h3 { color: var(--white); }
+.location-card:hover p { color: #b9d1dc; }
+.location-card:hover .location-card__addr { color: #ffffff; }
+.location-card:hover .location-card__info { border-top-color: rgba(255, 255, 255, 0.22); }
+.location-card:hover .location-card__info a { color: var(--blue); }
