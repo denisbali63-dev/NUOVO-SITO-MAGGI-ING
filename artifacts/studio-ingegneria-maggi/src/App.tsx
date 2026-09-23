@@ -66,11 +66,6 @@ const careerBenefits = [
 const careerRoles = [
   'Ingegneri strutturisti',
   'Ingegneri civili e delle infrastrutture',
-  'Architetti',
-  'Geologi',
-  'Tecnici e disegnatori BIM',
-  'Geometri e tecnici di cantiere',
-  'Amministrazione e segreteria',
 ];
 
 const clientLogos = [
@@ -81,6 +76,7 @@ const clientLogos = [
   { src: 'loghi-clienti/sogesid.png', name: 'Sogesid' },
   { src: 'loghi-clienti/invitalia.png', name: 'Invitalia' },
   { src: 'loghi-clienti/sport-e-salute.png', name: 'Sport e Salute' },
+  { src: 'loghi-clienti/tav.png', name: 'TAV' },
   { src: 'loghi-clienti/enav.png', name: 'ENAV' },
   { src: 'loghi-clienti/regione-lazio.png', name: 'Regione Lazio' },
   { src: 'loghi-clienti/cm-roma.png', name: 'Città metropolitana di Roma' },
@@ -110,7 +106,7 @@ const servicePanels = [
     detail: 'Progettazione integrata',
     description: 'Diamo forma a edifici e spazi attraverso un progetto coordinato, attento alla funzione, al contesto e alla qualità dell’esperienza.',
     activities: [
-      'Studi di fattibilità e progettazione preliminare, definitiva ed esecutiva',
+      'Progetti di fattibilità tecnico-economica ed esecutivo',
       'Progettazione architettonica, urbanistica e di interni',
       'Recupero e rifunzionalizzazione dell’esistente e nuove costruzioni',
       'Edilizia pubblica, privata, residenziale, commerciale e turistico-ricettiva',
@@ -213,11 +209,11 @@ const portfolio: Project[] = [
     description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri: rinforzo delle strutture in cemento armato dei tre corpi di fabbrica secondo le NTC 2018 ed efficientamento energetico dell'edificio.",
   },
   {
-    title: 'Ex Mattatoio di Subiaco',
+    title: 'Centro pellegrinaggio di Subiaco',
     category: 'Architettura',
     meta: 'Recupero e rifunzionalizzazione · Subiaco (RM)',
     image: asset('progetti/mattatoio-3.jpg'),
-    description: "Recupero dell'ex mattatoio comunale, trasformato in un nuovo spazio pubblico polifunzionale al servizio del territorio e del Parco dei Monti Simbruini.",
+    description: "Recupero e rifunzionalizzazione dell'edificio comunale di Subiaco in un nuovo centro di pellegrinaggio al servizio del territorio e del Parco dei Monti Simbruini.",
   },
   {
     title: 'Pista ciclopedonale del Lago di Canterno',
@@ -227,11 +223,11 @@ const portfolio: Project[] = [
     description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione per una fruizione accessibile del paesaggio.",
   },
   {
-    title: 'Copertura dell’ex Mattatoio',
+    title: 'Copertura del Centro pellegrinaggio',
     category: 'Strutture',
     meta: 'Struttura in legno · Subiaco (RM)',
     image: asset('progetti/copertura-1.jpg'),
-    description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, leggera e reversibile, integrata con la muratura esistente dell'ex mattatoio.",
+    description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, leggera e reversibile, integrata con la muratura esistente del centro di pellegrinaggio.",
   },
   {
     title: 'Scuola di Filettino',
@@ -380,16 +376,16 @@ const workDescription =
 
 const works: Record<string, Work[]> = {
   architettura: [
-    { image: asset('progetti/tiburtino/tib-16.jpg'), images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')], client: '', title: 'Nuovo Ospedale Tiburtino', date: '', description: "Progetto per il Nuovo Ospedale Tiburtino, a Tivoli (RM): un complesso sanitario dall'impianto curvo che organizza degenze, servizi e percorsi attorno a spazi verdi e terrazze terapeutiche, con grande attenzione all'inserimento nel paesaggio e alla sostenibilità energetica." },
-    { image: asset('progetti/bellegra/bel-07.jpg'), images: [asset('progetti/bellegra/bel-07.jpg'), asset('progetti/bellegra/bel-05.jpg'), asset('progetti/bellegra/bel-08.jpg'), asset('progetti/bellegra/bel-27.jpg'), asset('progetti/bellegra/bel-29.jpg'), asset('progetti/bellegra/bel-31.jpg'), asset('progetti/bellegra/bel-34.jpg')], client: '', title: 'Scuola San Francesco d’Assisi — Bellegra', date: '', description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: un edificio che si adatta al pendio, con aule luminose, spazi comuni e aree gioco all'aperto, pensato per la sicurezza e il benessere dei bambini." },
-    { image: asset('progetti/fiano/fia-02.jpg'), images: [asset('progetti/fiano/fia-02.jpg'), asset('progetti/fiano/fia-01.jpg')], client: '', title: 'Ampliamento Scuola “Francesco da Fiano”', date: '', description: "Ampliamento della Scuola Media “Francesco da Fiano” a Fiano Romano (RM): nuovi spazi didattici e un auditorium integrati con l'edificio esistente e con il contesto." },
-    { image: asset('progetti/mattatoio-3.jpg'), images: [asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')], client: '', title: 'Ex Mattatoio di Subiaco', date: '', description: "Recupero dell'ex mattatoio comunale di Subiaco, trasformato in un nuovo spazio pubblico polifunzionale al servizio del territorio e del Parco dei Monti Simbruini: consolidamento dell'involucro, nuova copertura in legno, sala polifunzionale e spazi espositivi." },
-    { image: asset('progetti/filettino.jpg'), client: '', title: 'Scuola di Filettino', date: '', description: "Progetto per l'edificio scolastico di Filettino, con partizioni interne mobili per adattare gli ambienti alle diverse attività didattiche. In immagine il rendering di progetto." },
+    { image: asset('progetti/tiburtino/tib-16.jpg'), images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')], client: '', title: 'Nuovo Ospedale Tiburtino', date: 'Tivoli (RM)', description: "Progetto per il Nuovo Ospedale Tiburtino, a Tivoli (RM): un complesso sanitario dall'impianto curvo che organizza degenze, servizi e percorsi attorno a spazi verdi e terrazze terapeutiche, con grande attenzione all'inserimento nel paesaggio e alla sostenibilità energetica." },
+    { image: asset('progetti/bellegra/bel-07.jpg'), images: [asset('progetti/bellegra/bel-07.jpg'), asset('progetti/bellegra/bel-05.jpg'), asset('progetti/bellegra/bel-08.jpg'), asset('progetti/bellegra/bel-27.jpg'), asset('progetti/bellegra/bel-29.jpg'), asset('progetti/bellegra/bel-31.jpg'), asset('progetti/bellegra/bel-34.jpg')], client: '', title: 'Scuola San Francesco d’Assisi — Bellegra', date: 'Bellegra (RM)', description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: un edificio che si adatta al pendio, con aule luminose, spazi comuni e aree gioco all'aperto, pensato per la sicurezza e il benessere dei bambini." },
+    { image: asset('progetti/fiano/fia-02.jpg'), images: [asset('progetti/fiano/fia-02.jpg'), asset('progetti/fiano/fia-01.jpg')], client: '', title: 'Ampliamento Scuola “Francesco da Fiano”', date: 'Fiano Romano (RM)', description: "Ampliamento della Scuola Media “Francesco da Fiano” a Fiano Romano (RM): nuovi spazi didattici e un auditorium integrati con l'edificio esistente e con il contesto." },
+    { image: asset('progetti/mattatoio-3.jpg'), images: [asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')], client: '', title: 'Centro pellegrinaggio di Subiaco', date: 'Subiaco (RM)', description: "Recupero e rifunzionalizzazione dell'edificio comunale di Subiaco in un nuovo centro di pellegrinaggio al servizio del territorio e del Parco dei Monti Simbruini: consolidamento dell'involucro, nuova copertura in legno, sala polifunzionale e spazi di accoglienza." },
+    { image: asset('progetti/filettino.jpg'), client: '', title: 'Scuola di Filettino', date: 'Filettino (FR)', description: "Progetto per l'edificio scolastico di Filettino, con partizioni interne mobili per adattare gli ambienti alle diverse attività didattiche. In immagine il rendering di progetto." },
   ],
   strutture: [
-    { image: asset('progetti/vibo/vibo-01.jpg'), images: [asset('progetti/vibo/vibo-01.jpg'), asset('progetti/vibo/vibo-02.jpg'), asset('progetti/vibo/vibo-03.jpg'), asset('progetti/vibo/vibo-04.jpg'), asset('progetti/vibo/vibo-05.jpg'), asset('progetti/vibo/vibo-06.jpg'), asset('progetti/vibo/vibo-07.jpg'), asset('progetti/vibo/vibo-08.jpg'), asset('progetti/vibo/vibo-09.jpg'), asset('progetti/vibo/vibo-10.jpg'), asset('progetti/vibo/vibo-11.jpg')], client: '', title: 'Adeguamento sismico dell’ITG di Vibo Valentia', date: '', description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri di Vibo Valentia. Sulla base di analisi pushover secondo le NTC 2018, rinforzo delle strutture in cemento armato dei tre corpi di fabbrica — ringrossi armati di pilastri, travi e fondazioni e adeguamento dei giunti sismici — insieme all'efficientamento energetico dell'edificio: cappotto termico, nuovi infissi a taglio termico, illuminazione a LED e impianto fotovoltaico. In galleria render di progetto, prospetti, sezioni, piante e particolari costruttivi." },
-    { image: asset('progetti/copertura-1.jpg'), client: '', title: 'Copertura dell’ex Mattatoio', date: '', description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, progettata per il recupero dell'ex mattatoio di Subiaco: una soluzione leggera e reversibile, integrata con la muratura esistente." },
-    { image: asset('progetti/ponte-comino.jpg'), images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')], client: '', title: 'Passerella pedonale in Valle di Comino', date: '', description: "Attraversamento pedonale in Valle di Comino, con struttura metallica leggera sul corso d'acqua. (Descrizione da confermare.)" },
+    { image: asset('progetti/vibo/vibo-01.jpg'), images: [asset('progetti/vibo/vibo-01.jpg'), asset('progetti/vibo/vibo-02.jpg'), asset('progetti/vibo/vibo-03.jpg'), asset('progetti/vibo/vibo-04.jpg'), asset('progetti/vibo/vibo-05.jpg'), asset('progetti/vibo/vibo-06.jpg'), asset('progetti/vibo/vibo-07.jpg'), asset('progetti/vibo/vibo-08.jpg'), asset('progetti/vibo/vibo-09.jpg'), asset('progetti/vibo/vibo-10.jpg'), asset('progetti/vibo/vibo-11.jpg')], client: '', title: 'Adeguamento sismico dell’ITG di Vibo Valentia', date: 'Vibo Valentia (VV)', description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri di Vibo Valentia. Sulla base di analisi pushover secondo le NTC 2018, rinforzo delle strutture in cemento armato dei tre corpi di fabbrica — ringrossi armati di pilastri, travi e fondazioni e adeguamento dei giunti sismici — insieme all'efficientamento energetico dell'edificio: cappotto termico, nuovi infissi a taglio termico, illuminazione a LED e impianto fotovoltaico. In galleria render di progetto, prospetti, sezioni, piante e particolari costruttivi." },
+    { image: asset('progetti/copertura-1.jpg'), client: '', title: 'Copertura del Centro pellegrinaggio', date: 'Subiaco (RM)', description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, progettata per il nuovo centro di pellegrinaggio di Subiaco: una soluzione leggera e reversibile, integrata con la muratura esistente." },
+    { image: asset('progetti/ponte-comino.jpg'), images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')], client: '', title: 'Passerella pedonale in Valle di Comino', date: 'Valle di Comino (FR)', description: "Attraversamento pedonale in Valle di Comino, con struttura metallica leggera sul corso d'acqua. (Descrizione da confermare.)" },
   ],
   cantiere: [
     { image: notOverview, client: 'Committente · Luogo', title: 'Direzione lavori', date: 'Anno · stato', description: workDescription },
@@ -408,7 +404,7 @@ const works: Record<string, Work[]> = {
     { image: asset('indagini/11_puntelli.jpg'), client: 'Prova di carico', title: "Prova di carico con puntelli", date: '', description: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." },
   ],
   territorio: [
-    { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: '', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
+    { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: 'Lago di Canterno (FR)', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
   ],
 };
 
@@ -646,7 +642,7 @@ function PortfolioCarousel({ items, onOpen }: { items: Project[]; onOpen: (p: Pr
 
 const metodoSteps = [
   { n: '01', title: 'Gara e offerta', text: 'Analizziamo il bando e prepariamo l’offerta tecnica ed economica, con la documentazione richiesta dall’appalto pubblico.' },
-  { n: '02', title: 'Rilievo e progettazione', text: 'Indagini, rilievi e progettazione preliminare, definitiva ed esecutiva, coordinando strutture, impianti e discipline specialistiche.' },
+  { n: '02', title: 'Rilievo e progettazione', text: 'Indagini, rilievi e progetti di fattibilità tecnico-economica ed esecutivo, coordinando strutture, impianti e discipline specialistiche.' },
   { n: '03', title: 'Direzione lavori e sicurezza', text: 'Seguiamo il cantiere con direzione dei lavori, coordinamento della sicurezza e controllo di tempi, costi e qualità.' },
   { n: '04', title: 'Collaudo e consegna', text: 'Verifiche finali, collaudo e consegna dell’opera all’ente committente, con la documentazione completa.' },
 ];
@@ -1046,6 +1042,7 @@ function App() {
                   <p>Una presenza pensata per ampliare il raggio d’azione e seguire con maggiore continuità i lavori nel territorio campano.</p>
                   <div className="location-card__info">
                     <p className="location-card__addr">Via San Massimo, 216<br />80035 Nola (NA)</p>
+                    <a href="tel:+3908117557574">+39 081 17557574</a>
                   </div>
                 </article>
                 <article className="location-card">
@@ -1053,7 +1050,8 @@ function App() {
                   <h3>Rieti</h3>
                   <p>Un presidio sul territorio per essere più vicini a committenti, cantieri e nuove opportunità nel reatino.</p>
                   <div className="location-card__info">
-                    <p className="location-card__addr">Via Pennina, 11<br />02100 Rieti (RI)</p>
+                    <p className="location-card__addr">Via Pennina, 11/a<br />02100 Rieti (RI)</p>
+                    <a href="tel:+390746246759">+39 0746 246759</a>
                   </div>
                 </article>
               </div>
@@ -1196,7 +1194,6 @@ function App() {
             </SectionHeading>
             <div className="contact__details">
               <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
-              <a href="tel:+390775504019">+39 0775 504019</a>
               <p>Via Casavetere, 25 bis/a<br />03014 Fiuggi (FR), Italia</p>
             </div>
           </div>

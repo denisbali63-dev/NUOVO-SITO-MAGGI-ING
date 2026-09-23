@@ -7,7 +7,7 @@ export const ITALY_PATH =
 export type Sede = { name: string; cx: number; cy: number; address: string; phone: string; email: string };
 
 export const ITALY_SEDI: Sede[] = [
-  { name: 'Rieti', cx: 465.1, cy: 467.81, address: 'Via Pennina, 11 — 02100 Rieti (RI)', phone: '+39 0775 504019', email: 'info@studioingegneriamaggi.it' },
+  { name: 'Rieti', cx: 465.1, cy: 467.81, address: 'Via Pennina, 11/a — 02100 Rieti (RI)', phone: '+39 0746 246759', email: 'info@studioingegneriamaggi.it' },
   { name: 'Fiuggi', cx: 492.13, cy: 527.91, address: 'Via Casavetere, 25 bis/a — 03014 Fiuggi (FR)', phone: '+39 0775 504019', email: 'info@studioingegneriamaggi.it' },
-  { name: 'Nola', cx: 589.86, cy: 615.61, address: 'Via San Massimo, 216 — 80035 Nola (NA)', phone: '+39 0775 504019', email: 'info@studioingegneriamaggi.it' },
+  { name: 'Nola', cx: 589.86, cy: 615.61, address: 'Via San Massimo, 216 — 80035 Nola (NA)', phone: '+39 081 17557574', email: 'info@studioingegneriamaggi.it' },
 ];
