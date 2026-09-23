@@ -74,21 +74,21 @@ const careerRoles = [
 ];
 
 const clientLogos = [
+  { src: 'loghi-clienti/ministero-interno.png', name: "Ministero dell'Interno" },
   { src: 'loghi-clienti/autostrade.png', name: "Autostrade per l'Italia" },
   { src: 'loghi-clienti/anas.png', name: 'ANAS' },
-  { src: 'loghi-clienti/roma-capitale.png', name: 'Roma Capitale' },
-  { src: 'loghi-clienti/regione-lazio.png', name: 'Regione Lazio' },
-  { src: 'loghi-clienti/cm-roma.png', name: 'Città metropolitana di Roma Capitale' },
-  { src: 'loghi-clienti/cm-bari.png', name: 'Città metropolitana di Bari' },
-  { src: 'loghi-clienti/provincia-frosinone.png', name: 'Provincia di Frosinone' },
-  { src: 'loghi-clienti/provincia-latina.png', name: 'Provincia di Latina' },
   { src: 'loghi-clienti/invitalia.png', name: 'Invitalia' },
-  { src: 'loghi-clienti/enav.png', name: 'ENAV' },
-  { src: 'loghi-clienti/risorse-per-roma.png', name: 'Risorse per Roma' },
   { src: 'loghi-clienti/sport-e-salute.png', name: 'Sport e Salute' },
-  { src: 'loghi-clienti/acea.png', name: 'ACEA Infrastructure' },
+  { src: 'loghi-clienti/enav.png', name: 'ENAV' },
+  { src: 'loghi-clienti/regione-lazio.png', name: 'Regione Lazio' },
+  { src: 'loghi-clienti/cm-roma.png', name: 'Città metropolitana di Roma' },
+  { src: 'loghi-clienti/roma-capitale.png', name: 'Comune di Roma Capitale' },
+  { src: 'loghi-clienti/risorse-per-roma.png', name: 'Risorse per Roma' },
   { src: 'loghi-clienti/ater-roma.png', name: 'ATER Roma' },
-  { src: 'loghi-clienti/ministero-interno.png', name: "Ministero dell'Interno" },
+  { src: 'loghi-clienti/acea.png', name: 'ACEA Infrastructure' },
+  { src: 'loghi-clienti/cm-bari.png', name: 'Città metropolitana di Bari' },
+  { src: 'loghi-clienti/provincia-latina.png', name: 'Provincia di Latina' },
+  { src: 'loghi-clienti/provincia-frosinone.png', name: 'Provincia di Frosinone' },
 ];
 
 const servicePanels = [
