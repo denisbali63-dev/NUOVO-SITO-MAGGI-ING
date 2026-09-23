@@ -1561,8 +1561,13 @@ img {
     border-right: 0;
   }
 
-  .service-panel:nth-last-child(-n + 2) {
+  .service-panel:last-child {
     border-bottom: 0;
+  }
+
+  .services-hero .service-panel:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    border-right: 0;
   }
 
   .service-panel:hover {
@@ -2815,9 +2820,22 @@ a.cert-card {
 }
 
 @media (max-width: 1279px) {
-  .locations__map {
-    display: none;
+  .locations {
+    display: flex;
+    flex-direction: column;
   }
+  .locations__heading { order: 1; }
+  .locations__intro { order: 2; }
+  .locations__map {
+    position: static;
+    order: 3;
+    width: min(66%, 300px);
+    height: auto;
+    margin: 6px auto 4px;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .locations__list { order: 4; }
 }
 
 
