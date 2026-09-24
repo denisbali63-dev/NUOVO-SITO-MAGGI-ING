@@ -215,6 +215,13 @@ const portfolio: Project[] = [
     description: "Recupero e rifunzionalizzazione dell'edificio comunale di Subiaco in un nuovo centro di pellegrinaggio al servizio del territorio e del Parco dei Monti Simbruini.",
   },
   {
+    title: 'Linee ferroviarie ad alta velocità (TAV)',
+    category: 'Territorio',
+    meta: 'Alta velocità · Torino–Milano · Firenze–Bologna',
+    image: asset('progetti/tav/tav-01.jpg'),
+    description: "Coordinamento della sicurezza in fase di progettazione nei cantieri TAV: viadotti, pile e impalcati e gallerie lungo le linee ad alta velocità Torino–Milano e Firenze–Bologna.",
+  },
+  {
     title: 'Pista ciclopedonale del Lago di Canterno',
     category: 'Territorio',
     meta: 'Ambiente e paesaggio · Canterno (FR)',
@@ -403,6 +410,7 @@ const works: Record<string, Work[]> = {
     { image: asset('indagini/11_puntelli.jpg'), client: 'Prova di carico', title: "Prova di carico con puntelli", date: '', description: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." },
   ],
   territorio: [
+    { image: asset('progetti/tav/tav-01.jpg'), images: [asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg'), asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg')], client: '', title: 'Linee ferroviarie ad alta velocità (TAV)', date: 'Torino–Milano · Firenze–Bologna', description: "Coordinamento della sicurezza in fase di progettazione nei cantieri delle linee ferroviarie ad alta velocità: viadotti, pile e impalcati (linea Torino–Venezia, tratta Torino–Milano) e gallerie (linea Napoli–Milano, tratta Firenze–Bologna)." },
     { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: 'Lago di Canterno (FR)', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
   ],
 };
