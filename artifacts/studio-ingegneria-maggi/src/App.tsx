@@ -650,8 +650,9 @@ function PortfolioCarousel({ items, onOpen }: { items: Project[]; onOpen: (p: Pr
 const metodoSteps = [
   { n: '01', title: 'Gara e offerta', text: 'Analizziamo il bando e prepariamo l’offerta tecnica ed economica, con la documentazione richiesta dall’appalto pubblico.' },
   { n: '02', title: 'Rilievo e progettazione', text: 'Indagini, rilievi e progetti di fattibilità tecnico-economica ed esecutivo, coordinando strutture, impianti e discipline specialistiche.' },
-  { n: '03', title: 'Direzione lavori e sicurezza', text: 'Seguiamo il cantiere con direzione dei lavori, coordinamento della sicurezza e controllo di tempi, costi e qualità.' },
-  { n: '04', title: 'Collaudo e consegna', text: 'Verifiche finali, collaudo e consegna dell’opera all’ente committente, con la documentazione completa.' },
+  { n: '03', title: 'Verifica dei progetti', text: 'Verifica della progettazione delle opere ai fini della validazione, condotta secondo la normativa vigente prima dell’affidamento e dell’avvio dei lavori.' },
+  { n: '04', title: 'Direzione lavori e sicurezza', text: 'Seguiamo il cantiere con direzione dei lavori, coordinamento della sicurezza e controllo di tempi, costi e qualità.' },
+  { n: '05', title: 'Collaudo e consegna', text: 'Verifiche finali, collaudo e consegna dell’opera all’ente committente, con la documentazione completa.' },
 ];
 
 function CountUp({ value, suffix = '', duration = 1500 }: { value: number; suffix?: string; duration?: number }) {
