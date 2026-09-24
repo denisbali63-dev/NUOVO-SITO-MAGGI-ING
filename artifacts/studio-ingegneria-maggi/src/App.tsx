@@ -104,7 +104,7 @@ const servicePanels = [
     description: 'Diamo forma a edifici e spazi attraverso un progetto coordinato, attento alla funzione, al contesto e alla qualità dell’esperienza.',
     activities: [
       'Progetti di fattibilità tecnico-economica ed esecutivo',
-      'Progettazione architettonica, urbanistica e di interni',
+      'Progettazione architettonica, strutturale ed impiantistica',
       'Recupero e rifunzionalizzazione dell’esistente e nuove costruzioni',
       'Edilizia pubblica, privata, residenziale, commerciale e turistico-ricettiva',
       'Progettazione impiantistica e coordinamento delle discipline',
