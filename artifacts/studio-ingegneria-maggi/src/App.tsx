@@ -135,7 +135,9 @@ const servicePanels = [
     description: 'Mettiamo in relazione opere, ambiente e paesaggio per interventi che rispettano il territorio e costruiscono valore nel tempo.',
     activities: [
       'Progetti di ambiente, territorio e paesaggio',
-      'Opere infrastrutturali e infrastrutture di trasporto',
+      'Infrastrutture di trasporto: opere stradali, autostradali e linee ferroviarie ad alta velocità (Autostrade per l’Italia, ANAS, Alta Velocità)',
+      'Progettazione infrastrutturale e strutturale, verifiche di sicurezza, diagnostica e prove di carico su ponti, viadotti e opere d’arte',
+      'Direzione lavori e collaudi; coordinamento della sicurezza in fase di progettazione ed esecuzione per le linee ad alta velocità',
       'Interventi di riqualificazione e valorizzazione dei luoghi',
       'Supporto tecnico per enti pubblici, imprese e soggetti privati',
     ],
