@@ -64,8 +64,12 @@ const careerBenefits = [
 ];
 
 const careerRoles = [
-  'Ingegneri strutturisti',
-  'Ingegneri civili e delle infrastrutture',
+  'Ingegneri',
+  'Architetti',
+  'Geologi',
+  'Tecnici e disegnatori BIM',
+  'Geometri e tecnici di cantiere',
+  'Amministrazione e segreteria',
 ];
 
 const clientLogos = [
