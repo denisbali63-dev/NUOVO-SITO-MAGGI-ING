@@ -6,6 +6,7 @@ import {
   Boxes,
   Building2,
   Check,
+  Construction,
   HardHat,
   HeartHandshake,
   Leaf,
@@ -179,6 +180,22 @@ const servicePanels = [
     image: asset('images/riuso-ferroviario.jpg'),
     Icon: HardHat,
   },
+  {
+    slug: 'infrastrutture',
+    number: '06',
+    title: 'Infrastrutture',
+    detail: 'Strade, autostrade e alta velocità',
+    description: 'Opere per la grande mobilità: reti stradali e autostradali e linee ferroviarie ad alta velocità, dalla progettazione alla sicurezza dei cantieri.',
+    activities: [
+      'Opere stradali e autostradali (Autostrade per l’Italia, ANAS)',
+      'Linee ferroviarie ad alta velocità (TAV)',
+      'Progettazione e verifiche strutturali di ponti, viadotti e opere d’arte',
+      'Diagnostica, prove di carico, direzione lavori e collaudi',
+      'Coordinamento della sicurezza in fase di progettazione ed esecuzione',
+    ],
+    image: asset('progetti/tav/tav-01.jpg'),
+    Icon: Construction,
+  },
 ];
 
 type ServicePanel = typeof servicePanels[number];
@@ -194,7 +211,7 @@ type Project = {
 const projectDescription =
   "Descrizione approfondita del progetto: un breve testo che racconta l'intervento, il ruolo dello studio (dal rilievo e progettazione fino alla direzione dei lavori) e i risultati ottenuti. Testo di esempio da sostituire con la descrizione reale del progetto.";
 
-const portfolioCategories = ['Tutti', 'Architettura', 'Strutture', 'Territorio'];
+const portfolioCategories = ['Tutti', 'Architettura', 'Strutture', 'Infrastrutture', 'Territorio'];
 
 const portfolio: Project[] = [
   {
@@ -213,14 +230,14 @@ const portfolio: Project[] = [
   },
   {
     title: 'Centro pellegrinaggio di Subiaco',
-    category: 'Architettura',
-    meta: 'Recupero e rifunzionalizzazione · Subiaco (RM)',
-    image: asset('progetti/mattatoio-3.jpg'),
-    description: "Recupero e rifunzionalizzazione dell'edificio comunale di Subiaco in un nuovo centro di pellegrinaggio al servizio del territorio e del Parco dei Monti Simbruini.",
+    category: 'Strutture',
+    meta: 'Struttura in legno · Subiaco (RM)',
+    image: asset('progetti/copertura-1.jpg'),
+    description: "Recupero dell'edificio comunale di Subiaco in un centro di pellegrinaggio: copertura in legno lamellare con tiranti metallici e lucernari, leggera e reversibile, e nuovi spazi di accoglienza.",
   },
   {
     title: 'Linee ferroviarie ad alta velocità (TAV)',
-    category: 'Territorio',
+    category: 'Infrastrutture',
     meta: 'Alta velocità · Torino–Milano · Firenze–Bologna',
     image: asset('progetti/tav/tav-01.jpg'),
     description: "Coordinamento della sicurezza in fase di progettazione nei cantieri TAV: viadotti, pile e impalcati e gallerie lungo le linee ad alta velocità Torino–Milano e Firenze–Bologna.",
@@ -231,20 +248,6 @@ const portfolio: Project[] = [
     meta: 'Ambiente e paesaggio · Canterno (FR)',
     image: asset('progetti/canterno-1.jpg'),
     description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione per una fruizione accessibile del paesaggio.",
-  },
-  {
-    title: 'Copertura del Centro pellegrinaggio',
-    category: 'Strutture',
-    meta: 'Struttura in legno · Subiaco (RM)',
-    image: asset('progetti/copertura-1.jpg'),
-    description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, leggera e reversibile, integrata con la muratura esistente del centro di pellegrinaggio.",
-  },
-  {
-    title: 'Scuola di Filettino',
-    category: 'Architettura',
-    meta: 'Edilizia scolastica · Filettino (FR)',
-    image: asset('progetti/filettino.jpg'),
-    description: "Progetto per l'edificio scolastico di Filettino, con partizioni interne mobili per adattare gli ambienti alle diverse attività didattiche.",
   },
   {
     title: 'Passerella pedonale in Valle di Comino',
@@ -273,6 +276,34 @@ const portfolio: Project[] = [
     meta: 'Edilizia scolastica · Fiano Romano (RM)',
     image: asset('progetti/fiano/fia-02.jpg'),
     description: "Ampliamento della Scuola Media “Francesco da Fiano”: nuovi spazi didattici e un auditorium integrati con l'edificio esistente.",
+  },
+  {
+    title: 'Piazza Carlo Alberto dalla Chiesa — Mentana',
+    category: 'Territorio',
+    meta: 'Riqualificazione urbana · Mentana (RM)',
+    image: asset('progetti/piazza-mentana/piazza-mentana-1.jpg'),
+    description: "Riqualificazione urbana degli spazi pubblici di Mentana: nuova «boulevard», pista ciclabile, giardini e un edificio polifunzionale per la cultura e l'aggregazione.",
+  },
+  {
+    title: 'Scuola e palestra di Pizzo',
+    category: 'Architettura',
+    meta: 'Edilizia scolastica · Pizzo (VV)',
+    image: asset('progetti/pizzo/pizzo-1.jpg'),
+    description: "Progetto esecutivo in BIM di una scuola con palestra a Pizzo (VV): nuovi spazi didattici e sportivi con campo polivalente regolamentare.",
+  },
+  {
+    title: 'Palestra Brunelleschi — Mentana',
+    category: 'Architettura',
+    meta: 'Edilizia sportiva · Mentana (RM)',
+    image: asset('progetti/mentana/mentana-1.jpg'),
+    description: "Palestra scolastica del Nuovo Istituto Comprensivo di Via Brunelleschi: campo da basket regolamentare, spogliatoi e sistemazione delle aree esterne.",
+  },
+  {
+    title: 'Palestra di Agosta',
+    category: 'Architettura',
+    meta: 'Edilizia sportiva · Agosta (RM)',
+    image: asset('progetti/agosta/agosta-1.jpg'),
+    description: "Nuova palestra scolastica in Via Rufinelli ad Agosta, il «Centro sportivo dell'Alto Aniene»: campo regolamentare, parete di arrampicata e spazi per la comunità.",
   },
 ];
 
@@ -386,20 +417,19 @@ const workDescription =
 
 const works: Record<string, Work[]> = {
   architettura: [
-    { image: asset('progetti/tiburtino/tib-16.jpg'), images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')], client: '', title: 'Nuovo Ospedale Tiburtino', date: 'Tivoli (RM)', description: "Progetto per il Nuovo Ospedale Tiburtino, a Tivoli (RM): un complesso sanitario dall'impianto curvo che organizza degenze, servizi e percorsi attorno a spazi verdi e terrazze terapeutiche, con grande attenzione all'inserimento nel paesaggio e alla sostenibilità energetica." },
+    { image: asset('progetti/tiburtino/tib-16.jpg'), images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')], client: '', title: 'Nuovo Ospedale Tiburtino', date: 'Tivoli (RM)', description: "Il Nuovo Ospedale Tiburtino, a Tivoli (RM), nasce come un grande arco che abbraccia il paesaggio: un complesso sanitario dall'impianto curvo dove degenze, servizi e percorsi si affacciano su corti verdi e terrazze terapeutiche. Luce naturale, verde e benessere delle persone guidano ogni scelta, insieme a un progetto energetico orientato alla sostenibilità." },
     { image: asset('progetti/bellegra/bel-07.jpg'), images: [asset('progetti/bellegra/bel-07.jpg'), asset('progetti/bellegra/bel-05.jpg'), asset('progetti/bellegra/bel-08.jpg'), asset('progetti/bellegra/bel-27.jpg'), asset('progetti/bellegra/bel-29.jpg'), asset('progetti/bellegra/bel-31.jpg'), asset('progetti/bellegra/bel-34.jpg')], client: '', title: 'Scuola San Francesco d’Assisi — Bellegra', date: 'Bellegra (RM)', description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: un edificio che si adatta al pendio, con aule luminose, spazi comuni e aree gioco all'aperto, pensato per la sicurezza e il benessere dei bambini." },
     { image: asset('progetti/fiano/fia-02.jpg'), images: [asset('progetti/fiano/fia-02.jpg'), asset('progetti/fiano/fia-01.jpg')], client: '', title: 'Ampliamento Scuola “Francesco da Fiano”', date: 'Fiano Romano (RM)', description: "Ampliamento della Scuola Media “Francesco da Fiano” a Fiano Romano (RM): nuovi spazi didattici e un auditorium integrati con l'edificio esistente e con il contesto." },
-    { image: asset('progetti/mattatoio-3.jpg'), images: [asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')], client: '', title: 'Centro pellegrinaggio di Subiaco', date: 'Subiaco (RM)', description: "Recupero e rifunzionalizzazione dell'edificio comunale di Subiaco in un nuovo centro di pellegrinaggio al servizio del territorio e del Parco dei Monti Simbruini: consolidamento dell'involucro, nuova copertura in legno, sala polifunzionale e spazi di accoglienza." },
-    { image: asset('progetti/filettino.jpg'), client: '', title: 'Scuola di Filettino', date: 'Filettino (FR)', description: "Progetto per l'edificio scolastico di Filettino, con partizioni interne mobili per adattare gli ambienti alle diverse attività didattiche. In immagine il rendering di progetto." },
+    { image: asset('progetti/pizzo/pizzo-1.jpg'), images: [asset('progetti/pizzo/pizzo-1.jpg'), asset('progetti/pizzo/pizzo-2.jpg'), asset('progetti/pizzo/pizzo-3.jpg')], client: '', title: 'Scuola e palestra di Pizzo', date: 'Pizzo (VV)', description: "Progetto esecutivo in BIM di una scuola con palestra a Pizzo (VV): nuovi spazi didattici e sportivi, palestra con campo polivalente regolamentare e sistemazioni esterne. In galleria render e piante di progetto." },
+    { image: asset('progetti/mentana/mentana-1.jpg'), images: [asset('progetti/mentana/mentana-1.jpg'), asset('progetti/mentana/mentana-2.jpg'), asset('progetti/mentana/mentana-3.jpg'), asset('progetti/mentana/mentana-4.jpg')], client: '', title: 'Palestra Brunelleschi — Mentana', date: 'Mentana (RM)', description: "Palestra scolastica a servizio del Nuovo Istituto Comprensivo di Via Brunelleschi a Mentana (RM): campo da basket regolamentare, blocco spogliatoi, parcheggi e sistemazione delle aree esterne a verde, in dialogo con la scuola esistente." },
+    { image: asset('progetti/agosta/agosta-1.jpg'), images: [asset('progetti/agosta/agosta-1.jpg'), asset('progetti/agosta/agosta-2.jpg'), asset('progetti/agosta/agosta-3.jpg')], client: '', title: 'Palestra di Agosta — Centro sportivo dell’Alto Aniene', date: 'Agosta (RM)', description: "Nuova palestra scolastica in Via Rufinelli ad Agosta (RM), il «Centro sportivo dell'Alto Aniene»: campo regolamentare, parete di arrampicata e spazi aperti alla comunità in orario extra-scolastico, affacciati sul borgo." },
   ],
   strutture: [
     { image: asset('progetti/vibo/vibo-01.jpg'), images: [asset('progetti/vibo/vibo-01.jpg'), asset('progetti/vibo/vibo-02.jpg'), asset('progetti/vibo/vibo-03.jpg'), asset('progetti/vibo/vibo-04.jpg'), asset('progetti/vibo/vibo-05.jpg'), asset('progetti/vibo/vibo-06.jpg'), asset('progetti/vibo/vibo-07.jpg'), asset('progetti/vibo/vibo-08.jpg'), asset('progetti/vibo/vibo-09.jpg'), asset('progetti/vibo/vibo-10.jpg'), asset('progetti/vibo/vibo-11.jpg')], client: '', title: 'Adeguamento sismico dell’ITG di Vibo Valentia', date: 'Vibo Valentia (VV)', description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri di Vibo Valentia. Sulla base di analisi pushover secondo le NTC 2018, rinforzo delle strutture in cemento armato dei tre corpi di fabbrica — ringrossi armati di pilastri, travi e fondazioni e adeguamento dei giunti sismici — insieme all'efficientamento energetico dell'edificio: cappotto termico, nuovi infissi a taglio termico, illuminazione a LED e impianto fotovoltaico. In galleria render di progetto, prospetti, sezioni, piante e particolari costruttivi." },
-    { image: asset('progetti/copertura-1.jpg'), client: '', title: 'Copertura del Centro pellegrinaggio', date: 'Subiaco (RM)', description: "Struttura di copertura in legno lamellare con tiranti metallici e lucernari, progettata per il nuovo centro di pellegrinaggio di Subiaco: una soluzione leggera e reversibile, integrata con la muratura esistente." },
+    { image: asset('progetti/copertura-1.jpg'), images: [asset('progetti/copertura-1.jpg'), asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')], client: '', title: 'Centro pellegrinaggio di Subiaco', date: 'Subiaco (RM)', description: "Recupero dell'edificio comunale di Subiaco trasformato in un nuovo centro di pellegrinaggio: struttura di copertura in legno lamellare con tiranti metallici e lucernari — leggera, reversibile e integrata con la muratura esistente — e nuovi spazi di accoglienza al servizio del territorio e del Parco dei Monti Simbruini." },
     { image: asset('progetti/ponte-comino.jpg'), images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')], client: '', title: 'Passerella pedonale in Valle di Comino', date: 'Valle di Comino (FR)', description: "Attraversamento pedonale in Valle di Comino, con struttura metallica leggera sul corso d'acqua. (Descrizione da confermare.)" },
   ],
-  cantiere: [
-    { image: notOverview, client: 'Committente · Luogo', title: 'Direzione lavori', date: 'Anno · stato', description: workDescription },
-  ],
+  cantiere: [],
   indagini: [
     { image: asset('indagini/01_sclerometrica.jpg'), client: 'Prova non distruttiva', title: "Prova sclerometrica", date: '', description: "Lo sclerometro misura l'indice di rimbalzo su più battute della superficie in calcestruzzo, per valutarne l'omogeneità e ottenere una stima indiretta della resistenza a compressione, da correlare con le prove dirette." },
     { image: asset('indagini/02_pacometrica.jpg'), client: 'Indagine non distruttiva', title: "Indagine pacometrica", date: '', description: "Rilievo elettromagnetico non distruttivo di posizione, direzione e copriferro delle armature nel calcestruzzo: verifica la corrispondenza con il progetto e guida carotaggi e prelievi." },
@@ -414,8 +444,11 @@ const works: Record<string, Work[]> = {
     { image: asset('indagini/11_puntelli.jpg'), client: 'Prova di carico', title: "Prova di carico con puntelli", date: '', description: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." },
   ],
   territorio: [
-    { image: asset('progetti/tav/tav-01.jpg'), images: [asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg'), asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg')], client: '', title: 'Linee ferroviarie ad alta velocità (TAV)', date: 'Torino–Milano · Firenze–Bologna', description: "Coordinamento della sicurezza in fase di progettazione nei cantieri delle linee ferroviarie ad alta velocità: viadotti, pile e impalcati (linea Torino–Venezia, tratta Torino–Milano) e gallerie (linea Napoli–Milano, tratta Firenze–Bologna)." },
+    { image: asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), images: [asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), asset('progetti/piazza-mentana/piazza-mentana-2.jpg'), asset('progetti/piazza-mentana/piazza-mentana-3.jpg'), asset('progetti/piazza-mentana/piazza-mentana-4.jpg')], client: '', title: 'Riqualificazione di Piazza Carlo Alberto dalla Chiesa — Mentana', date: 'Mentana (RM)', description: "Riqualificazione urbana di Piazza Carlo Alberto dalla Chiesa a Mentana: nuovi spazi pubblici per l'aggregazione e la cultura lungo una nuova «boulevard», con pista ciclabile, giardini, area mercato e un edificio polifunzionale affiancato da un palco per le manifestazioni." },
     { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: 'Lago di Canterno (FR)', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
+  ],
+  infrastrutture: [
+    { image: asset('progetti/tav/tav-01.jpg'), images: [asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg'), asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg')], client: '', title: 'Linee ferroviarie ad alta velocità (TAV)', date: 'Torino–Milano · Firenze–Bologna', description: "Coordinamento della sicurezza in fase di progettazione nei cantieri delle linee ferroviarie ad alta velocità: viadotti, pile e impalcati (linea Torino–Venezia, tratta Torino–Milano) e gallerie (linea Napoli–Milano, tratta Firenze–Bologna)." },
   ],
 };
 
@@ -438,7 +471,7 @@ function ServiceDetail({ service }: { service: ServicePanel }) {
           <Icon className="service-detail__icon" size={54} strokeWidth={1.15} />
           <h1>{service.title}</h1>
           <p className="service-detail__lead">{service.description}</p>
-          <a className="button button--primary" href="#contatti">Parliamo del progetto <ArrowRight size={17} /></a>
+          <a className="button button--primary" href="#progetto">Parliamo del progetto <ArrowRight size={17} /></a>
         </div>
         <div className="service-detail__image">
           <img src={service.image} alt={`Studio Ingegneria Maggi, ${service.title}`} />
@@ -908,7 +941,7 @@ function App() {
               </a>
             ))}
           </nav>
-          <a className="header-cta" href="#contatti">
+          <a className="header-cta" href="#progetto">
             Parliamo del progetto <ArrowRight size={16} />
           </a>
           <button
@@ -1035,7 +1068,7 @@ function App() {
                 <p>
                   Alla sede di Fiuggi si sono affiancate le sedi operative di Nola e Rieti, nate con l’intenzione di espandere le nostre attività e riuscire a seguire meglio i lavori nei diversi territori.
                 </p>
-                <a className="text-link" href="#contatti">Parliamo di un progetto <ArrowRight size={16} /></a>
+                <a className="text-link" href="#progetto">Parliamo di un progetto <ArrowRight size={16} /></a>
               </div>
               <div className="locations__list">
                 <article className="location-card">
@@ -1198,9 +1231,39 @@ function App() {
               </div>
             </section>
 
-            <section id="contatti" className="contact section-pad">
+            <section id="contatti" className="contacts section-pad">
+              <div className="contact__intro">
+                <div className="section-tag"><span>06</span><span className="section-rule" /> Contatti</div>
+                <SectionHeading eyebrow="Dove trovarci">
+                  Tre sedi,<br /><em>un unico riferimento.</em>
+                </SectionHeading>
+              </div>
+              <div className="contacts__grid">
+                <article className="contacts__card">
+                  <h3>Fiuggi <span>Sede principale</span></h3>
+                  <p>Via Casavetere, 25 bis/a<br />03014 Fiuggi (FR)</p>
+                  <a href="tel:+390775504019">+39 0775 504019</a>
+                  <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
+                </article>
+                <article className="contacts__card">
+                  <h3>Nola <span>Sede operativa</span></h3>
+                  <p>Via San Massimo, 216<br />80035 Nola (NA)</p>
+                  <a href="tel:+3908117557574">+39 081 17557574</a>
+                  <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
+                </article>
+                <article className="contacts__card">
+                  <h3>Rieti <span>Sede operativa</span></h3>
+                  <p>Via Pennina, 11/a<br />02100 Rieti (RI)</p>
+                  <a href="tel:+390746246759">+39 0746 246759</a>
+                  <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
+                </article>
+              </div>
+              <p className="contacts__general">P.IVA IT02334940604 · PEC <a href="mailto:studioingegneriamaggi@pec.it">studioingegneriamaggi@pec.it</a> · Email <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a></p>
+            </section>
+
+            <section id="progetto" className="contact section-pad">
           <div className="contact__intro">
-            <div className="section-tag"><span>06</span><span className="section-rule" /> Contatti</div>
+            <div className="section-tag"><span>07</span><span className="section-rule" /> Parliamo del progetto</div>
             <SectionHeading eyebrow="Iniziamo da qui">
               Hai un progetto?<br /><em>Parliamone.</em>
             </SectionHeading>
