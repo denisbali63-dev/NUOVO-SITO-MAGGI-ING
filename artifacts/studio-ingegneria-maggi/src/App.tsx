@@ -205,6 +205,7 @@ type Project = {
   category: string;
   meta: string;
   image: string;
+  images?: string[];
   description: string;
 };
 
@@ -219,6 +220,7 @@ const portfolio: Project[] = [
     category: 'Architettura',
     meta: 'Struttura sanitaria · Tivoli (RM)',
     image: asset('progetti/tiburtino/tib-16.jpg'),
+    images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')],
     description: "Progetto per una nuova struttura sanitaria nel territorio tiburtino: organizzazione funzionale dei volumi, dei percorsi e dei collegamenti, con attenzione all'inserimento nel contesto.",
   },
   {
@@ -226,6 +228,7 @@ const portfolio: Project[] = [
     category: 'Strutture',
     meta: 'Adeguamento sismico · Vibo Valentia (VV)',
     image: asset('progetti/vibo/vibo-01.jpg'),
+    images: [asset('progetti/vibo/vibo-01.jpg'), asset('progetti/vibo/vibo-02.jpg'), asset('progetti/vibo/vibo-03.jpg'), asset('progetti/vibo/vibo-04.jpg'), asset('progetti/vibo/vibo-05.jpg'), asset('progetti/vibo/vibo-06.jpg'), asset('progetti/vibo/vibo-07.jpg'), asset('progetti/vibo/vibo-08.jpg'), asset('progetti/vibo/vibo-09.jpg'), asset('progetti/vibo/vibo-10.jpg'), asset('progetti/vibo/vibo-11.jpg')],
     description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri: rinforzo delle strutture in cemento armato dei tre corpi di fabbrica secondo le NTC 2018 ed efficientamento energetico dell'edificio.",
   },
   {
@@ -233,6 +236,7 @@ const portfolio: Project[] = [
     category: 'Strutture',
     meta: 'Struttura in legno · Subiaco (RM)',
     image: asset('progetti/copertura-1.jpg'),
+    images: [asset('progetti/copertura-1.jpg'), asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')],
     description: "Recupero dell'edificio comunale di Subiaco in un centro di pellegrinaggio: copertura in legno lamellare con tiranti metallici e lucernari, leggera e reversibile, e nuovi spazi di accoglienza.",
   },
   {
@@ -240,6 +244,7 @@ const portfolio: Project[] = [
     category: 'Infrastrutture',
     meta: 'Alta velocità · Torino–Milano · Firenze–Bologna',
     image: asset('progetti/tav/tav-01.jpg'),
+    images: [asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg'), asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg')],
     description: "Coordinamento della sicurezza in fase di progettazione nei cantieri TAV: viadotti, pile e impalcati e gallerie lungo le linee ad alta velocità Torino–Milano e Firenze–Bologna.",
   },
   {
@@ -247,6 +252,7 @@ const portfolio: Project[] = [
     category: 'Territorio',
     meta: 'Ambiente e paesaggio · Canterno (FR)',
     image: asset('progetti/canterno-1.jpg'),
+    images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')],
     description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione per una fruizione accessibile del paesaggio.",
   },
   {
@@ -254,6 +260,7 @@ const portfolio: Project[] = [
     category: 'Strutture',
     meta: 'Infrastrutture · Valle di Comino (FR)',
     image: asset('progetti/ponte-comino.jpg'),
+    images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')],
     description: "Attraversamento pedonale in Valle di Comino: struttura metallica leggera e durevole per collegare in sicurezza le due sponde.",
   },
   {
@@ -261,6 +268,7 @@ const portfolio: Project[] = [
     category: 'Architettura',
     meta: 'Composizione e volumi · Tivoli (RM)',
     image: asset('progetti/tiburtino/tib-07.jpg'),
+    images: [asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')],
     description: "Vista d'insieme del complesso: composizione dei volumi e relazione con il contesto urbano e paesaggistico.",
   },
   {
@@ -268,6 +276,7 @@ const portfolio: Project[] = [
     category: 'Architettura',
     meta: 'Edilizia scolastica · Bellegra (RM)',
     image: asset('progetti/bellegra/bel-07.jpg'),
+    images: [asset('progetti/bellegra/bel-07.jpg'), asset('progetti/bellegra/bel-05.jpg'), asset('progetti/bellegra/bel-08.jpg'), asset('progetti/bellegra/bel-27.jpg'), asset('progetti/bellegra/bel-29.jpg'), asset('progetti/bellegra/bel-31.jpg'), asset('progetti/bellegra/bel-34.jpg')],
     description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: aule luminose, spazi comuni e aree gioco, con l'edificio che si adatta al pendio.",
   },
   {
@@ -275,6 +284,7 @@ const portfolio: Project[] = [
     category: 'Architettura',
     meta: 'Edilizia scolastica · Fiano Romano (RM)',
     image: asset('progetti/fiano/fia-02.jpg'),
+    images: [asset('progetti/fiano/fia-02.jpg'), asset('progetti/fiano/fia-01.jpg')],
     description: "Ampliamento della Scuola Media “Francesco da Fiano”: nuovi spazi didattici e un auditorium integrati con l'edificio esistente.",
   },
   {
@@ -282,6 +292,7 @@ const portfolio: Project[] = [
     category: 'Territorio',
     meta: 'Riqualificazione urbana · Mentana (RM)',
     image: asset('progetti/piazza-mentana/piazza-mentana-1.jpg'),
+    images: [asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), asset('progetti/piazza-mentana/piazza-mentana-2.jpg'), asset('progetti/piazza-mentana/piazza-mentana-3.jpg'), asset('progetti/piazza-mentana/piazza-mentana-4.jpg'), asset('progetti/piazza-mentana/piazza-mentana-5.jpg'), asset('progetti/piazza-mentana/piazza-mentana-6.jpg'), asset('progetti/piazza-mentana/piazza-mentana-7.jpg')],
     description: "Riqualificazione urbana degli spazi pubblici di Mentana: nuova «boulevard», pista ciclabile, giardini e un edificio polifunzionale per la cultura e l'aggregazione.",
   },
   {
@@ -289,6 +300,7 @@ const portfolio: Project[] = [
     category: 'Architettura',
     meta: 'Edilizia scolastica · Pizzo (VV)',
     image: asset('progetti/pizzo/pizzo-1.jpg'),
+    images: [asset('progetti/pizzo/pizzo-1.jpg'), asset('progetti/pizzo/pizzo-2.jpg'), asset('progetti/pizzo/pizzo-3.jpg')],
     description: "Progetto esecutivo in BIM di una scuola con palestra a Pizzo (VV): nuovi spazi didattici e sportivi con campo polivalente regolamentare.",
   },
   {
@@ -296,6 +308,7 @@ const portfolio: Project[] = [
     category: 'Architettura',
     meta: 'Edilizia sportiva · Mentana (RM)',
     image: asset('progetti/mentana/mentana-1.jpg'),
+    images: [asset('progetti/mentana/mentana-1.jpg'), asset('progetti/mentana/mentana-2.jpg'), asset('progetti/mentana/mentana-3.jpg'), asset('progetti/mentana/mentana-4.jpg')],
     description: "Palestra scolastica del Nuovo Istituto Comprensivo di Via Brunelleschi: campo da basket regolamentare, spogliatoi e sistemazione delle aree esterne.",
   },
   {
@@ -303,6 +316,7 @@ const portfolio: Project[] = [
     category: 'Architettura',
     meta: 'Edilizia sportiva · Agosta (RM)',
     image: asset('progetti/agosta/agosta-1.jpg'),
+    images: [asset('progetti/agosta/agosta-1.jpg'), asset('progetti/agosta/agosta-2.jpg'), asset('progetti/agosta/agosta-3.jpg')],
     description: "Nuova palestra scolastica in Via Rufinelli ad Agosta, il «Centro sportivo dell'Alto Aniene»: campo regolamentare, parete di arrampicata e spazi per la comunità.",
   },
 ];
@@ -444,7 +458,7 @@ const works: Record<string, Work[]> = {
     { image: asset('indagini/11_puntelli.jpg'), client: 'Prova di carico', title: "Prova di carico con puntelli", date: '', description: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." },
   ],
   territorio: [
-    { image: asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), images: [asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), asset('progetti/piazza-mentana/piazza-mentana-2.jpg'), asset('progetti/piazza-mentana/piazza-mentana-3.jpg'), asset('progetti/piazza-mentana/piazza-mentana-4.jpg')], client: '', title: 'Riqualificazione di Piazza Carlo Alberto dalla Chiesa — Mentana', date: 'Mentana (RM)', description: "Riqualificazione urbana di Piazza Carlo Alberto dalla Chiesa a Mentana: nuovi spazi pubblici per l'aggregazione e la cultura lungo una nuova «boulevard», con pista ciclabile, giardini, area mercato e un edificio polifunzionale affiancato da un palco per le manifestazioni." },
+    { image: asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), images: [asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), asset('progetti/piazza-mentana/piazza-mentana-2.jpg'), asset('progetti/piazza-mentana/piazza-mentana-3.jpg'), asset('progetti/piazza-mentana/piazza-mentana-4.jpg'), asset('progetti/piazza-mentana/piazza-mentana-5.jpg'), asset('progetti/piazza-mentana/piazza-mentana-6.jpg'), asset('progetti/piazza-mentana/piazza-mentana-7.jpg')], client: '', title: 'Riqualificazione di Piazza Carlo Alberto dalla Chiesa — Mentana', date: 'Mentana (RM)', description: "Riqualificazione urbana di Piazza Carlo Alberto dalla Chiesa a Mentana: nuovi spazi pubblici per l'aggregazione e la cultura lungo una nuova «boulevard», con pista ciclabile, giardini, area mercato e un edificio polifunzionale affiancato da un palco per le manifestazioni." },
     { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: 'Lago di Canterno (FR)', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
   ],
   infrastrutture: [
@@ -861,6 +875,8 @@ function App() {
   const [activeServiceSlug, setActiveServiceSlug] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>('Tutti');
   const [openProject, setOpenProject] = useState<Project | null>(null);
+  const [pIndex, setPIndex] = useState(0);
+  useEffect(() => { setPIndex(0); }, [openProject]);
   const [scrolled, setScrolled] = useState(false);
   const [legalPage, setLegalPage] = useState<'privacy' | 'cookie' | null>(null);
   const [showCerts, setShowCerts] = useState(false);
@@ -1056,7 +1072,7 @@ function App() {
               </div>
             </section>
 
-            <section className="locations section-pad">
+            <section id="sedi" className="locations section-pad">
               <ItalyMap />
               <div className="locations__heading">
                 <div className="section-tag"><span>03</span><span className="section-rule" /> Dove lavoriamo</div>
@@ -1170,7 +1186,28 @@ function App() {
                       <X size={22} />
                     </button>
                     <div className="work-lightbox__image">
-                      <img src={openProject.image} alt={openProject.title} />
+                      <img src={(openProject.images && openProject.images[pIndex]) || openProject.image} alt={openProject.title} />
+                      {openProject.images && openProject.images.length > 1 && (
+                        <>
+                          <button
+                            className="work-lightbox__nav work-lightbox__nav--prev"
+                            type="button"
+                            aria-label="Foto precedente"
+                            onClick={() => setPIndex((i) => { const n = openProject.images?.length ?? 1; return (i - 1 + n) % n; })}
+                          >
+                            <ArrowLeft size={24} />
+                          </button>
+                          <button
+                            className="work-lightbox__nav work-lightbox__nav--next"
+                            type="button"
+                            aria-label="Foto successiva"
+                            onClick={() => setPIndex((i) => { const n = openProject.images?.length ?? 1; return (i + 1) % n; })}
+                          >
+                            <ArrowRight size={24} />
+                          </button>
+                          <span className="work-lightbox__counter">{pIndex + 1} / {openProject.images.length}</span>
+                        </>
+                      )}
                     </div>
                     <div className="work-lightbox__body">
                       <span className="work-card__client">{openProject.category}</span>
@@ -1231,39 +1268,9 @@ function App() {
               </div>
             </section>
 
-            <section id="contatti" className="contacts section-pad">
-              <div className="contact__intro">
-                <div className="section-tag"><span>06</span><span className="section-rule" /> Contatti</div>
-                <SectionHeading eyebrow="Dove trovarci">
-                  Tre sedi,<br /><em>un unico riferimento.</em>
-                </SectionHeading>
-              </div>
-              <div className="contacts__grid">
-                <article className="contacts__card">
-                  <h3>Fiuggi <span>Sede principale</span></h3>
-                  <p>Via Casavetere, 25 bis/a<br />03014 Fiuggi (FR)</p>
-                  <a href="tel:+390775504019">+39 0775 504019</a>
-                  <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
-                </article>
-                <article className="contacts__card">
-                  <h3>Nola <span>Sede operativa</span></h3>
-                  <p>Via San Massimo, 216<br />80035 Nola (NA)</p>
-                  <a href="tel:+3908117557574">+39 081 17557574</a>
-                  <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
-                </article>
-                <article className="contacts__card">
-                  <h3>Rieti <span>Sede operativa</span></h3>
-                  <p>Via Pennina, 11/a<br />02100 Rieti (RI)</p>
-                  <a href="tel:+390746246759">+39 0746 246759</a>
-                  <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
-                </article>
-              </div>
-              <p className="contacts__general">P.IVA IT02334940604 · PEC <a href="mailto:studioingegneriamaggi@pec.it">studioingegneriamaggi@pec.it</a> · Email <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a></p>
-            </section>
-
             <section id="progetto" className="contact section-pad">
           <div className="contact__intro">
-            <div className="section-tag"><span>07</span><span className="section-rule" /> Parliamo del progetto</div>
+            <div className="section-tag"><span>06</span><span className="section-rule" /> Parliamo del progetto</div>
             <SectionHeading eyebrow="Iniziamo da qui">
               Hai un progetto?<br /><em>Parliamone.</em>
             </SectionHeading>
@@ -1291,6 +1298,38 @@ function App() {
               </>
             )}
           </form>
+            </section>
+
+            <section id="contatti" className="contacts section-pad">
+              <div className="contact__intro">
+                <div className="section-tag"><span>07</span><span className="section-rule" /> Contatti</div>
+                <SectionHeading eyebrow="Come raggiungerci">
+                  Restiamo<br /><em>in contatto.</em>
+                </SectionHeading>
+              </div>
+              <div className="contacts__channels">
+                <div className="contacts__channel">
+                  <span>Email</span>
+                  <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
+                </div>
+                <div className="contacts__channel">
+                  <span>PEC</span>
+                  <a href="mailto:studioingegneriamaggi@pec.it">studioingegneriamaggi@pec.it</a>
+                </div>
+                <div className="contacts__channel">
+                  <span>Telefono</span>
+                  <a href="tel:+390775504019">+39 0775 504019</a>
+                </div>
+                <div className="contacts__channel">
+                  <span>Dati fiscali</span>
+                  <p>P.IVA IT02334940604</p>
+                </div>
+              </div>
+              <div className="contacts__sedi">
+                <span className="contacts__sedi-label">Le sedi</span>
+                <p><strong>Fiuggi</strong> <a href="tel:+390775504019">0775 504019</a> · <strong>Nola</strong> <a href="tel:+3908117557574">081 17557574</a> · <strong>Rieti</strong> <a href="tel:+390746246759">0746 246759</a></p>
+                <a className="text-link" href="#sedi">Indirizzi e mappa <ArrowRight size={16} /></a>
+              </div>
             </section>
           </>
         )}

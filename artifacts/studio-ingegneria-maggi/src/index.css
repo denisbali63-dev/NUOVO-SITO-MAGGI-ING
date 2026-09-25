@@ -3416,54 +3416,55 @@ button:focus-visible,
 .location-card:hover .location-card__info { border-top-color: rgba(255, 255, 255, 0.22); }
 .location-card:hover .location-card__info a { color: var(--blue); }
 
-/* ===== Sezione Contatti (recapiti sedi) ===== */
+/* ===== Sezione Contatti (hub canali) ===== */
 .contacts { background: var(--white); }
-.contacts__grid {
+.contacts__channels {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(22px, 2.6vw, 44px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 36px);
   margin-top: clamp(34px, 4vw, 56px);
 }
-.contacts__card {
-  border-top: 2px solid var(--ink);
-  padding-top: 20px;
-}
-.contacts__card h3 {
-  margin: 0 0 12px;
-  font-size: clamp(20px, 2vw, 26px);
-  color: var(--ink);
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 6px 12px;
-}
-.contacts__card h3 span {
+.contacts__channel { border-top: 2px solid var(--ink); padding-top: 16px; }
+.contacts__channel > span {
+  display: block;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--blue-deep);
   font-weight: 600;
+  margin-bottom: 10px;
 }
-.contacts__card p {
-  margin: 0 0 14px;
-  color: var(--ink-soft);
-  line-height: 1.55;
-}
-.contacts__card a {
-  display: block;
+.contacts__channel a,
+.contacts__channel p {
+  margin: 0;
   color: var(--ink);
   font-weight: 600;
-  margin-bottom: 4px;
+  font-size: clamp(15px, 1.35vw, 18px);
+  overflow-wrap: anywhere;
   transition: color 160ms ease;
 }
-.contacts__card a:hover { color: var(--blue-deep); }
-.contacts__general {
-  margin-top: clamp(28px, 3.4vw, 46px);
-  color: var(--ink-soft);
-  font-size: 14px;
+.contacts__channel a:hover { color: var(--blue-deep); }
+.contacts__sedi {
+  margin-top: clamp(30px, 3.4vw, 48px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 22px;
 }
-.contacts__general a { color: var(--ink); font-weight: 600; }
-.contacts__general a:hover { color: var(--blue-deep); }
+.contacts__sedi-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.contacts__sedi p { margin: 0; color: var(--ink-soft); }
+.contacts__sedi p strong { color: var(--ink); }
+.contacts__sedi a:not(.text-link) { color: var(--ink); font-weight: 600; }
+.contacts__sedi a:hover { color: var(--blue-deep); }
 @media (max-width: 820px) {
-  .contacts__grid { grid-template-columns: 1fr; gap: 26px; }
+  .contacts__channels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .contacts__channels { grid-template-columns: 1fr; }
 }
