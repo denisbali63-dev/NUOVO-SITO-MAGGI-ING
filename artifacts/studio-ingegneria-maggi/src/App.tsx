@@ -185,10 +185,12 @@ const servicePanels = [
     number: '06',
     title: 'Infrastrutture',
     detail: 'Strade, autostrade e alta velocità',
-    description: 'Opere per la grande mobilità: reti stradali e autostradali e linee ferroviarie ad alta velocità, dalla progettazione alla sicurezza dei cantieri.',
+    description: 'Opere per la mobilità e il territorio: reti stradali e autostradali, linee ferroviarie ad alta velocità, rotatorie e difesa della costa, dalla progettazione alla sicurezza dei cantieri.',
     activities: [
       'Opere stradali e autostradali (Autostrade per l’Italia, ANAS)',
       'Linee ferroviarie ad alta velocità (TAV)',
+      'Rotatorie, intersezioni e messa in sicurezza della viabilità',
+      'Difesa costiera e ricostruzione dei litorali',
       'Progettazione e verifiche strutturali di ponti, viadotti e opere d’arte',
       'Diagnostica, prove di carico, direzione lavori e collaudi',
       'Coordinamento della sicurezza in fase di progettazione ed esecuzione',
@@ -243,8 +245,8 @@ const portfolio: Project[] = [
     title: 'Linee ferroviarie ad alta velocità (TAV)',
     category: 'Infrastrutture',
     meta: 'Alta velocità · Torino–Milano · Firenze–Bologna',
-    image: asset('progetti/tav/tav-01.jpg'),
-    images: [asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg'), asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg')],
+    image: asset('progetti/tav/tav-03.jpg'),
+    images: [asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg'), asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg'), asset('progetti/tav/tav-08.jpg'), asset('progetti/tav/tav-09.jpg'), asset('progetti/tav/tav-10.jpg'), asset('progetti/tav/tav-11.jpg'), asset('progetti/tav/tav-12.jpg')],
     description: "Coordinamento della sicurezza in fase di progettazione nei cantieri TAV: viadotti, pile e impalcati e gallerie lungo le linee ad alta velocità Torino–Milano e Firenze–Bologna.",
   },
   {
@@ -286,6 +288,22 @@ const portfolio: Project[] = [
     image: asset('progetti/fiano/fia-02.jpg'),
     images: [asset('progetti/fiano/fia-02.jpg'), asset('progetti/fiano/fia-01.jpg')],
     description: "Ampliamento della Scuola Media “Francesco da Fiano”: nuovi spazi didattici e un auditorium integrati con l'edificio esistente.",
+  },
+  {
+    title: 'Difesa e ricostruzione dei litorali del Lazio',
+    category: 'Infrastrutture',
+    meta: 'Opere di difesa costiera · Ostia e Ladispoli (RM)',
+    image: asset('progetti/litorali/litorali-1.jpg'),
+    images: [asset('progetti/litorali/litorali-1.jpg'), asset('progetti/litorali/litorali-2.jpg'), asset('progetti/litorali/litorali-3.jpg'), asset('progetti/litorali/litorali-4.jpg'), asset('progetti/litorali/litorali-5.jpg'), asset('progetti/litorali/litorali-6.jpg'), asset('progetti/litorali/litorali-7.jpg'), asset('progetti/litorali/litorali-8.jpg')],
+    description: "Ripascimenti, pennelli e scogliere per la ricostruzione delle spiagge di Ostia e Ladispoli, per Regione Lazio e ARDIS.",
+  },
+  {
+    title: 'Rotatorie e messa in sicurezza della viabilità',
+    category: 'Infrastrutture',
+    meta: 'Viabilità · Fiuggi (FR) · Colleferro (RM)',
+    image: asset('progetti/rotatorie/rotatorie-1.jpg'),
+    images: [asset('progetti/rotatorie/rotatorie-1.jpg'), asset('progetti/rotatorie/rotatorie-2.jpg'), asset('progetti/rotatorie/rotatorie-3.jpg'), asset('progetti/rotatorie/rotatorie-4.jpg'), asset('progetti/rotatorie/rotatorie-5.jpg'), asset('progetti/rotatorie/rotatorie-6.jpg')],
+    description: "Rotatoria d'ingresso a Fiuggi sulla S.R. 155 Fiuggi–Alatri e rotatorie per ASTRAL sulla SP 21 e sulla SP 64a a Colleferro.",
   },
   {
     title: 'Piazza Carlo Alberto dalla Chiesa — Mentana',
@@ -462,7 +480,10 @@ const works: Record<string, Work[]> = {
     { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: 'Lago di Canterno (FR)', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
   ],
   infrastrutture: [
-    { image: asset('progetti/tav/tav-01.jpg'), images: [asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg'), asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg')], client: '', title: 'Linee ferroviarie ad alta velocità (TAV)', date: 'Torino–Milano · Firenze–Bologna', description: "Coordinamento della sicurezza in fase di progettazione nei cantieri delle linee ferroviarie ad alta velocità: viadotti, pile e impalcati (linea Torino–Venezia, tratta Torino–Milano) e gallerie (linea Napoli–Milano, tratta Firenze–Bologna)." },
+    { image: asset('progetti/tav/tav-03.jpg'), images: [asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg')], client: '', title: 'Alta Velocità Torino–Milano: viadotti', date: 'Linea Torino–Venezia · tratta Torino–Milano', description: "Coordinamento della sicurezza in fase di progettazione nei cantieri della linea ferroviaria ad alta velocità Torino–Milano: viadotti a travata, pile a fungo in alveo, varo degli impalcati con carri di lancio e gru di grande portata." },
+    { image: asset('progetti/tav/tav-06.jpg'), images: [asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg'), asset('progetti/tav/tav-08.jpg'), asset('progetti/tav/tav-09.jpg'), asset('progetti/tav/tav-10.jpg'), asset('progetti/tav/tav-11.jpg'), asset('progetti/tav/tav-12.jpg')], client: '', title: 'Alta Velocità Firenze–Bologna: gallerie', date: 'Linea Napoli–Milano · tratta Firenze–Bologna', description: "Project management nell'ufficio del Coordinatore per la sicurezza dei cantieri in galleria della tratta appenninica Firenze–Bologna: scavo, consolidamento del fronte, rivestimenti e imbocchi, in un contesto di cantiere ad alta complessità." },
+    { image: asset('progetti/litorali/litorali-1.jpg'), images: [asset('progetti/litorali/litorali-1.jpg'), asset('progetti/litorali/litorali-2.jpg'), asset('progetti/litorali/litorali-3.jpg'), asset('progetti/litorali/litorali-4.jpg'), asset('progetti/litorali/litorali-5.jpg'), asset('progetti/litorali/litorali-6.jpg'), asset('progetti/litorali/litorali-7.jpg'), asset('progetti/litorali/litorali-8.jpg')], client: '', title: 'Difesa e ricostruzione dei litorali del Lazio', date: 'Ostia (RM) · Ladispoli (RM)', description: "Interventi di difesa e ricostruzione delle spiagge laziali per Regione Lazio e ARDIS: ripascimenti con sabbie dragate in mare, pennelli e scogliere, ricostruzione dell'arenile a Ostia e a Ladispoli – Torre Flavia." },
+    { image: asset('progetti/rotatorie/rotatorie-1.jpg'), images: [asset('progetti/rotatorie/rotatorie-1.jpg'), asset('progetti/rotatorie/rotatorie-2.jpg'), asset('progetti/rotatorie/rotatorie-3.jpg'), asset('progetti/rotatorie/rotatorie-4.jpg'), asset('progetti/rotatorie/rotatorie-5.jpg'), asset('progetti/rotatorie/rotatorie-6.jpg')], client: '', title: 'Rotatorie e messa in sicurezza della viabilità', date: 'Fiuggi (FR) · Colleferro (RM)', description: "Progettazione e direzione lavori di intersezioni a rotatoria: l'ampliamento e messa in sicurezza della S.R. 155 Fiuggi–Alatri con la rotatoria d'ingresso a Fiuggi (Provincia di Frosinone) e le rotatorie per ASTRAL sulla SP 21 allo svincolo SLO e sulla SP 64a a Colleferro." },
   ],
 };
 
