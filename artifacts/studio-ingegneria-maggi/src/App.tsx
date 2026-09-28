@@ -102,8 +102,26 @@ const clientLogos = [
 
 const servicePanels = [
   {
-    slug: 'architettura',
+    slug: 'infrastrutture',
     number: '01',
+    title: 'Infrastrutture',
+    detail: 'Strade, autostrade e alta velocità',
+    description: 'Opere per la mobilità e il territorio: reti stradali e autostradali, linee ferroviarie ad alta velocità, rotatorie e difesa della costa, dalla progettazione alla sicurezza dei cantieri.',
+    activities: [
+      'Opere stradali e autostradali (Autostrade per l’Italia, ANAS)',
+      'Linee ferroviarie ad alta velocità (TAV)',
+      'Rotatorie, intersezioni e messa in sicurezza della viabilità',
+      'Difesa costiera e ricostruzione dei litorali',
+      'Progettazione e verifiche strutturali di ponti, viadotti e opere d’arte',
+      'Diagnostica, prove di carico, direzione lavori e collaudi',
+      'Coordinamento della sicurezza in fase di progettazione ed esecuzione',
+    ],
+    image: asset('progetti/tav/tav-01.jpg'),
+    Icon: Construction,
+  },
+  {
+    slug: 'architettura',
+    number: '02',
     title: 'Architettura',
     detail: 'Progettazione integrata',
     description: 'Diamo forma a edifici e spazi attraverso un progetto coordinato, attento alla funzione, al contesto e alla qualità dell’esperienza.',
@@ -119,7 +137,7 @@ const servicePanels = [
   },
   {
     slug: 'strutture',
-    number: '02',
+    number: '03',
     title: 'Strutture',
     detail: 'Verifiche e sismica',
     description: 'Studiamo il comportamento degli edifici e progettiamo interventi strutturali sicuri, proporzionati e compatibili con il costruito.',
@@ -133,34 +151,19 @@ const servicePanels = [
     Icon: Ruler,
   },
   {
-    slug: 'territorio',
-    number: '03',
-    title: 'Territorio',
-    detail: 'Ambiente e infrastrutture',
-    description: 'Mettiamo in relazione opere, ambiente e paesaggio per interventi che rispettano il territorio e costruiscono valore nel tempo.',
-    activities: [
-      'Progetti di ambiente, territorio e paesaggio',
-      'Infrastrutture di trasporto: opere stradali, autostradali e linee ferroviarie ad alta velocità (Autostrade per l’Italia, ANAS, Alta Velocità)',
-      'Progettazione infrastrutturale e strutturale, verifiche di sicurezza, diagnostica e prove di carico su ponti, viadotti e opere d’arte',
-      'Direzione lavori e collaudi; coordinamento della sicurezza in fase di progettazione ed esecuzione per le linee ad alta velocità',
-      'Interventi di riqualificazione e valorizzazione dei luoghi',
-      'Supporto tecnico per enti pubblici, imprese e soggetti privati',
-    ],
-    image: asset('progetti/canterno-1.jpg'),
-    Icon: Map,
-  },
-  {
     slug: 'indagini',
     number: '04',
     title: 'Indagini e Geologia',
-    detail: 'Rilievi, diagnostica e geologia',
-    description: 'Partiamo dalla conoscenza concreta dell’edificio e del terreno: rilievi, ispezioni, prove mirate e indagini geologiche per trasformare i dati in decisioni affidabili.',
+    detail: 'Rilievi, geologia e territorio',
+    description: 'Partiamo dalla conoscenza concreta dell’edificio, del terreno e del territorio: rilievi, ispezioni, prove mirate e indagini geologiche per trasformare i dati in decisioni affidabili, fino ai progetti di ambiente e paesaggio.',
     activities: [
       'Rilievi geometrici, materici e delle condizioni di conservazione',
       'Ispezioni visive ed estrazione di campioni',
       'Indagini endoscopiche, pacometriche, sclerometriche e Windsor',
       'Carotaggi, prove con martinetto piatto, pull-out, prove di carico e di tiro',
       'Indagini geologiche e geotecniche a supporto della progettazione',
+      'Progetti di ambiente, territorio e paesaggio',
+      'Interventi di riqualificazione e valorizzazione dei luoghi',
     ],
     image: asset('images/edificio-restauro.jpg'),
     Icon: ScanSearch,
@@ -179,24 +182,6 @@ const servicePanels = [
     ],
     image: asset('images/riuso-ferroviario.jpg'),
     Icon: HardHat,
-  },
-  {
-    slug: 'infrastrutture',
-    number: '06',
-    title: 'Infrastrutture',
-    detail: 'Strade, autostrade e alta velocità',
-    description: 'Opere per la mobilità e il territorio: reti stradali e autostradali, linee ferroviarie ad alta velocità, rotatorie e difesa della costa, dalla progettazione alla sicurezza dei cantieri.',
-    activities: [
-      'Opere stradali e autostradali (Autostrade per l’Italia, ANAS)',
-      'Linee ferroviarie ad alta velocità (TAV)',
-      'Rotatorie, intersezioni e messa in sicurezza della viabilità',
-      'Difesa costiera e ricostruzione dei litorali',
-      'Progettazione e verifiche strutturali di ponti, viadotti e opere d’arte',
-      'Diagnostica, prove di carico, direzione lavori e collaudi',
-      'Coordinamento della sicurezza in fase di progettazione ed esecuzione',
-    ],
-    image: asset('progetti/tav/tav-01.jpg'),
-    Icon: Construction,
   },
 ];
 
@@ -220,10 +205,10 @@ const portfolio: Project[] = [
   {
     title: 'Nuovo Ospedale Tiburtino',
     category: 'Architettura',
-    meta: 'Struttura sanitaria · Tivoli (RM)',
+    meta: 'Struttura sanitaria · Roma – Tivoli (RM)',
     image: asset('progetti/tiburtino/tib-16.jpg'),
     images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')],
-    description: "Progetto per una nuova struttura sanitaria nel territorio tiburtino: organizzazione funzionale dei volumi, dei percorsi e dei collegamenti, con attenzione all'inserimento nel contesto.",
+    description: "La nuova struttura sanitaria di Roma nel territorio limitrofo di Tivoli: un complesso dall'impianto curvo con corti verdi e terrazze terapeutiche, pensato per il benessere delle persone e la sostenibilità.",
   },
   {
     title: 'Adeguamento sismico dell’ITG di Vibo Valentia',
@@ -259,7 +244,7 @@ const portfolio: Project[] = [
   },
   {
     title: 'Passerella pedonale in Valle di Comino',
-    category: 'Strutture',
+    category: 'Infrastrutture',
     meta: 'Infrastrutture · Valle di Comino (FR)',
     image: asset('progetti/ponte-comino.jpg'),
     images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')],
@@ -441,7 +426,7 @@ const workDescription =
 
 const works: Record<string, Work[]> = {
   architettura: [
-    { image: asset('progetti/tiburtino/tib-16.jpg'), images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')], client: '', title: 'Nuovo Ospedale Tiburtino', date: 'Tivoli (RM)', description: "Il Nuovo Ospedale Tiburtino, a Tivoli (RM), nasce come un grande arco che abbraccia il paesaggio: un complesso sanitario dall'impianto curvo dove degenze, servizi e percorsi si affacciano su corti verdi e terrazze terapeutiche. Luce naturale, verde e benessere delle persone guidano ogni scelta, insieme a un progetto energetico orientato alla sostenibilità." },
+    { image: asset('progetti/tiburtino/tib-16.jpg'), images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')], client: '', title: 'Nuovo Ospedale Tiburtino', date: 'Roma · Tivoli (RM)', description: "Il Nuovo Ospedale Tiburtino è la nuova struttura sanitaria di Roma, nel territorio limitrofo di Tivoli: nasce come un grande arco che abbraccia il paesaggio, un complesso dall'impianto curvo dove degenze, servizi e percorsi si affacciano su corti verdi e terrazze terapeutiche. Luce naturale, verde e benessere delle persone guidano ogni scelta, insieme a un progetto energetico orientato alla sostenibilità." },
     { image: asset('progetti/bellegra/bel-07.jpg'), images: [asset('progetti/bellegra/bel-07.jpg'), asset('progetti/bellegra/bel-05.jpg'), asset('progetti/bellegra/bel-08.jpg'), asset('progetti/bellegra/bel-27.jpg'), asset('progetti/bellegra/bel-29.jpg'), asset('progetti/bellegra/bel-31.jpg'), asset('progetti/bellegra/bel-34.jpg')], client: '', title: 'Scuola San Francesco d’Assisi — Bellegra', date: 'Bellegra (RM)', description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: un edificio che si adatta al pendio, con aule luminose, spazi comuni e aree gioco all'aperto, pensato per la sicurezza e il benessere dei bambini." },
     { image: asset('progetti/fiano/fia-02.jpg'), images: [asset('progetti/fiano/fia-02.jpg'), asset('progetti/fiano/fia-01.jpg')], client: '', title: 'Ampliamento Scuola “Francesco da Fiano”', date: 'Fiano Romano (RM)', description: "Ampliamento della Scuola Media “Francesco da Fiano” a Fiano Romano (RM): nuovi spazi didattici e un auditorium integrati con l'edificio esistente e con il contesto." },
     { image: asset('progetti/pizzo/pizzo-1.jpg'), images: [asset('progetti/pizzo/pizzo-1.jpg'), asset('progetti/pizzo/pizzo-2.jpg'), asset('progetti/pizzo/pizzo-3.jpg')], client: '', title: 'Scuola e palestra di Pizzo', date: 'Pizzo (VV)', description: "Progetto esecutivo in BIM di una scuola con palestra a Pizzo (VV): nuovi spazi didattici e sportivi, palestra con campo polivalente regolamentare e sistemazioni esterne. In galleria render e piante di progetto." },
@@ -451,7 +436,6 @@ const works: Record<string, Work[]> = {
   strutture: [
     { image: asset('progetti/vibo/vibo-01.jpg'), images: [asset('progetti/vibo/vibo-01.jpg'), asset('progetti/vibo/vibo-02.jpg'), asset('progetti/vibo/vibo-03.jpg'), asset('progetti/vibo/vibo-04.jpg'), asset('progetti/vibo/vibo-05.jpg'), asset('progetti/vibo/vibo-06.jpg'), asset('progetti/vibo/vibo-07.jpg'), asset('progetti/vibo/vibo-08.jpg'), asset('progetti/vibo/vibo-09.jpg'), asset('progetti/vibo/vibo-10.jpg'), asset('progetti/vibo/vibo-11.jpg')], client: '', title: 'Adeguamento sismico dell’ITG di Vibo Valentia', date: 'Vibo Valentia (VV)', description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri di Vibo Valentia. Sulla base di analisi pushover secondo le NTC 2018, rinforzo delle strutture in cemento armato dei tre corpi di fabbrica — ringrossi armati di pilastri, travi e fondazioni e adeguamento dei giunti sismici — insieme all'efficientamento energetico dell'edificio: cappotto termico, nuovi infissi a taglio termico, illuminazione a LED e impianto fotovoltaico. In galleria render di progetto, prospetti, sezioni, piante e particolari costruttivi." },
     { image: asset('progetti/copertura-1.jpg'), images: [asset('progetti/copertura-1.jpg'), asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')], client: '', title: 'Centro pellegrinaggio di Subiaco', date: 'Subiaco (RM)', description: "Recupero dell'edificio comunale di Subiaco trasformato in un nuovo centro di pellegrinaggio: struttura di copertura in legno lamellare con tiranti metallici e lucernari — leggera, reversibile e integrata con la muratura esistente — e nuovi spazi di accoglienza al servizio del territorio e del Parco dei Monti Simbruini." },
-    { image: asset('progetti/ponte-comino.jpg'), images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')], client: '', title: 'Passerella pedonale in Valle di Comino', date: 'Valle di Comino (FR)', description: "Attraversamento pedonale in Valle di Comino, con struttura metallica leggera sul corso d'acqua. (Descrizione da confermare.)" },
   ],
   cantiere: [],
   indagini: [
@@ -466,8 +450,6 @@ const works: Record<string, Work[]> = {
     { image: asset('indagini/09_martinetti.jpg'), client: 'Prova semi-distruttiva', title: "Martinetti piatti doppi", date: '', description: "Due martinetti idraulici inseriti tra i giunti di malta misurano in situ la deformabilità della muratura e il modulo elastico e, ove possibile, la resistenza a compressione." },
     { image: asset('indagini/10_gommone.jpg'), client: 'Prova di carico', title: "Prova di carico con gommone", date: '', description: "Serbatoi flessibili riempiti d'acqua applicano un carico distribuito e finemente controllato sul solaio, misurandone frecce, rigidezza e recupero elastico in carico e scarico." },
     { image: asset('indagini/11_puntelli.jpg'), client: 'Prova di carico', title: "Prova di carico con puntelli", date: '', description: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." },
-  ],
-  territorio: [
     { image: asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), images: [asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), asset('progetti/piazza-mentana/piazza-mentana-2.jpg'), asset('progetti/piazza-mentana/piazza-mentana-3.jpg'), asset('progetti/piazza-mentana/piazza-mentana-4.jpg'), asset('progetti/piazza-mentana/piazza-mentana-5.jpg'), asset('progetti/piazza-mentana/piazza-mentana-6.jpg'), asset('progetti/piazza-mentana/piazza-mentana-7.jpg')], client: '', title: 'Riqualificazione di Piazza Carlo Alberto dalla Chiesa — Mentana', date: 'Mentana (RM)', description: "Riqualificazione urbana di Piazza Carlo Alberto dalla Chiesa a Mentana: nuovi spazi pubblici per l'aggregazione e la cultura lungo una nuova «boulevard», con pista ciclabile, giardini, area mercato e un edificio polifunzionale affiancato da un palco per le manifestazioni." },
     { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: 'Lago di Canterno (FR)', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
   ],
@@ -476,6 +458,7 @@ const works: Record<string, Work[]> = {
     { image: asset('progetti/tav/tav-06.jpg'), images: [asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg'), asset('progetti/tav/tav-08.jpg'), asset('progetti/tav/tav-09.jpg'), asset('progetti/tav/tav-10.jpg'), asset('progetti/tav/tav-11.jpg'), asset('progetti/tav/tav-12.jpg')], client: '', title: 'Alta Velocità Firenze–Bologna: gallerie', date: 'Linea Napoli–Milano · tratta Firenze–Bologna', description: "Project management nell'ufficio del Coordinatore per la sicurezza dei cantieri in galleria della tratta appenninica Firenze–Bologna: scavo, consolidamento del fronte, rivestimenti e imbocchi, in un contesto di cantiere ad alta complessità." },
     { image: asset('progetti/litorali/litorali-1.jpg'), images: [asset('progetti/litorali/litorali-1.jpg'), asset('progetti/litorali/litorali-2.jpg'), asset('progetti/litorali/litorali-3.jpg'), asset('progetti/litorali/litorali-4.jpg'), asset('progetti/litorali/litorali-5.jpg'), asset('progetti/litorali/litorali-6.jpg'), asset('progetti/litorali/litorali-7.jpg'), asset('progetti/litorali/litorali-8.jpg')], client: '', title: 'Difesa e ricostruzione dei litorali del Lazio', date: 'Ostia (RM) · Ladispoli (RM)', description: "Interventi di difesa e ricostruzione delle spiagge laziali per Regione Lazio e ARDIS: ripascimenti con sabbie dragate in mare, pennelli e scogliere, ricostruzione dell'arenile a Ostia e a Ladispoli – Torre Flavia." },
     { image: asset('progetti/rotatorie/rotatorie-1.jpg'), images: [asset('progetti/rotatorie/rotatorie-1.jpg'), asset('progetti/rotatorie/rotatorie-2.jpg'), asset('progetti/rotatorie/rotatorie-3.jpg'), asset('progetti/rotatorie/rotatorie-4.jpg'), asset('progetti/rotatorie/rotatorie-5.jpg'), asset('progetti/rotatorie/rotatorie-6.jpg')], client: '', title: 'Rotatorie e messa in sicurezza della viabilità', date: 'Fiuggi (FR) · Colleferro (RM)', description: "Progettazione e direzione lavori di intersezioni a rotatoria: l'ampliamento e messa in sicurezza della S.R. 155 Fiuggi–Alatri con la rotatoria d'ingresso a Fiuggi (Provincia di Frosinone) e le rotatorie per ASTRAL sulla SP 21 allo svincolo SLO e sulla SP 64a a Colleferro." },
+    { image: asset('progetti/ponte-comino.jpg'), images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')], client: '', title: 'Passerella pedonale in Valle di Comino', date: 'Valle di Comino (FR)', description: "Attraversamento pedonale in Valle di Comino, con struttura metallica leggera sul corso d'acqua. (Descrizione da confermare.)" },
   ],
 };
 
@@ -1062,7 +1045,7 @@ function App() {
                 <div className="impact__item"><CountUp value={2004} /><span>Anno di fondazione</span></div>
                 <div className="impact__item"><CountUp value={20} suffix="+" /><span>Anni di esperienza</span></div>
                 <div className="impact__item"><CountUp value={3} /><span>Sedi operative</span></div>
-                <div className="impact__item"><CountUp value={6} /><span>Ambiti di intervento</span></div>
+                <div className="impact__item"><CountUp value={5} /><span>Ambiti di intervento</span></div>
               </div>
             </section>
 
@@ -1140,7 +1123,7 @@ function App() {
                   </SectionHeading>
                 </div>
                 <div className="projects__heading-copy">
-                  <p>Una selezione di opere, studi e visioni che raccontano il lavoro dello studio attraverso architettura, strutture e territorio. Scorri le opere o filtra per ambito; apri un progetto per la scheda completa.</p>
+                  <p>Una selezione di opere, studi e visioni che raccontano il lavoro dello studio attraverso infrastrutture, architettura, strutture e territorio. Scorri le opere o filtra per ambito; apri un progetto per la scheda completa.</p>
                   <span className="projects__count">{portfolio.length} opere realizzate</span>
                 </div>
               </div>
