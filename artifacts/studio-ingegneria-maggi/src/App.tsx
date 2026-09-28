@@ -114,7 +114,7 @@ const servicePanels = [
       'Edilizia pubblica, privata, residenziale, commerciale e turistico-ricettiva',
       'Progettazione impiantistica e coordinamento delle discipline',
     ],
-    image: notFacade,
+    image: asset('progetti/mentana/mentana-2.jpg'),
     Icon: Building2,
   },
   {
@@ -264,14 +264,6 @@ const portfolio: Project[] = [
     image: asset('progetti/ponte-comino.jpg'),
     images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')],
     description: "Attraversamento pedonale in Valle di Comino: struttura metallica leggera e durevole per collegare in sicurezza le due sponde.",
-  },
-  {
-    title: "Nuovo Ospedale Tiburtino · vista d'insieme",
-    category: 'Architettura',
-    meta: 'Composizione e volumi · Tivoli (RM)',
-    image: asset('progetti/tiburtino/tib-07.jpg'),
-    images: [asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')],
-    description: "Vista d'insieme del complesso: composizione dei volumi e relazione con il contesto urbano e paesaggistico.",
   },
   {
     title: 'Scuola San Francesco d’Assisi — Bellegra',
