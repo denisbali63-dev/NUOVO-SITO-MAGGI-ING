@@ -112,7 +112,7 @@ img {
   align-items: center;
   gap: 14px;
   flex-shrink: 0;
-  color: var(--ink);
+  color: #b91c28;
 }
 
 .brand img {

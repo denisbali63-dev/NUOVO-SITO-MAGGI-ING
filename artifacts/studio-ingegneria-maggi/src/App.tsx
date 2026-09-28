@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 
 import architectureMark from '@assets/SIM_emblema.png';
-import brandEmblem from '@assets/SIM_emblema.png';
+import brandEmblem from '@assets/SIM_emblema_rosso.png';
 import { ITALY_VIEWBOX, ITALY_PATH, ITALY_SEDI } from './lib/italy';
 import notFacade from '@assets/NOT.1_1788173173214.jpg';
 import notAerial from '@assets/NOT.2_1788173173218.jpg';
