@@ -3468,3 +3468,10 @@ button:focus-visible,
 @media (max-width: 480px) {
   .contacts__channels { grid-template-columns: 1fr; }
 }
+
+/* didascalia per foto nel lightbox (indagini) */
+.work-lightbox__caption { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+.work-lightbox__caption span { display: block; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-deep); font-weight: 700; }
+.work-lightbox__caption strong { display: block; margin-top: 6px; font-size: 17px; color: var(--ink); font-weight: 600; }
+.work-lightbox__body .work-lightbox__caption p { margin-top: 6px; }
+.work-lightbox__body { overflow-y: auto; }
