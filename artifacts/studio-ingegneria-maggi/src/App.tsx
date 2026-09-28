@@ -16,6 +16,7 @@ import {
   Scale,
   ScanSearch,
   ShieldCheck,
+  ClipboardCheck,
   X,
   ChevronLeft,
   ChevronRight,
@@ -179,8 +180,25 @@ const servicePanels = [
     Icon: ScanSearch,
   },
   {
-    slug: 'cantiere',
+    slug: 'verifiche',
     number: '05',
+    title: 'Verifiche di progetto',
+    detail: 'Verifica ai fini della validazione',
+    description: 'Controlliamo i progetti prima che diventino cantiere: verifichiamo completezza, coerenza e conformità alla normativa degli elaborati, per consegnare alla stazione appaltante un progetto validabile e pronto per l’affidamento dei lavori.',
+    activities: [
+      'Verifica preventiva della progettazione ai fini della validazione',
+      'Controllo di completezza, coerenza e adeguatezza degli elaborati',
+      'Verifica di calcoli strutturali e impiantistici',
+      'Controllo di computi metrici, stime e quadri economici',
+      'Conformità alla normativa tecnica, ambientale e di sicurezza',
+      'Rapporti di verifica e supporto al RUP nella validazione',
+    ],
+    image: asset('progetti/tiburtino/tib-12.jpg'),
+    Icon: ClipboardCheck,
+  },
+  {
+    slug: 'cantiere',
+    number: '06',
     title: 'Cantiere',
     detail: 'Direzione lavori e sicurezza',
     description: 'Seguiamo la fase realizzativa con presenza, coordinamento e controllo, traducendo il progetto in un’opera eseguita correttamente.',
@@ -456,6 +474,7 @@ const works: Record<string, Work[]> = {
     { image: asset('progetti/vibo/vibo-01.jpg'), images: [asset('progetti/vibo/vibo-01.jpg'), asset('progetti/vibo/vibo-02.jpg'), asset('progetti/vibo/vibo-03.jpg'), asset('progetti/vibo/vibo-04.jpg'), asset('progetti/vibo/vibo-05.jpg'), asset('progetti/vibo/vibo-06.jpg'), asset('progetti/vibo/vibo-07.jpg'), asset('progetti/vibo/vibo-08.jpg'), asset('progetti/vibo/vibo-09.jpg'), asset('progetti/vibo/vibo-10.jpg'), asset('progetti/vibo/vibo-11.jpg')], client: '', title: 'Adeguamento sismico dell’ITG di Vibo Valentia', date: 'Vibo Valentia (VV)', description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri di Vibo Valentia. Sulla base di analisi pushover secondo le NTC 2018, rinforzo delle strutture in cemento armato dei tre corpi di fabbrica — ringrossi armati di pilastri, travi e fondazioni e adeguamento dei giunti sismici — insieme all'efficientamento energetico dell'edificio: cappotto termico, nuovi infissi a taglio termico, illuminazione a LED e impianto fotovoltaico. In galleria render di progetto, prospetti, sezioni, piante e particolari costruttivi." },
     { image: asset('progetti/copertura-1.jpg'), images: [asset('progetti/copertura-1.jpg'), asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')], client: '', title: 'Centro pellegrinaggio di Subiaco', date: 'Subiaco (RM)', description: "Recupero dell'edificio comunale di Subiaco trasformato in un nuovo centro di pellegrinaggio: struttura di copertura in legno lamellare con tiranti metallici e lucernari — leggera, reversibile e integrata con la muratura esistente — e nuovi spazi di accoglienza al servizio del territorio e del Parco dei Monti Simbruini." },
   ],
+  verifiche: [],
   cantiere: [],
   indagini: [
     { image: asset('indagini/01_sclerometrica.jpg'), images: [asset('indagini/01_sclerometrica.jpg'), asset('indagini/02_pacometrica.jpg'), asset('indagini/03_termografia.jpg'), asset('indagini/04_endoscopia.jpg'), asset('indagini/05_carotaggio.jpg'), asset('indagini/06_pullout.jpg'), asset('indagini/07_barre.jpg'), asset('indagini/08_saggi.jpg'), asset('indagini/09_martinetti.jpg'), asset('indagini/10_gommone.jpg'), asset('indagini/11_puntelli.jpg')], client: '', title: 'Indagini e prove su materiali e strutture', date: 'Prove non distruttive · prelievi · prove di carico', description: "Campagne di indagine su edifici e opere esistenti per conoscerne materiali, geometrie e comportamento: prove non distruttive (sclerometriche, pacometriche, termografiche ed endoscopiche), prelievi e prove semi-distruttive (carotaggi, pull-out, estrazione di barre d'armatura, saggi diretti, martinetti piatti) e prove di carico sui solai. Scorri le foto: per ciascuna trovi la descrizione della prova.", captions: [{ kind: "Prova non distruttiva", title: "Prova sclerometrica", text: "Lo sclerometro misura l'indice di rimbalzo su più battute della superficie in calcestruzzo, per valutarne l'omogeneità e ottenere una stima indiretta della resistenza a compressione, da correlare con le prove dirette." }, { kind: "Indagine non distruttiva", title: "Indagine pacometrica", text: "Rilievo elettromagnetico non distruttivo di posizione, direzione e copriferro delle armature nel calcestruzzo: verifica la corrispondenza con il progetto e guida carotaggi e prelievi." }, { kind: "Indagine non distruttiva", title: "Indagine termografica", text: "La termocamera a infrarossi mappa, senza demolizioni, la tessitura muraria nascosta, discontinuità e distacchi, l'orditura dei solai e le zone interessate da umidità o degrado." }, { kind: "Indagine debolmente invasiva", title: "Indagine endoscopica", text: "Un videoscopio introdotto in un piccolo foro permette di osservare l'interno di murature, solai e intercapedini: stratigrafia, vuoti, distacchi e stato reale dei materiali." }, { kind: "Prelievo diretto", title: "Carotaggio", text: "Prelievo di carote cilindriche di calcestruzzo da sottoporre a compressione in laboratorio: la misura diretta della resistenza in opera dell'elemento strutturale esistente." }, { kind: "Prova semi-distruttiva", title: "Prova pull-out", text: "Si estrae un inserto ancorato nel calcestruzzo e dalla forza massima di estrazione si stima la resistenza a compressione del materiale direttamente in situ, con danno locale contenuto." }, { kind: "Prelievo diretto", title: "Estrazione barre d'armatura", text: "Prelievo di spezzoni d'armatura per caratterizzare l'acciaio in opera — diametro, snervamento, rottura, allungamento — con successivo ripristino del copriferro." }, { kind: "Saggio diretto", title: "Saggi diretti", text: "Aperture localizzate su murature, solai e fondazioni per rilevare tessitura, stratigrafia, orditura e tipologia fondale, verificando la reale configurazione della struttura." }, { kind: "Prova semi-distruttiva", title: "Martinetti piatti doppi", text: "Due martinetti idraulici inseriti tra i giunti di malta misurano in situ la deformabilità della muratura e il modulo elastico e, ove possibile, la resistenza a compressione." }, { kind: "Prova di carico", title: "Prova di carico con gommone", text: "Serbatoi flessibili riempiti d'acqua applicano un carico distribuito e finemente controllato sul solaio, misurandone frecce, rigidezza e recupero elastico in carico e scarico." }, { kind: "Prova di carico", title: "Prova di carico con puntelli", text: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." }] },
@@ -483,7 +502,7 @@ function ServiceDetail({ service }: { service: ServicePanel }) {
         <a className="service-detail__back" href="#servizi">
           <ArrowRight size={16} /> Torna ai servizi
         </a>
-        <span className="service-detail__index">Servizio {service.number} / 05</span>
+        <span className="service-detail__index">Servizio {service.number} / {String(servicePanels.length).padStart(2, '0')}</span>
       </div>
       <div className="service-detail__hero">
         <div className="service-detail__copy">
@@ -1062,7 +1081,7 @@ function App() {
                 <div className="impact__item"><CountUp value={2004} /><span>Anno di fondazione</span></div>
                 <div className="impact__item"><CountUp value={20} suffix="+" /><span>Anni di esperienza</span></div>
                 <div className="impact__item"><CountUp value={3} /><span>Sedi operative</span></div>
-                <div className="impact__item"><CountUp value={5} /><span>Ambiti di intervento</span></div>
+                <div className="impact__item"><CountUp value={servicePanels.length} /><span>Ambiti di intervento</span></div>
               </div>
             </section>
 
