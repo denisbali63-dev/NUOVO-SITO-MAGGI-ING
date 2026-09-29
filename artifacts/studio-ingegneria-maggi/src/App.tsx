@@ -75,6 +75,7 @@ const careerRoles = [
 ];
 
 const clientLogos = [
+  { src: 'loghi-clienti/canada.png', name: 'Ambasciata del Canada in Italia' },
   { src: 'loghi-clienti/senato.png', name: 'Senato della Repubblica' },
   { src: 'loghi-clienti/ministero-interno.png', name: "Ministero dell'Interno" },
   { src: 'loghi-clienti/autostrade.png', name: "Autostrade per l'Italia" },
@@ -1045,12 +1046,12 @@ function App() {
               <div className="clients__track">
                 <div className="clients__row">
                   {clientLogos.map((c) => (
-                    <span className={`clients__item${c.name === 'Comune di Matera' ? ' clients__item--lg' : ''}`} key={c.name}>
+                    <span className={`clients__item${(c.name === 'Comune di Matera' || c.name === 'Ambasciata del Canada in Italia') ? ' clients__item--lg' : ''}`} key={c.name}>
                       <img src={asset(c.src)} alt={c.name} loading="lazy" />
                     </span>
                   ))}
                   {clientLogos.map((c) => (
-                    <span className={`clients__item${c.name === 'Comune di Matera' ? ' clients__item--lg' : ''}`} key={`${c.name}-dup`} aria-hidden="true">
+                    <span className={`clients__item${(c.name === 'Comune di Matera' || c.name === 'Ambasciata del Canada in Italia') ? ' clients__item--lg' : ''}`} key={`${c.name}-dup`} aria-hidden="true">
                       <img src={asset(c.src)} alt="" loading="lazy" />
                     </span>
                   ))}
