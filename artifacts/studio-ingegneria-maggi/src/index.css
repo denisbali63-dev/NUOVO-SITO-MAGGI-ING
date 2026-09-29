@@ -3475,3 +3475,56 @@ button:focus-visible,
 .work-lightbox__caption strong { display: block; margin-top: 6px; font-size: 17px; color: var(--ink); font-weight: 600; }
 .work-lightbox__body .work-lightbox__caption p { margin-top: 6px; }
 .work-lightbox__body { overflow-y: auto; }
+
+
+/* ===== Ancoraggi sezioni sotto l'header fisso ===== */
+section[id], [id="top"] { scroll-margin-top: 84px; }
+
+/* ===== Indirizzi -> Google Maps ===== */
+.location-card__info a.location-card__maps {
+  width: auto;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.location-card__maps span { color: var(--blue-deep); font-weight: 700; }
+.location-card__maps:hover { color: var(--blue-deep); }
+.locations__map a.sede-marker { pointer-events: auto; cursor: pointer; }
+.locations__map a.sede-marker:focus-visible .sede-halo { opacity: 1; stroke-width: 5; }
+.locations__map a.sede-marker:focus-visible .sede-tooltip { opacity: 1; }
+
+/* ===== Mobile: ragione sociale accanto al logo ===== */
+@media (max-width: 720px) {
+  .site-header .brand span {
+    display: block;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+  }
+  .site-header .brand { gap: 10px; }
+  .site-header .brand img { height: 46px; }
+}
+@media (max-width: 360px) {
+  .site-header .brand span { font-size: 10px; letter-spacing: 0.05em; }
+}
+/* la mappa sta sopra al testo (svg trasparente ai click), così i marker sono cliccabili */
+.locations .locations__map { z-index: 2; }
+
+/* ===== Ritocchi versione mobile ===== */
+@media (max-width: 720px) {
+  .services-hero .service-panel { min-height: 270px; }
+  .section-pad { padding-top: 68px; padding-bottom: 68px; }
+  .site-footer .brand--light span {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+  }
+  .portfolio-carousel__arrow { top: 36%; width: 36px; height: 36px; }
+  .portfolio-carousel__arrow--prev { left: 6px; }
+  .portfolio-carousel__arrow--next { right: 6px; }
+  /* niente zoom automatico di iOS quando si tocca un campo del modulo */
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select { font-size: 16px; }
+}

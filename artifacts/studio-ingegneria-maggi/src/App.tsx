@@ -22,15 +22,15 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-import architectureMark from '@assets/SIM_emblema.png';
-import brandEmblem from '@assets/SIM_emblema.png';
+import architectureMark from '@assets/SIM_emblema.webp';
+import brandEmblem from '@assets/SIM_emblema.webp';
 import { ITALY_VIEWBOX, ITALY_PATH, ITALY_SEDI } from './lib/italy';
-import notFacade from '@assets/NOT.1_1788173173214.jpg';
-import notAerial from '@assets/NOT.2_1788173173218.jpg';
-import notOverview from '@assets/NOT_1788173173220.jpg';
-import viboPlan from '@assets/VIBO.1_1788173173223.png';
-import viboBuilding from '@assets/VIBO_1788173173224.png';
-import roofStructure from '@assets/IMG-20140307-WA0006_1788180849882.jpg';
+import notFacade from '@assets/NOT.1_1788173173214.webp';
+import notAerial from '@assets/NOT.2_1788173173218.webp';
+import notOverview from '@assets/NOT_1788173173220.webp';
+import viboPlan from '@assets/VIBO.1_1788173173223.webp';
+import viboBuilding from '@assets/VIBO_1788173173224.webp';
+import roofStructure from '@assets/IMG-20140307-WA0006_1788180849882.webp';
 
 // Prefissa gli asset statici (cartella public/) con il base path del sito,
 // cosi' funzionano anche quando il sito e' pubblicato in una sottocartella
@@ -75,41 +75,41 @@ const careerRoles = [
 ];
 
 const clientLogos = [
-  { src: 'loghi-clienti/canada.png', name: 'Ambasciata del Canada in Italia' },
-  { src: 'loghi-clienti/senato.png', name: 'Senato della Repubblica' },
-  { src: 'loghi-clienti/ministero-interno.png', name: "Ministero dell'Interno" },
-  { src: 'loghi-clienti/autostrade.png', name: "Autostrade per l'Italia" },
-  { src: 'loghi-clienti/anas.png', name: 'ANAS' },
-  { src: 'loghi-clienti/sogesid.png', name: 'Sogesid' },
-  { src: 'loghi-clienti/invitalia.png', name: 'Invitalia' },
-  { src: 'loghi-clienti/sport-e-salute.png', name: 'Sport e Salute' },
-  { src: 'loghi-clienti/tav.png', name: 'TAV' },
-  { src: 'loghi-clienti/enav.png', name: 'ENAV' },
-  { src: 'loghi-clienti/regione-lazio.png', name: 'Regione Lazio' },
-  { src: 'loghi-clienti/cm-roma.png', name: 'Città metropolitana di Roma' },
-  { src: 'loghi-clienti/roma-capitale.png', name: 'Comune di Roma Capitale' },
-  { src: 'loghi-clienti/risorse-per-roma.png', name: 'Risorse per Roma' },
-  { src: 'loghi-clienti/ater-roma.png', name: 'ATER Roma' },
-  { src: 'loghi-clienti/ater-civitavecchia.png', name: 'ATER Civitavecchia' },
-  { src: 'loghi-clienti/ater-rieti.png', name: 'ATER Rieti' },
-  { src: 'loghi-clienti/acea.png', name: 'ACEA' },
-  { src: 'loghi-clienti/cm-bari.png', name: 'Città metropolitana di Bari' },
-  { src: 'loghi-clienti/asl-roma1.png', name: 'ASL Roma 1' },
-  { src: 'loghi-clienti/asl-roma3.png', name: 'ASL Roma 3' },
-  { src: 'loghi-clienti/asl-roma5.png', name: 'ASL Roma 5' },
-  { src: 'loghi-clienti/asl-frosinone.png', name: 'ASL Frosinone' },
-  { src: 'loghi-clienti/asl-rieti.png', name: 'ASL Rieti' },
-  { src: 'loghi-clienti/asl-matera.png', name: 'ASL Matera' },
-  { src: 'loghi-clienti/ast-macerata.png', name: 'AST Macerata' },
-  { src: 'loghi-clienti/ssr-calabria.png', name: 'Regione Calabria – Servizio Sanitario Regionale' },
-  { src: 'loghi-clienti/asp-potenza.png', name: 'ASP Potenza' },
-  { src: 'loghi-clienti/asl-bt.png', name: 'ASL BT' },
-  { src: 'loghi-clienti/provincia-viterbo.png', name: 'Provincia di Viterbo' },
-  { src: 'loghi-clienti/provincia-latina.png', name: 'Provincia di Latina' },
-  { src: 'loghi-clienti/provincia-frosinone.png', name: 'Provincia di Frosinone' },
-  { src: 'loghi-clienti/reggio-calabria.png', name: 'Comune di Reggio Calabria' },
-  { src: 'loghi-clienti/potenza.png', name: 'Comune di Potenza' },
-  { src: 'loghi-clienti/matera.png', name: 'Comune di Matera' },
+  { src: 'loghi-clienti/canada.webp', name: 'Ambasciata del Canada in Italia' },
+  { src: 'loghi-clienti/senato.webp', name: 'Senato della Repubblica' },
+  { src: 'loghi-clienti/ministero-interno.webp', name: "Ministero dell'Interno" },
+  { src: 'loghi-clienti/autostrade.webp', name: "Autostrade per l'Italia" },
+  { src: 'loghi-clienti/anas.webp', name: 'ANAS' },
+  { src: 'loghi-clienti/sogesid.webp', name: 'Sogesid' },
+  { src: 'loghi-clienti/invitalia.webp', name: 'Invitalia' },
+  { src: 'loghi-clienti/sport-e-salute.webp', name: 'Sport e Salute' },
+  { src: 'loghi-clienti/tav.webp', name: 'TAV' },
+  { src: 'loghi-clienti/enav.webp', name: 'ENAV' },
+  { src: 'loghi-clienti/regione-lazio.webp', name: 'Regione Lazio' },
+  { src: 'loghi-clienti/cm-roma.webp', name: 'Città metropolitana di Roma' },
+  { src: 'loghi-clienti/roma-capitale.webp', name: 'Comune di Roma Capitale' },
+  { src: 'loghi-clienti/risorse-per-roma.webp', name: 'Risorse per Roma' },
+  { src: 'loghi-clienti/ater-roma.webp', name: 'ATER Roma' },
+  { src: 'loghi-clienti/ater-civitavecchia.webp', name: 'ATER Civitavecchia' },
+  { src: 'loghi-clienti/ater-rieti.webp', name: 'ATER Rieti' },
+  { src: 'loghi-clienti/acea.webp', name: 'ACEA' },
+  { src: 'loghi-clienti/cm-bari.webp', name: 'Città metropolitana di Bari' },
+  { src: 'loghi-clienti/asl-roma1.webp', name: 'ASL Roma 1' },
+  { src: 'loghi-clienti/asl-roma3.webp', name: 'ASL Roma 3' },
+  { src: 'loghi-clienti/asl-roma5.webp', name: 'ASL Roma 5' },
+  { src: 'loghi-clienti/asl-frosinone.webp', name: 'ASL Frosinone' },
+  { src: 'loghi-clienti/asl-rieti.webp', name: 'ASL Rieti' },
+  { src: 'loghi-clienti/asl-matera.webp', name: 'ASL Matera' },
+  { src: 'loghi-clienti/ast-macerata.webp', name: 'AST Macerata' },
+  { src: 'loghi-clienti/ssr-calabria.webp', name: 'Regione Calabria – Servizio Sanitario Regionale' },
+  { src: 'loghi-clienti/asp-potenza.webp', name: 'ASP Potenza' },
+  { src: 'loghi-clienti/asl-bt.webp', name: 'ASL BT' },
+  { src: 'loghi-clienti/provincia-viterbo.webp', name: 'Provincia di Viterbo' },
+  { src: 'loghi-clienti/provincia-latina.webp', name: 'Provincia di Latina' },
+  { src: 'loghi-clienti/provincia-frosinone.webp', name: 'Provincia di Frosinone' },
+  { src: 'loghi-clienti/reggio-calabria.webp', name: 'Comune di Reggio Calabria' },
+  { src: 'loghi-clienti/potenza.webp', name: 'Comune di Potenza' },
+  { src: 'loghi-clienti/matera.webp', name: 'Comune di Matera' },
 ];
 
 const servicePanels = [
@@ -128,7 +128,7 @@ const servicePanels = [
       'Diagnostica, prove di carico, direzione lavori e collaudi',
       'Coordinamento della sicurezza in fase di progettazione ed esecuzione',
     ],
-    image: asset('progetti/tav/tav-01.jpg'),
+    image: asset('progetti/tav/tav-01.webp'),
     Icon: Construction,
   },
   {
@@ -144,7 +144,7 @@ const servicePanels = [
       'Edilizia pubblica, privata, residenziale, commerciale e turistico-ricettiva',
       'Progettazione impiantistica e coordinamento delle discipline',
     ],
-    image: asset('progetti/mentana/mentana-2.jpg'),
+    image: asset('progetti/mentana/mentana-2.webp'),
     Icon: Building2,
   },
   {
@@ -177,7 +177,7 @@ const servicePanels = [
       'Progetti di ambiente, territorio e paesaggio',
       'Interventi di riqualificazione e valorizzazione dei luoghi',
     ],
-    image: asset('images/edificio-restauro.jpg'),
+    image: asset('images/edificio-restauro.webp'),
     Icon: ScanSearch,
   },
   {
@@ -194,7 +194,7 @@ const servicePanels = [
       'Conformità alla normativa tecnica, ambientale e di sicurezza',
       'Rapporti di verifica e supporto al RUP nella validazione',
     ],
-    image: asset('progetti/tiburtino/tib-12.jpg'),
+    image: asset('progetti/tiburtino/tib-12.webp'),
     Icon: ClipboardCheck,
   },
   {
@@ -209,7 +209,7 @@ const servicePanels = [
       'Controllo delle lavorazioni, dei tempi e della qualità',
       'Supporto tecnico nella gestione dell’appalto e della chiusura dei lavori',
     ],
-    image: asset('images/riuso-ferroviario.jpg'),
+    image: asset('images/riuso-ferroviario.webp'),
     Icon: HardHat,
   },
 ];
@@ -235,120 +235,128 @@ const portfolio: Project[] = [
     title: 'Nuovo Ospedale Tiburtino',
     category: 'Architettura',
     meta: 'Struttura sanitaria · Roma – Tivoli (RM)',
-    image: asset('progetti/tiburtino/tib-16.jpg'),
-    images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')],
+    image: asset('progetti/tiburtino/tib-16.webp'),
+    images: [asset('progetti/tiburtino/tib-16.webp'), asset('progetti/tiburtino/tib-06.webp'), asset('progetti/tiburtino/tib-07.webp'), asset('progetti/tiburtino/tib-15.webp'), asset('progetti/tiburtino/tib-05.webp'), asset('progetti/tiburtino/tib-08.webp')],
     description: "La nuova struttura sanitaria di Roma nel territorio limitrofo di Tivoli: un complesso dall'impianto curvo con corti verdi e terrazze terapeutiche, pensato per il benessere delle persone e la sostenibilità.",
   },
   {
     title: 'Adeguamento sismico dell’ITG di Vibo Valentia',
     category: 'Strutture',
     meta: 'Adeguamento sismico · Vibo Valentia (VV)',
-    image: asset('progetti/vibo/vibo-01.jpg'),
-    images: [asset('progetti/vibo/vibo-01.jpg'), asset('progetti/vibo/vibo-02.jpg'), asset('progetti/vibo/vibo-03.jpg'), asset('progetti/vibo/vibo-04.jpg'), asset('progetti/vibo/vibo-05.jpg'), asset('progetti/vibo/vibo-06.jpg'), asset('progetti/vibo/vibo-07.jpg'), asset('progetti/vibo/vibo-08.jpg'), asset('progetti/vibo/vibo-09.jpg'), asset('progetti/vibo/vibo-10.jpg'), asset('progetti/vibo/vibo-11.jpg')],
+    image: asset('progetti/vibo/vibo-01.webp'),
+    images: [asset('progetti/vibo/vibo-01.webp'), asset('progetti/vibo/vibo-02.webp'), asset('progetti/vibo/vibo-03.webp'), asset('progetti/vibo/vibo-04.webp'), asset('progetti/vibo/vibo-05.webp'), asset('progetti/vibo/vibo-06.webp'), asset('progetti/vibo/vibo-07.webp'), asset('progetti/vibo/vibo-08.webp'), asset('progetti/vibo/vibo-09.webp'), asset('progetti/vibo/vibo-10.webp'), asset('progetti/vibo/vibo-11.webp')],
     description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri: rinforzo delle strutture in cemento armato dei tre corpi di fabbrica secondo le NTC 2018 ed efficientamento energetico dell'edificio.",
   },
   {
     title: 'Centro pellegrinaggio di Subiaco',
     category: 'Strutture',
     meta: 'Struttura in legno · Subiaco (RM)',
-    image: asset('progetti/copertura-1.jpg'),
-    images: [asset('progetti/copertura-1.jpg'), asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')],
+    image: asset('progetti/copertura-1.webp'),
+    images: [asset('progetti/copertura-1.webp'), asset('progetti/mattatoio-3.webp'), asset('progetti/mattatoio-1.webp'), asset('progetti/mattatoio-5.webp'), asset('progetti/mattatoio-4.webp'), asset('progetti/mattatoio-2.webp')],
     description: "Recupero dell'edificio comunale di Subiaco in un centro di pellegrinaggio: copertura in legno lamellare con tiranti metallici e lucernari, leggera e reversibile, e nuovi spazi di accoglienza.",
   },
   {
     title: 'Linee ferroviarie ad alta velocità (TAV)',
     category: 'Infrastrutture',
     meta: 'Alta velocità · Torino–Milano · Firenze–Bologna',
-    image: asset('progetti/tav/tav-03.jpg'),
-    images: [asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg'), asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg'), asset('progetti/tav/tav-08.jpg'), asset('progetti/tav/tav-09.jpg'), asset('progetti/tav/tav-10.jpg'), asset('progetti/tav/tav-11.jpg'), asset('progetti/tav/tav-12.jpg')],
+    image: asset('progetti/tav/tav-03.webp'),
+    images: [asset('progetti/tav/tav-03.webp'), asset('progetti/tav/tav-01.webp'), asset('progetti/tav/tav-02.webp'), asset('progetti/tav/tav-04.webp'), asset('progetti/tav/tav-05.webp'), asset('progetti/tav/tav-06.webp'), asset('progetti/tav/tav-07.webp'), asset('progetti/tav/tav-08.webp'), asset('progetti/tav/tav-09.webp'), asset('progetti/tav/tav-10.webp'), asset('progetti/tav/tav-11.webp'), asset('progetti/tav/tav-12.webp')],
     description: "Coordinamento della sicurezza in fase di progettazione nei cantieri TAV: viadotti, pile e impalcati e gallerie lungo le linee ad alta velocità Torino–Milano e Firenze–Bologna.",
   },
   {
     title: 'Pista ciclopedonale del Lago di Canterno',
     category: 'Territorio',
     meta: 'Ambiente e paesaggio · Canterno (FR)',
-    image: asset('progetti/canterno-1.jpg'),
-    images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')],
+    image: asset('progetti/canterno-1.webp'),
+    images: [asset('progetti/canterno-1.webp'), asset('progetti/canterno-2.webp'), asset('progetti/canterno-3.webp'), asset('progetti/canterno-4.webp'), asset('progetti/canterno-5.webp'), asset('progetti/canterno-6.webp'), asset('progetti/canterno-7.webp')],
     description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione per una fruizione accessibile del paesaggio.",
   },
   {
     title: 'Passerella pedonale in Valle di Comino',
     category: 'Infrastrutture',
     meta: 'Infrastrutture · Valle di Comino (FR)',
-    image: asset('progetti/ponte-comino.jpg'),
-    images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')],
+    image: asset('progetti/ponte-comino.webp'),
+    images: [asset('progetti/ponte-comino.webp'), asset('progetti/passerella-comino.webp')],
     description: "Attraversamento pedonale in Valle di Comino: struttura metallica leggera e durevole per collegare in sicurezza le due sponde.",
   },
   {
     title: 'Scuola San Francesco d’Assisi — Bellegra',
     category: 'Architettura',
     meta: 'Edilizia scolastica · Bellegra (RM)',
-    image: asset('progetti/bellegra/bel-07.jpg'),
-    images: [asset('progetti/bellegra/bel-07.jpg'), asset('progetti/bellegra/bel-05.jpg'), asset('progetti/bellegra/bel-08.jpg'), asset('progetti/bellegra/bel-27.jpg'), asset('progetti/bellegra/bel-29.jpg'), asset('progetti/bellegra/bel-31.jpg'), asset('progetti/bellegra/bel-34.jpg')],
+    image: asset('progetti/bellegra/bel-07.webp'),
+    images: [asset('progetti/bellegra/bel-07.webp'), asset('progetti/bellegra/bel-05.webp'), asset('progetti/bellegra/bel-08.webp'), asset('progetti/bellegra/bel-27.webp'), asset('progetti/bellegra/bel-29.webp'), asset('progetti/bellegra/bel-31.webp'), asset('progetti/bellegra/bel-34.webp')],
     description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: aule luminose, spazi comuni e aree gioco, con l'edificio che si adatta al pendio.",
   },
   {
     title: 'Ampliamento Scuola “Francesco da Fiano”',
     category: 'Architettura',
     meta: 'Edilizia scolastica · Fiano Romano (RM)',
-    image: asset('progetti/fiano/fia-02.jpg'),
-    images: [asset('progetti/fiano/fia-02.jpg'), asset('progetti/fiano/fia-01.jpg')],
+    image: asset('progetti/fiano/fia-02.webp'),
+    images: [asset('progetti/fiano/fia-02.webp'), asset('progetti/fiano/fia-01.webp')],
     description: "Ampliamento della Scuola Media “Francesco da Fiano”: nuovi spazi didattici e un auditorium integrati con l'edificio esistente.",
   },
   {
     title: 'Difesa e ricostruzione dei litorali del Lazio',
     category: 'Infrastrutture',
     meta: 'Opere di difesa costiera · Ostia e Ladispoli (RM)',
-    image: asset('progetti/litorali/litorali-1.jpg'),
-    images: [asset('progetti/litorali/litorali-1.jpg'), asset('progetti/litorali/litorali-2.jpg'), asset('progetti/litorali/litorali-3.jpg'), asset('progetti/litorali/litorali-4.jpg'), asset('progetti/litorali/litorali-5.jpg'), asset('progetti/litorali/litorali-6.jpg'), asset('progetti/litorali/litorali-7.jpg'), asset('progetti/litorali/litorali-8.jpg')],
+    image: asset('progetti/litorali/litorali-1.webp'),
+    images: [asset('progetti/litorali/litorali-1.webp'), asset('progetti/litorali/litorali-2.webp'), asset('progetti/litorali/litorali-3.webp'), asset('progetti/litorali/litorali-4.webp'), asset('progetti/litorali/litorali-5.webp'), asset('progetti/litorali/litorali-6.webp'), asset('progetti/litorali/litorali-7.webp'), asset('progetti/litorali/litorali-8.webp')],
     description: "Ripascimenti, pennelli e scogliere per la ricostruzione delle spiagge di Ostia e Ladispoli, per Regione Lazio e ARDIS.",
   },
   {
     title: 'Traforo autostradale del Frejus',
     category: 'Infrastrutture',
     meta: 'Gallerie autostradali · Bardonecchia (TO)',
-    image: asset('progetti/frejus/frejus-1.jpg'),
-    images: [asset('progetti/frejus/frejus-1.jpg'), asset('progetti/frejus/frejus-2.jpg'), asset('progetti/frejus/frejus-3.jpg'), asset('progetti/frejus/frejus-4.jpg')],
+    image: asset('progetti/frejus/frejus-1.webp'),
+    images: [asset('progetti/frejus/frejus-1.webp'), asset('progetti/frejus/frejus-2.webp'), asset('progetti/frejus/frejus-3.webp'), asset('progetti/frejus/frejus-4.webp')],
     description: "Coordinamento della sicurezza in esecuzione per i pozzetti sifonati di raccolta liquidi nel Traforo del Frejus, per S.I.T.A.F. S.p.A.",
+  },
+  {
+    title: 'S.S. 7 Via Appia — risanamento della pavimentazione',
+    category: 'Infrastrutture',
+    meta: 'Coordinamento sicurezza (CSE) · ANAS · Itri (LT)',
+    image: asset('progetti/anas-ss7/ss7-1.webp'),
+    images: [asset('progetti/anas-ss7/ss7-1.webp'), asset('progetti/anas-ss7/ss7-2.webp'), asset('progetti/anas-ss7/ss7-3.webp'), asset('progetti/anas-ss7/ss7-4.webp'), asset('progetti/anas-ss7/ss7-5.webp')],
+    description: "Coordinamento della sicurezza in fase di esecuzione per ANAS nei lavori di risanamento della pavimentazione della S.S. 7 Appia a Itri (LT), con lavorazioni diurne e notturne.",
   },
   {
     title: 'Rotatorie e messa in sicurezza della viabilità',
     category: 'Infrastrutture',
     meta: 'Viabilità · Fiuggi (FR) · Colleferro (RM)',
-    image: asset('progetti/rotatorie/rotatorie-1.jpg'),
-    images: [asset('progetti/rotatorie/rotatorie-1.jpg'), asset('progetti/rotatorie/rotatorie-2.jpg'), asset('progetti/rotatorie/rotatorie-3.jpg'), asset('progetti/rotatorie/rotatorie-4.jpg'), asset('progetti/rotatorie/rotatorie-5.jpg'), asset('progetti/rotatorie/rotatorie-6.jpg')],
+    image: asset('progetti/rotatorie/rotatorie-1.webp'),
+    images: [asset('progetti/rotatorie/rotatorie-1.webp'), asset('progetti/rotatorie/rotatorie-2.webp'), asset('progetti/rotatorie/rotatorie-3.webp'), asset('progetti/rotatorie/rotatorie-4.webp'), asset('progetti/rotatorie/rotatorie-5.webp'), asset('progetti/rotatorie/rotatorie-6.webp')],
     description: "Rotatoria d'ingresso a Fiuggi sulla S.R. 155 Fiuggi–Alatri e rotatorie per ASTRAL sulla SP 21 e sulla SP 64a a Colleferro.",
   },
   {
     title: 'Piazza Carlo Alberto dalla Chiesa — Mentana',
     category: 'Territorio',
     meta: 'Riqualificazione urbana · Mentana (RM)',
-    image: asset('progetti/piazza-mentana/piazza-mentana-1.jpg'),
-    images: [asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), asset('progetti/piazza-mentana/piazza-mentana-2.jpg'), asset('progetti/piazza-mentana/piazza-mentana-3.jpg'), asset('progetti/piazza-mentana/piazza-mentana-4.jpg'), asset('progetti/piazza-mentana/piazza-mentana-5.jpg'), asset('progetti/piazza-mentana/piazza-mentana-6.jpg'), asset('progetti/piazza-mentana/piazza-mentana-7.jpg')],
+    image: asset('progetti/piazza-mentana/piazza-mentana-1.webp'),
+    images: [asset('progetti/piazza-mentana/piazza-mentana-1.webp'), asset('progetti/piazza-mentana/piazza-mentana-2.webp'), asset('progetti/piazza-mentana/piazza-mentana-3.webp'), asset('progetti/piazza-mentana/piazza-mentana-4.webp'), asset('progetti/piazza-mentana/piazza-mentana-5.webp'), asset('progetti/piazza-mentana/piazza-mentana-6.webp'), asset('progetti/piazza-mentana/piazza-mentana-7.webp')],
     description: "Riqualificazione urbana degli spazi pubblici di Mentana: nuova «boulevard», pista ciclabile, giardini e un edificio polifunzionale per la cultura e l'aggregazione.",
   },
   {
     title: 'Scuola e palestra di Pizzo',
     category: 'Architettura',
     meta: 'Edilizia scolastica · Pizzo (VV)',
-    image: asset('progetti/pizzo/pizzo-1.jpg'),
-    images: [asset('progetti/pizzo/pizzo-1.jpg'), asset('progetti/pizzo/pizzo-2.jpg'), asset('progetti/pizzo/pizzo-3.jpg')],
+    image: asset('progetti/pizzo/pizzo-1.webp'),
+    images: [asset('progetti/pizzo/pizzo-1.webp'), asset('progetti/pizzo/pizzo-2.webp'), asset('progetti/pizzo/pizzo-3.webp')],
     description: "Progetto esecutivo in BIM di una scuola con palestra a Pizzo (VV): nuovi spazi didattici e sportivi con campo polivalente regolamentare.",
   },
   {
     title: 'Palestra Brunelleschi — Mentana',
     category: 'Architettura',
     meta: 'Edilizia sportiva · Mentana (RM)',
-    image: asset('progetti/mentana/mentana-1.jpg'),
-    images: [asset('progetti/mentana/mentana-1.jpg'), asset('progetti/mentana/mentana-2.jpg'), asset('progetti/mentana/mentana-3.jpg'), asset('progetti/mentana/mentana-4.jpg')],
+    image: asset('progetti/mentana/mentana-1.webp'),
+    images: [asset('progetti/mentana/mentana-1.webp'), asset('progetti/mentana/mentana-2.webp'), asset('progetti/mentana/mentana-3.webp'), asset('progetti/mentana/mentana-4.webp')],
     description: "Palestra scolastica del Nuovo Istituto Comprensivo di Via Brunelleschi: campo da basket regolamentare, spogliatoi e sistemazione delle aree esterne.",
   },
   {
     title: 'Palestra di Agosta',
     category: 'Architettura',
     meta: 'Edilizia sportiva · Agosta (RM)',
-    image: asset('progetti/agosta/agosta-1.jpg'),
-    images: [asset('progetti/agosta/agosta-1.jpg'), asset('progetti/agosta/agosta-2.jpg'), asset('progetti/agosta/agosta-3.jpg')],
+    image: asset('progetti/agosta/agosta-1.webp'),
+    images: [asset('progetti/agosta/agosta-1.webp'), asset('progetti/agosta/agosta-2.webp'), asset('progetti/agosta/agosta-3.webp')],
     description: "Nuova palestra scolastica in Via Rufinelli ad Agosta, il «Centro sportivo dell'Alto Aniene»: campo regolamentare, parete di arrampicata e spazi per la comunità.",
   },
 ];
@@ -464,31 +472,33 @@ const workDescription =
 
 const works: Record<string, Work[]> = {
   architettura: [
-    { image: asset('progetti/tiburtino/tib-16.jpg'), images: [asset('progetti/tiburtino/tib-16.jpg'), asset('progetti/tiburtino/tib-06.jpg'), asset('progetti/tiburtino/tib-07.jpg'), asset('progetti/tiburtino/tib-15.jpg'), asset('progetti/tiburtino/tib-05.jpg'), asset('progetti/tiburtino/tib-08.jpg')], client: '', title: 'Nuovo Ospedale Tiburtino', date: 'Roma · Tivoli (RM)', description: "Il Nuovo Ospedale Tiburtino è la nuova struttura sanitaria di Roma, nel territorio limitrofo di Tivoli: nasce come un grande arco che abbraccia il paesaggio, un complesso dall'impianto curvo dove degenze, servizi e percorsi si affacciano su corti verdi e terrazze terapeutiche. Luce naturale, verde e benessere delle persone guidano ogni scelta, insieme a un progetto energetico orientato alla sostenibilità." },
-    { image: asset('progetti/bellegra/bel-07.jpg'), images: [asset('progetti/bellegra/bel-07.jpg'), asset('progetti/bellegra/bel-05.jpg'), asset('progetti/bellegra/bel-08.jpg'), asset('progetti/bellegra/bel-27.jpg'), asset('progetti/bellegra/bel-29.jpg'), asset('progetti/bellegra/bel-31.jpg'), asset('progetti/bellegra/bel-34.jpg')], client: '', title: 'Scuola San Francesco d’Assisi — Bellegra', date: 'Bellegra (RM)', description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: un edificio che si adatta al pendio, con aule luminose, spazi comuni e aree gioco all'aperto, pensato per la sicurezza e il benessere dei bambini." },
-    { image: asset('progetti/fiano/fia-02.jpg'), images: [asset('progetti/fiano/fia-02.jpg'), asset('progetti/fiano/fia-01.jpg')], client: '', title: 'Ampliamento Scuola “Francesco da Fiano”', date: 'Fiano Romano (RM)', description: "Ampliamento della Scuola Media “Francesco da Fiano” a Fiano Romano (RM): nuovi spazi didattici e un auditorium integrati con l'edificio esistente e con il contesto." },
-    { image: asset('progetti/pizzo/pizzo-1.jpg'), images: [asset('progetti/pizzo/pizzo-1.jpg'), asset('progetti/pizzo/pizzo-2.jpg'), asset('progetti/pizzo/pizzo-3.jpg')], client: '', title: 'Scuola e palestra di Pizzo', date: 'Pizzo (VV)', description: "Progetto esecutivo in BIM di una scuola con palestra a Pizzo (VV): nuovi spazi didattici e sportivi, palestra con campo polivalente regolamentare e sistemazioni esterne. In galleria render e piante di progetto." },
-    { image: asset('progetti/mentana/mentana-1.jpg'), images: [asset('progetti/mentana/mentana-1.jpg'), asset('progetti/mentana/mentana-2.jpg'), asset('progetti/mentana/mentana-3.jpg'), asset('progetti/mentana/mentana-4.jpg')], client: '', title: 'Palestra Brunelleschi — Mentana', date: 'Mentana (RM)', description: "Palestra scolastica a servizio del Nuovo Istituto Comprensivo di Via Brunelleschi a Mentana (RM): campo da basket regolamentare, blocco spogliatoi, parcheggi e sistemazione delle aree esterne a verde, in dialogo con la scuola esistente." },
-    { image: asset('progetti/agosta/agosta-1.jpg'), images: [asset('progetti/agosta/agosta-1.jpg'), asset('progetti/agosta/agosta-2.jpg'), asset('progetti/agosta/agosta-3.jpg')], client: '', title: 'Palestra di Agosta — Centro sportivo dell’Alto Aniene', date: 'Agosta (RM)', description: "Nuova palestra scolastica in Via Rufinelli ad Agosta (RM), il «Centro sportivo dell'Alto Aniene»: campo regolamentare, parete di arrampicata e spazi aperti alla comunità in orario extra-scolastico, affacciati sul borgo." },
+    { image: asset('progetti/tiburtino/tib-16.webp'), images: [asset('progetti/tiburtino/tib-16.webp'), asset('progetti/tiburtino/tib-06.webp'), asset('progetti/tiburtino/tib-07.webp'), asset('progetti/tiburtino/tib-15.webp'), asset('progetti/tiburtino/tib-05.webp'), asset('progetti/tiburtino/tib-08.webp')], client: '', title: 'Nuovo Ospedale Tiburtino', date: 'Roma · Tivoli (RM)', description: "Il Nuovo Ospedale Tiburtino è la nuova struttura sanitaria di Roma, nel territorio limitrofo di Tivoli: nasce come un grande arco che abbraccia il paesaggio, un complesso dall'impianto curvo dove degenze, servizi e percorsi si affacciano su corti verdi e terrazze terapeutiche. Luce naturale, verde e benessere delle persone guidano ogni scelta, insieme a un progetto energetico orientato alla sostenibilità." },
+    { image: asset('progetti/bellegra/bel-07.webp'), images: [asset('progetti/bellegra/bel-07.webp'), asset('progetti/bellegra/bel-05.webp'), asset('progetti/bellegra/bel-08.webp'), asset('progetti/bellegra/bel-27.webp'), asset('progetti/bellegra/bel-29.webp'), asset('progetti/bellegra/bel-31.webp'), asset('progetti/bellegra/bel-34.webp')], client: '', title: 'Scuola San Francesco d’Assisi — Bellegra', date: 'Bellegra (RM)', description: "Progetto della scuola “San Francesco d'Assisi” a Bellegra: un edificio che si adatta al pendio, con aule luminose, spazi comuni e aree gioco all'aperto, pensato per la sicurezza e il benessere dei bambini." },
+    { image: asset('progetti/fiano/fia-02.webp'), images: [asset('progetti/fiano/fia-02.webp'), asset('progetti/fiano/fia-01.webp')], client: '', title: 'Ampliamento Scuola “Francesco da Fiano”', date: 'Fiano Romano (RM)', description: "Ampliamento della Scuola Media “Francesco da Fiano” a Fiano Romano (RM): nuovi spazi didattici e un auditorium integrati con l'edificio esistente e con il contesto." },
+    { image: asset('progetti/pizzo/pizzo-1.webp'), images: [asset('progetti/pizzo/pizzo-1.webp'), asset('progetti/pizzo/pizzo-2.webp'), asset('progetti/pizzo/pizzo-3.webp')], client: '', title: 'Scuola e palestra di Pizzo', date: 'Pizzo (VV)', description: "Progetto esecutivo in BIM di una scuola con palestra a Pizzo (VV): nuovi spazi didattici e sportivi, palestra con campo polivalente regolamentare e sistemazioni esterne. In galleria render e piante di progetto." },
+    { image: asset('progetti/mentana/mentana-1.webp'), images: [asset('progetti/mentana/mentana-1.webp'), asset('progetti/mentana/mentana-2.webp'), asset('progetti/mentana/mentana-3.webp'), asset('progetti/mentana/mentana-4.webp')], client: '', title: 'Palestra Brunelleschi — Mentana', date: 'Mentana (RM)', description: "Palestra scolastica a servizio del Nuovo Istituto Comprensivo di Via Brunelleschi a Mentana (RM): campo da basket regolamentare, blocco spogliatoi, parcheggi e sistemazione delle aree esterne a verde, in dialogo con la scuola esistente." },
+    { image: asset('progetti/agosta/agosta-1.webp'), images: [asset('progetti/agosta/agosta-1.webp'), asset('progetti/agosta/agosta-2.webp'), asset('progetti/agosta/agosta-3.webp')], client: '', title: 'Palestra di Agosta — Centro sportivo dell’Alto Aniene', date: 'Agosta (RM)', description: "Nuova palestra scolastica in Via Rufinelli ad Agosta (RM), il «Centro sportivo dell'Alto Aniene»: campo regolamentare, parete di arrampicata e spazi aperti alla comunità in orario extra-scolastico, affacciati sul borgo." },
   ],
   strutture: [
-    { image: asset('progetti/vibo/vibo-01.jpg'), images: [asset('progetti/vibo/vibo-01.jpg'), asset('progetti/vibo/vibo-02.jpg'), asset('progetti/vibo/vibo-03.jpg'), asset('progetti/vibo/vibo-04.jpg'), asset('progetti/vibo/vibo-05.jpg'), asset('progetti/vibo/vibo-06.jpg'), asset('progetti/vibo/vibo-07.jpg'), asset('progetti/vibo/vibo-08.jpg'), asset('progetti/vibo/vibo-09.jpg'), asset('progetti/vibo/vibo-10.jpg'), asset('progetti/vibo/vibo-11.jpg')], client: '', title: 'Adeguamento sismico dell’ITG di Vibo Valentia', date: 'Vibo Valentia (VV)', description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri di Vibo Valentia. Sulla base di analisi pushover secondo le NTC 2018, rinforzo delle strutture in cemento armato dei tre corpi di fabbrica — ringrossi armati di pilastri, travi e fondazioni e adeguamento dei giunti sismici — insieme all'efficientamento energetico dell'edificio: cappotto termico, nuovi infissi a taglio termico, illuminazione a LED e impianto fotovoltaico. In galleria render di progetto, prospetti, sezioni, piante e particolari costruttivi." },
-    { image: asset('progetti/copertura-1.jpg'), images: [asset('progetti/copertura-1.jpg'), asset('progetti/mattatoio-3.jpg'), asset('progetti/mattatoio-1.jpg'), asset('progetti/mattatoio-5.jpg'), asset('progetti/mattatoio-4.jpg'), asset('progetti/mattatoio-2.jpg')], client: '', title: 'Centro pellegrinaggio di Subiaco', date: 'Subiaco (RM)', description: "Recupero dell'edificio comunale di Subiaco trasformato in un nuovo centro di pellegrinaggio: struttura di copertura in legno lamellare con tiranti metallici e lucernari — leggera, reversibile e integrata con la muratura esistente — e nuovi spazi di accoglienza al servizio del territorio e del Parco dei Monti Simbruini." },
+    { image: asset('progetti/vibo/vibo-01.webp'), images: [asset('progetti/vibo/vibo-01.webp'), asset('progetti/vibo/vibo-02.webp'), asset('progetti/vibo/vibo-03.webp'), asset('progetti/vibo/vibo-04.webp'), asset('progetti/vibo/vibo-05.webp'), asset('progetti/vibo/vibo-06.webp'), asset('progetti/vibo/vibo-07.webp'), asset('progetti/vibo/vibo-08.webp'), asset('progetti/vibo/vibo-09.webp'), asset('progetti/vibo/vibo-10.webp'), asset('progetti/vibo/vibo-11.webp')], client: '', title: 'Adeguamento sismico dell’ITG di Vibo Valentia', date: 'Vibo Valentia (VV)', description: "Adeguamento sismico e riqualificazione dell'Istituto Tecnico per Geometri di Vibo Valentia. Sulla base di analisi pushover secondo le NTC 2018, rinforzo delle strutture in cemento armato dei tre corpi di fabbrica — ringrossi armati di pilastri, travi e fondazioni e adeguamento dei giunti sismici — insieme all'efficientamento energetico dell'edificio: cappotto termico, nuovi infissi a taglio termico, illuminazione a LED e impianto fotovoltaico. In galleria render di progetto, prospetti, sezioni, piante e particolari costruttivi." },
+    { image: asset('progetti/copertura-1.webp'), images: [asset('progetti/copertura-1.webp'), asset('progetti/mattatoio-3.webp'), asset('progetti/mattatoio-1.webp'), asset('progetti/mattatoio-5.webp'), asset('progetti/mattatoio-4.webp'), asset('progetti/mattatoio-2.webp')], client: '', title: 'Centro pellegrinaggio di Subiaco', date: 'Subiaco (RM)', description: "Recupero dell'edificio comunale di Subiaco trasformato in un nuovo centro di pellegrinaggio: struttura di copertura in legno lamellare con tiranti metallici e lucernari — leggera, reversibile e integrata con la muratura esistente — e nuovi spazi di accoglienza al servizio del territorio e del Parco dei Monti Simbruini." },
   ],
   verifiche: [],
-  cantiere: [],
+  cantiere: [
+    { image: asset('progetti/anas-ss7/ss7-1.webp'), images: [asset('progetti/anas-ss7/ss7-1.webp'), asset('progetti/anas-ss7/ss7-2.webp'), asset('progetti/anas-ss7/ss7-3.webp'), asset('progetti/anas-ss7/ss7-4.webp'), asset('progetti/anas-ss7/ss7-5.webp')], client: 'ANAS S.p.A.', title: 'S.S. 7 Via Appia — risanamento della pavimentazione', date: 'Itri (LT) · 2026', description: "Coordinamento della sicurezza in fase di esecuzione (CSE) per ANAS S.p.A. nei lavori di risanamento della pavimentazione della S.S. 7 Via Appia nel territorio di Itri (LT): fresatura del manto esistente, stesa e rullatura del nuovo conglomerato bituminoso, con lavorazioni anche in orario notturno e gestione del traffico per ridurre l'impatto sulla circolazione." },
+  ],
   indagini: [
-    { image: asset('indagini/01_sclerometrica.jpg'), images: [asset('indagini/01_sclerometrica.jpg'), asset('indagini/02_pacometrica.jpg'), asset('indagini/03_termografia.jpg'), asset('indagini/04_endoscopia.jpg'), asset('indagini/05_carotaggio.jpg'), asset('indagini/06_pullout.jpg'), asset('indagini/07_barre.jpg'), asset('indagini/08_saggi.jpg'), asset('indagini/09_martinetti.jpg'), asset('indagini/10_gommone.jpg'), asset('indagini/11_puntelli.jpg')], client: '', title: 'Indagini e prove su materiali e strutture', date: 'Prove non distruttive · prelievi · prove di carico', description: "Campagne di indagine su edifici e opere esistenti per conoscerne materiali, geometrie e comportamento: prove non distruttive (sclerometriche, pacometriche, termografiche ed endoscopiche), prelievi e prove semi-distruttive (carotaggi, pull-out, estrazione di barre d'armatura, saggi diretti, martinetti piatti) e prove di carico sui solai. Scorri le foto: per ciascuna trovi la descrizione della prova.", captions: [{ kind: "Prova non distruttiva", title: "Prova sclerometrica", text: "Lo sclerometro misura l'indice di rimbalzo su più battute della superficie in calcestruzzo, per valutarne l'omogeneità e ottenere una stima indiretta della resistenza a compressione, da correlare con le prove dirette." }, { kind: "Indagine non distruttiva", title: "Indagine pacometrica", text: "Rilievo elettromagnetico non distruttivo di posizione, direzione e copriferro delle armature nel calcestruzzo: verifica la corrispondenza con il progetto e guida carotaggi e prelievi." }, { kind: "Indagine non distruttiva", title: "Indagine termografica", text: "La termocamera a infrarossi mappa, senza demolizioni, la tessitura muraria nascosta, discontinuità e distacchi, l'orditura dei solai e le zone interessate da umidità o degrado." }, { kind: "Indagine debolmente invasiva", title: "Indagine endoscopica", text: "Un videoscopio introdotto in un piccolo foro permette di osservare l'interno di murature, solai e intercapedini: stratigrafia, vuoti, distacchi e stato reale dei materiali." }, { kind: "Prelievo diretto", title: "Carotaggio", text: "Prelievo di carote cilindriche di calcestruzzo da sottoporre a compressione in laboratorio: la misura diretta della resistenza in opera dell'elemento strutturale esistente." }, { kind: "Prova semi-distruttiva", title: "Prova pull-out", text: "Si estrae un inserto ancorato nel calcestruzzo e dalla forza massima di estrazione si stima la resistenza a compressione del materiale direttamente in situ, con danno locale contenuto." }, { kind: "Prelievo diretto", title: "Estrazione barre d'armatura", text: "Prelievo di spezzoni d'armatura per caratterizzare l'acciaio in opera — diametro, snervamento, rottura, allungamento — con successivo ripristino del copriferro." }, { kind: "Saggio diretto", title: "Saggi diretti", text: "Aperture localizzate su murature, solai e fondazioni per rilevare tessitura, stratigrafia, orditura e tipologia fondale, verificando la reale configurazione della struttura." }, { kind: "Prova semi-distruttiva", title: "Martinetti piatti doppi", text: "Due martinetti idraulici inseriti tra i giunti di malta misurano in situ la deformabilità della muratura e il modulo elastico e, ove possibile, la resistenza a compressione." }, { kind: "Prova di carico", title: "Prova di carico con gommone", text: "Serbatoi flessibili riempiti d'acqua applicano un carico distribuito e finemente controllato sul solaio, misurandone frecce, rigidezza e recupero elastico in carico e scarico." }, { kind: "Prova di carico", title: "Prova di carico con puntelli", text: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." }] },
-    { image: asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), images: [asset('progetti/piazza-mentana/piazza-mentana-1.jpg'), asset('progetti/piazza-mentana/piazza-mentana-2.jpg'), asset('progetti/piazza-mentana/piazza-mentana-3.jpg'), asset('progetti/piazza-mentana/piazza-mentana-4.jpg'), asset('progetti/piazza-mentana/piazza-mentana-5.jpg'), asset('progetti/piazza-mentana/piazza-mentana-6.jpg'), asset('progetti/piazza-mentana/piazza-mentana-7.jpg')], client: '', title: 'Riqualificazione di Piazza Carlo Alberto dalla Chiesa — Mentana', date: 'Mentana (RM)', description: "Riqualificazione urbana di Piazza Carlo Alberto dalla Chiesa a Mentana: nuovi spazi pubblici per l'aggregazione e la cultura lungo una nuova «boulevard», con pista ciclabile, giardini, area mercato e un edificio polifunzionale affiancato da un palco per le manifestazioni." },
-    { image: asset('progetti/canterno-1.jpg'), images: [asset('progetti/canterno-1.jpg'), asset('progetti/canterno-2.jpg'), asset('progetti/canterno-3.jpg'), asset('progetti/canterno-4.jpg'), asset('progetti/canterno-5.jpg'), asset('progetti/canterno-6.jpg'), asset('progetti/canterno-7.jpg')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: 'Lago di Canterno (FR)', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
+    { image: asset('indagini/01_sclerometrica.webp'), images: [asset('indagini/01_sclerometrica.webp'), asset('indagini/02_pacometrica.webp'), asset('indagini/03_termografia.webp'), asset('indagini/04_endoscopia.webp'), asset('indagini/05_carotaggio.webp'), asset('indagini/06_pullout.webp'), asset('indagini/07_barre.webp'), asset('indagini/08_saggi.webp'), asset('indagini/09_martinetti.webp'), asset('indagini/10_gommone.webp'), asset('indagini/11_puntelli.webp')], client: '', title: 'Indagini e prove su materiali e strutture', date: 'Prove non distruttive · prelievi · prove di carico', description: "Campagne di indagine su edifici e opere esistenti per conoscerne materiali, geometrie e comportamento: prove non distruttive (sclerometriche, pacometriche, termografiche ed endoscopiche), prelievi e prove semi-distruttive (carotaggi, pull-out, estrazione di barre d'armatura, saggi diretti, martinetti piatti) e prove di carico sui solai. Scorri le foto: per ciascuna trovi la descrizione della prova.", captions: [{ kind: "Prova non distruttiva", title: "Prova sclerometrica", text: "Lo sclerometro misura l'indice di rimbalzo su più battute della superficie in calcestruzzo, per valutarne l'omogeneità e ottenere una stima indiretta della resistenza a compressione, da correlare con le prove dirette." }, { kind: "Indagine non distruttiva", title: "Indagine pacometrica", text: "Rilievo elettromagnetico non distruttivo di posizione, direzione e copriferro delle armature nel calcestruzzo: verifica la corrispondenza con il progetto e guida carotaggi e prelievi." }, { kind: "Indagine non distruttiva", title: "Indagine termografica", text: "La termocamera a infrarossi mappa, senza demolizioni, la tessitura muraria nascosta, discontinuità e distacchi, l'orditura dei solai e le zone interessate da umidità o degrado." }, { kind: "Indagine debolmente invasiva", title: "Indagine endoscopica", text: "Un videoscopio introdotto in un piccolo foro permette di osservare l'interno di murature, solai e intercapedini: stratigrafia, vuoti, distacchi e stato reale dei materiali." }, { kind: "Prelievo diretto", title: "Carotaggio", text: "Prelievo di carote cilindriche di calcestruzzo da sottoporre a compressione in laboratorio: la misura diretta della resistenza in opera dell'elemento strutturale esistente." }, { kind: "Prova semi-distruttiva", title: "Prova pull-out", text: "Si estrae un inserto ancorato nel calcestruzzo e dalla forza massima di estrazione si stima la resistenza a compressione del materiale direttamente in situ, con danno locale contenuto." }, { kind: "Prelievo diretto", title: "Estrazione barre d'armatura", text: "Prelievo di spezzoni d'armatura per caratterizzare l'acciaio in opera — diametro, snervamento, rottura, allungamento — con successivo ripristino del copriferro." }, { kind: "Saggio diretto", title: "Saggi diretti", text: "Aperture localizzate su murature, solai e fondazioni per rilevare tessitura, stratigrafia, orditura e tipologia fondale, verificando la reale configurazione della struttura." }, { kind: "Prova semi-distruttiva", title: "Martinetti piatti doppi", text: "Due martinetti idraulici inseriti tra i giunti di malta misurano in situ la deformabilità della muratura e il modulo elastico e, ove possibile, la resistenza a compressione." }, { kind: "Prova di carico", title: "Prova di carico con gommone", text: "Serbatoi flessibili riempiti d'acqua applicano un carico distribuito e finemente controllato sul solaio, misurandone frecce, rigidezza e recupero elastico in carico e scarico." }, { kind: "Prova di carico", title: "Prova di carico con puntelli", text: "Il carico è applicato con puntelli e le frecce rilevate in tempo reale da trasduttori wireless, per verificare la risposta del solaio e il recupero elastico dopo lo scarico." }] },
+    { image: asset('progetti/piazza-mentana/piazza-mentana-1.webp'), images: [asset('progetti/piazza-mentana/piazza-mentana-1.webp'), asset('progetti/piazza-mentana/piazza-mentana-2.webp'), asset('progetti/piazza-mentana/piazza-mentana-3.webp'), asset('progetti/piazza-mentana/piazza-mentana-4.webp'), asset('progetti/piazza-mentana/piazza-mentana-5.webp'), asset('progetti/piazza-mentana/piazza-mentana-6.webp'), asset('progetti/piazza-mentana/piazza-mentana-7.webp')], client: '', title: 'Riqualificazione di Piazza Carlo Alberto dalla Chiesa — Mentana', date: 'Mentana (RM)', description: "Riqualificazione urbana di Piazza Carlo Alberto dalla Chiesa a Mentana: nuovi spazi pubblici per l'aggregazione e la cultura lungo una nuova «boulevard», con pista ciclabile, giardini, area mercato e un edificio polifunzionale affiancato da un palco per le manifestazioni." },
+    { image: asset('progetti/canterno-1.webp'), images: [asset('progetti/canterno-1.webp'), asset('progetti/canterno-2.webp'), asset('progetti/canterno-3.webp'), asset('progetti/canterno-4.webp'), asset('progetti/canterno-5.webp'), asset('progetti/canterno-6.webp'), asset('progetti/canterno-7.webp')], client: '', title: 'Pista ciclopedonale del Lago di Canterno', date: 'Lago di Canterno (FR)', description: "Percorso ciclopedonale lungo le rive del lago di Canterno: tracciato, staccionate in legno e opere di sistemazione pensati per una fruizione accessibile del paesaggio, con il minimo impatto sull'ambiente naturale." },
   ],
   infrastrutture: [
-    { image: asset('progetti/tav/tav-03.jpg'), images: [asset('progetti/tav/tav-03.jpg'), asset('progetti/tav/tav-01.jpg'), asset('progetti/tav/tav-02.jpg'), asset('progetti/tav/tav-04.jpg'), asset('progetti/tav/tav-05.jpg')], client: '', title: 'Alta Velocità Torino–Milano: viadotti', date: 'Linea Torino–Venezia · tratta Torino–Milano', description: "Coordinamento della sicurezza in fase di progettazione nei cantieri della linea ferroviaria ad alta velocità Torino–Milano: viadotti a travata, pile a fungo in alveo, varo degli impalcati con carri di lancio e gru di grande portata." },
-    { image: asset('progetti/tav/tav-06.jpg'), images: [asset('progetti/tav/tav-06.jpg'), asset('progetti/tav/tav-07.jpg'), asset('progetti/tav/tav-08.jpg'), asset('progetti/tav/tav-09.jpg'), asset('progetti/tav/tav-10.jpg'), asset('progetti/tav/tav-11.jpg'), asset('progetti/tav/tav-12.jpg')], client: '', title: 'Alta Velocità Firenze–Bologna: gallerie', date: 'Linea Napoli–Milano · tratta Firenze–Bologna', description: "Project management nell'ufficio del Coordinatore per la sicurezza dei cantieri in galleria della tratta appenninica Firenze–Bologna: scavo, consolidamento del fronte, rivestimenti e imbocchi, in un contesto di cantiere ad alta complessità." },
-    { image: asset('progetti/litorali/litorali-1.jpg'), images: [asset('progetti/litorali/litorali-1.jpg'), asset('progetti/litorali/litorali-2.jpg'), asset('progetti/litorali/litorali-3.jpg'), asset('progetti/litorali/litorali-4.jpg'), asset('progetti/litorali/litorali-5.jpg'), asset('progetti/litorali/litorali-6.jpg'), asset('progetti/litorali/litorali-7.jpg'), asset('progetti/litorali/litorali-8.jpg')], client: '', title: 'Difesa e ricostruzione dei litorali del Lazio', date: 'Ostia (RM) · Ladispoli (RM)', description: "Interventi di difesa e ricostruzione delle spiagge laziali per Regione Lazio e ARDIS: ripascimenti con sabbie dragate in mare, pennelli e scogliere, ricostruzione dell'arenile a Ostia e a Ladispoli – Torre Flavia." },
-    { image: asset('progetti/frejus/frejus-1.jpg'), images: [asset('progetti/frejus/frejus-1.jpg'), asset('progetti/frejus/frejus-2.jpg'), asset('progetti/frejus/frejus-3.jpg'), asset('progetti/frejus/frejus-4.jpg')], captions: [{ kind: 'Foto di repertorio', title: 'Imbocco italiano del Traforo del Frejus', text: '' }, { kind: 'Foto di repertorio', title: 'Portale della galleria di sicurezza SITAF', text: '' }, { kind: 'Foto di repertorio', title: 'Il traforo in costruzione', text: '' }, { kind: 'Foto di repertorio', title: 'Scavo in galleria', text: '' }], client: 'S.I.T.A.F. S.p.A.', title: 'Traforo autostradale del Frejus', date: 'Bardonecchia (TO) · 2003', description: "Coordinamento della sicurezza in fase di esecuzione, all'interno della soc. ISA, per la realizzazione di pozzetti sifonati per la raccolta dei liquidi in caso di sversamento all'interno del Traforo autostradale del Frejus. Committente: S.I.T.A.F. S.p.A." },
-    { image: asset('progetti/rotatorie/rotatorie-1.jpg'), images: [asset('progetti/rotatorie/rotatorie-1.jpg'), asset('progetti/rotatorie/rotatorie-2.jpg'), asset('progetti/rotatorie/rotatorie-3.jpg'), asset('progetti/rotatorie/rotatorie-4.jpg'), asset('progetti/rotatorie/rotatorie-5.jpg'), asset('progetti/rotatorie/rotatorie-6.jpg')], client: '', title: 'Rotatorie e messa in sicurezza della viabilità', date: 'Fiuggi (FR) · Colleferro (RM)', description: "Progettazione e direzione lavori di intersezioni a rotatoria: l'ampliamento e messa in sicurezza della S.R. 155 Fiuggi–Alatri con la rotatoria d'ingresso a Fiuggi (Provincia di Frosinone) e le rotatorie per ASTRAL sulla SP 21 allo svincolo SLO e sulla SP 64a a Colleferro." },
-    { image: asset('progetti/ponte-comino.jpg'), images: [asset('progetti/ponte-comino.jpg'), asset('progetti/passerella-comino.jpg')], client: '', title: 'Passerella pedonale in Valle di Comino', date: 'Valle di Comino (FR)', description: "Attraversamento pedonale in Valle di Comino, con struttura metallica leggera sul corso d'acqua. (Descrizione da confermare.)" },
+    { image: asset('progetti/tav/tav-03.webp'), images: [asset('progetti/tav/tav-03.webp'), asset('progetti/tav/tav-01.webp'), asset('progetti/tav/tav-02.webp'), asset('progetti/tav/tav-04.webp'), asset('progetti/tav/tav-05.webp')], client: '', title: 'Alta Velocità Torino–Milano: viadotti', date: 'Linea Torino–Venezia · tratta Torino–Milano', description: "Coordinamento della sicurezza in fase di progettazione nei cantieri della linea ferroviaria ad alta velocità Torino–Milano: viadotti a travata, pile a fungo in alveo, varo degli impalcati con carri di lancio e gru di grande portata." },
+    { image: asset('progetti/tav/tav-06.webp'), images: [asset('progetti/tav/tav-06.webp'), asset('progetti/tav/tav-07.webp'), asset('progetti/tav/tav-08.webp'), asset('progetti/tav/tav-09.webp'), asset('progetti/tav/tav-10.webp'), asset('progetti/tav/tav-11.webp'), asset('progetti/tav/tav-12.webp')], client: '', title: 'Alta Velocità Firenze–Bologna: gallerie', date: 'Linea Napoli–Milano · tratta Firenze–Bologna', description: "Project management nell'ufficio del Coordinatore per la sicurezza dei cantieri in galleria della tratta appenninica Firenze–Bologna: scavo, consolidamento del fronte, rivestimenti e imbocchi, in un contesto di cantiere ad alta complessità." },
+    { image: asset('progetti/litorali/litorali-1.webp'), images: [asset('progetti/litorali/litorali-1.webp'), asset('progetti/litorali/litorali-2.webp'), asset('progetti/litorali/litorali-3.webp'), asset('progetti/litorali/litorali-4.webp'), asset('progetti/litorali/litorali-5.webp'), asset('progetti/litorali/litorali-6.webp'), asset('progetti/litorali/litorali-7.webp'), asset('progetti/litorali/litorali-8.webp')], client: '', title: 'Difesa e ricostruzione dei litorali del Lazio', date: 'Ostia (RM) · Ladispoli (RM)', description: "Interventi di difesa e ricostruzione delle spiagge laziali per Regione Lazio e ARDIS: ripascimenti con sabbie dragate in mare, pennelli e scogliere, ricostruzione dell'arenile a Ostia e a Ladispoli – Torre Flavia." },
+    { image: asset('progetti/frejus/frejus-1.webp'), images: [asset('progetti/frejus/frejus-1.webp'), asset('progetti/frejus/frejus-2.webp'), asset('progetti/frejus/frejus-3.webp'), asset('progetti/frejus/frejus-4.webp')], captions: [{ kind: 'Foto di repertorio', title: 'Imbocco italiano del Traforo del Frejus', text: '' }, { kind: 'Foto di repertorio', title: 'Portale della galleria di sicurezza SITAF', text: '' }, { kind: 'Foto di repertorio', title: 'Il traforo in costruzione', text: '' }, { kind: 'Foto di repertorio', title: 'Scavo in galleria', text: '' }], client: 'S.I.T.A.F. S.p.A.', title: 'Traforo autostradale del Frejus', date: 'Bardonecchia (TO) · 2003', description: "Coordinamento della sicurezza in fase di esecuzione, all'interno della soc. ISA, per la realizzazione di pozzetti sifonati per la raccolta dei liquidi in caso di sversamento all'interno del Traforo autostradale del Frejus. Committente: S.I.T.A.F. S.p.A." },
+    { image: asset('progetti/rotatorie/rotatorie-1.webp'), images: [asset('progetti/rotatorie/rotatorie-1.webp'), asset('progetti/rotatorie/rotatorie-2.webp'), asset('progetti/rotatorie/rotatorie-3.webp'), asset('progetti/rotatorie/rotatorie-4.webp'), asset('progetti/rotatorie/rotatorie-5.webp'), asset('progetti/rotatorie/rotatorie-6.webp')], client: '', title: 'Rotatorie e messa in sicurezza della viabilità', date: 'Fiuggi (FR) · Colleferro (RM)', description: "Progettazione e direzione lavori di intersezioni a rotatoria: l'ampliamento e messa in sicurezza della S.R. 155 Fiuggi–Alatri con la rotatoria d'ingresso a Fiuggi (Provincia di Frosinone) e le rotatorie per ASTRAL sulla SP 21 allo svincolo SLO e sulla SP 64a a Colleferro." },
+    { image: asset('progetti/ponte-comino.webp'), images: [asset('progetti/ponte-comino.webp'), asset('progetti/passerella-comino.webp')], client: '', title: 'Passerella pedonale in Valle di Comino', date: 'Valle di Comino (FR)', description: "Attraversamento pedonale in Valle di Comino, con struttura metallica leggera sul corso d'acqua. (Descrizione da confermare.)" },
   ],
 };
 
@@ -631,22 +641,25 @@ function CertBadge({ top, main, year }: { top: string; main: string; year: strin
   );
 }
 
+const mapsUrl = (q: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+
 function ItalyMap() {
   return (
-    <svg className="locations__map" viewBox={ITALY_VIEWBOX} aria-hidden="true" focusable="false">
+    <svg className="locations__map" viewBox={ITALY_VIEWBOX} role="group" aria-label="Mappa delle sedi">
       <path className="italy-outline" d={ITALY_PATH} />
       {ITALY_SEDI.map((p) => (
-        <g className="sede-marker" key={p.name}>
+        <a className="sede-marker" key={p.name} href={mapsUrl(`Studio Ingegneria Maggi, ${p.address.replace(' — ', ', ')}`)} target="_blank" rel="noopener noreferrer" aria-label={`Sede di ${p.name}: apri in Google Maps`}>
           <circle className="sede-halo" cx={p.cx} cy={p.cy} r="26" />
           <circle className="sede-dot" cx={p.cx} cy={p.cy} r="12" />
           <text className="sede-label" x={p.cx + 32} y={p.cy + 9}>{p.name}</text>
           <g className="sede-tooltip" transform={`translate(${p.cx}, ${p.cy})`}>
-            <rect className="sede-tooltip__bg" x="-150" y="-120" width="300" height="98" rx="12" />
-            <text className="sede-tooltip__name" x="-132" y="-86">{p.name}</text>
-            <text className="sede-tooltip__line sede-tooltip__link" x="-132" y="-58">{p.phone}</text>
-            <text className="sede-tooltip__line sede-tooltip__link" x="-132" y="-34">{p.email}</text>
+            <rect className="sede-tooltip__bg" x="-150" y="-146" width="300" height="124" rx="12" />
+            <text className="sede-tooltip__name" x="-132" y="-112">{p.name}</text>
+            <text className="sede-tooltip__line sede-tooltip__link" x="-132" y="-84">{p.phone}</text>
+            <text className="sede-tooltip__line sede-tooltip__link" x="-132" y="-60">{p.email}</text>
+            <text className="sede-tooltip__line" x="-132" y="-36">Apri in Google Maps ↗</text>
           </g>
-        </g>
+        </a>
       ))}
     </svg>
   );
@@ -963,7 +976,16 @@ function App() {
       setLegalPage(lp as 'privacy' | 'cookie' | null);
       const certs = h === '#certificazioni';
       setShowCerts(certs);
-      if (h.startsWith(prefix) || lp || certs) window.scrollTo(0, 0);
+      if (h.startsWith(prefix) || lp || certs) {
+        window.scrollTo(0, 0);
+      } else if (h.length > 1) {
+        // Da una sotto-pagina (servizio, certificazioni, privacy) la home viene
+        // ri-renderizzata: aspettiamo il nuovo DOM e poi scendiamo alla sezione.
+        const id = decodeURIComponent(h.slice(1));
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          document.getElementById(id)?.scrollIntoView({ block: 'start' });
+        }));
+      }
     };
 
     syncFromHash();
@@ -1125,7 +1147,7 @@ function App() {
                   <h3>Fiuggi</h3>
                   <p>Il punto di partenza dello studio, dove si incontrano esperienza, progettazione e coordinamento.</p>
                   <div className="location-card__info">
-                    <p className="location-card__addr">Via Casavetere, 25 bis/a<br />03014 Fiuggi (FR)</p>
+                    <a className="location-card__addr location-card__maps" href={mapsUrl('Studio Ingegneria Maggi, Via Casavetere 25 bis/a, 03014 Fiuggi (FR)')} target="_blank" rel="noopener noreferrer" title="Apri in Google Maps">Via Casavetere, 25 bis/a<br />03014 Fiuggi (FR) <span aria-hidden="true">↗</span></a>
                     <a href="tel:+390775504019">+39 0775 504019</a>
                     <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
                   </div>
@@ -1135,7 +1157,7 @@ function App() {
                   <h3>Nola</h3>
                   <p>Una presenza pensata per ampliare il raggio d’azione e seguire con maggiore continuità i lavori nel territorio campano.</p>
                   <div className="location-card__info">
-                    <p className="location-card__addr">Via San Massimo, 216<br />80035 Nola (NA)</p>
+                    <a className="location-card__addr location-card__maps" href={mapsUrl('Studio Ingegneria Maggi, Via San Massimo 216, 80035 Nola (NA)')} target="_blank" rel="noopener noreferrer" title="Apri in Google Maps">Via San Massimo, 216<br />80035 Nola (NA) <span aria-hidden="true">↗</span></a>
                     <a href="tel:+3908117557574">+39 081 17557574</a>
                   </div>
                 </article>
@@ -1144,7 +1166,7 @@ function App() {
                   <h3>Rieti</h3>
                   <p>Un presidio sul territorio per essere più vicini a committenti, cantieri e nuove opportunità nel reatino.</p>
                   <div className="location-card__info">
-                    <p className="location-card__addr">Via Pennina, 11/a<br />02100 Rieti (RI)</p>
+                    <a className="location-card__addr location-card__maps" href={mapsUrl('Studio Ingegneria Maggi, Via Pennina 11/a, 02100 Rieti (RI)')} target="_blank" rel="noopener noreferrer" title="Apri in Google Maps">Via Pennina, 11/a<br />02100 Rieti (RI) <span aria-hidden="true">↗</span></a>
                     <a href="tel:+390746246759">+39 0746 246759</a>
                   </div>
                 </article>
@@ -1309,7 +1331,7 @@ function App() {
             </SectionHeading>
             <div className="contact__details">
               <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>
-              <p>Via Casavetere, 25 bis/a<br />03014 Fiuggi (FR), Italia</p>
+              <a href={mapsUrl('Studio Ingegneria Maggi, Via Casavetere 25 bis/a, 03014 Fiuggi (FR)')} target="_blank" rel="noopener noreferrer" title="Apri in Google Maps">Via Casavetere, 25 bis/a<br />03014 Fiuggi (FR), Italia</a>
             </div>
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>
@@ -1393,9 +1415,9 @@ function App() {
           <div className="cert-strip__issuers">
             <span className="cert-strip__issuers-label">Enti certificatori</span>
             <div className="cert-strip__logos">
-              <img src={asset('loghi/cert-international.png')} alt="CERT International" />
-              <img src={asset('loghi/quality-italia.png')} alt="Quality Italia" />
-              <img src={asset('loghi/nqa.png')} alt="NQA Italia" />
+              <img src={asset('loghi/cert-international.webp')} alt="CERT International" />
+              <img src={asset('loghi/quality-italia.webp')} alt="Quality Italia" />
+              <img src={asset('loghi/nqa.webp')} alt="NQA Italia" />
             </div>
           </div>
         </div>
