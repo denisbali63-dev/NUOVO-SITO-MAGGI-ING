@@ -69,6 +69,7 @@ const careerRoles = [
   'Ingegneri',
   'Architetti',
   'Geologi',
+  'Impiantisti (elettrici e meccanici)',
   'Tecnici e disegnatori BIM',
   'Geometri e tecnici di cantiere',
   'Amministrazione e segreteria',
