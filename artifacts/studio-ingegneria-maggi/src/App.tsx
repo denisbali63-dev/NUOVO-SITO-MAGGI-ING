@@ -75,10 +75,11 @@ const careerRoles = [
   'Amministrazione e segreteria',
 ];
 
-const clientLogos = [
-  { src: 'loghi-clienti/canada.webp', name: 'Ambasciata del Canada in Italia' },
-  { src: 'loghi-clienti/senato.webp', name: 'Senato della Repubblica' },
-  { src: 'loghi-clienti/ministero-interno.webp', name: "Ministero dell'Interno" },
+// Enti istituzionali indicati solo con il nome (senza logo/emblema)
+const clientLogos: { src?: string; name: string }[] = [
+  { name: 'Ambasciata del Canada in Italia' },
+  { name: 'Senato della Repubblica' },
+  { name: 'Ministero dell’Interno' },
   { src: 'loghi-clienti/autostrade.webp', name: "Autostrade per l'Italia" },
   { src: 'loghi-clienti/anas.webp', name: 'ANAS' },
   { src: 'loghi-clienti/sogesid.webp', name: 'Sogesid' },
@@ -1069,13 +1070,13 @@ function App() {
               <div className="clients__track">
                 <div className="clients__row">
                   {clientLogos.map((c) => (
-                    <span className={`clients__item${(c.name === 'Comune di Matera' || c.name === 'Ambasciata del Canada in Italia') ? ' clients__item--lg' : ''}`} key={c.name}>
-                      <img src={asset(c.src)} alt={c.name} loading="lazy" />
+                    <span className={`clients__item${c.name === 'Comune di Matera' ? ' clients__item--lg' : ''}${c.src ? '' : ' clients__item--text'}`} key={c.name}>
+                      {c.src ? <img src={asset(c.src)} alt={c.name} loading="lazy" /> : <span className="clients__name">{c.name}</span>}
                     </span>
                   ))}
                   {clientLogos.map((c) => (
-                    <span className={`clients__item${(c.name === 'Comune di Matera' || c.name === 'Ambasciata del Canada in Italia') ? ' clients__item--lg' : ''}`} key={`${c.name}-dup`} aria-hidden="true">
-                      <img src={asset(c.src)} alt="" loading="lazy" />
+                    <span className={`clients__item${c.name === 'Comune di Matera' ? ' clients__item--lg' : ''}${c.src ? '' : ' clients__item--text'}`} key={`${c.name}-dup`} aria-hidden="true">
+                      {c.src ? <img src={asset(c.src)} alt="" loading="lazy" /> : <span className="clients__name">{c.name}</span>}
                     </span>
                   ))}
                 </div>
