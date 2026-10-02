@@ -47,9 +47,11 @@ jobs:
       - name: Build del sito
         env:
           # Su GitHub Pages "di progetto" il sito vive in /<nome-repo>/.
-          # BASE_PATH viene calcolato in automatico dal nome del repository.
+          # Con il dominio studioingegneriamaggi.it attivo, impostare la variabile
+          # del repository SITE_BASE_PATH = "/" (Settings > Secrets and variables >
+          # Actions > Variables) e rilanciare il workflow.
           PORT: "4173"
-          BASE_PATH: "/${{ github.event.repository.name }}/"
+          BASE_PATH: "${{ vars.SITE_BASE_PATH || format('/{0}/', github.event.repository.name) }}"
         run: pnpm --filter @workspace/studio-ingegneria-maggi run build
 
       - name: Fallback SPA (404 -> index)

@@ -995,8 +995,17 @@ function App() {
     return () => window.removeEventListener('hashchange', syncFromHash);
   }, []);
 
+  // Il sito è statico: la richiesta viene preparata come email e aperta
+  // nel programma di posta del visitatore, già indirizzata allo studio.
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get('name') ?? '').trim();
+    const email = String(data.get('email') ?? '').trim();
+    const message = String(data.get('message') ?? '').trim();
+    const subject = `Richiesta dal sito — ${name}`;
+    const body = `${message}\n\n—\n${name}\n${email}`;
+    window.location.href = `mailto:info@studioingegneriamaggi.it?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
 
@@ -1340,9 +1349,9 @@ function App() {
             {sent ? (
               <div className="form-success">
                 <Check size={28} />
-                <span>Richiesta ricevuta</span>
-                <h3>Grazie per averci scritto.</h3>
-                <p>Il messaggio è pronto per essere preso in carico dallo studio.</p>
+                <span>Quasi fatto</span>
+                <h3>Controlla la tua email.</h3>
+                <p>Si è aperto il tuo programma di posta con il messaggio già pronto: premi «Invia» per farlo arrivare allo studio. Se non si è aperto, scrivici a <a href="mailto:info@studioingegneriamaggi.it">info@studioingegneriamaggi.it</a>.</p>
                 <button type="button" onClick={() => setSent(false)}>Invia un altro messaggio</button>
               </div>
             ) : (
